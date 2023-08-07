@@ -1,0 +1,153 @@
+.signStaff>#signStaffNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5.4vw;
+}
+
+.signStaff>#signStaffNav>.logo-small>img {
+    width: 13vw;
+    height: 1.7vw;
+    margin-left: 1.6vw;
+    cursor: pointer;
+}
+
+.signStaff>#signStaffNav>.buttonContainer {
+    margin-right: 1.6vw;
+}
+
+.signStaff>.signStaffBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.signStaff>.signStaffBody>.signButtonContianer {
+    display: flex;
+    gap: 1vw;
+    margin-top: 2vw;
+}
+
+#signStaffTitle {
+    margin-top: 3vw;
+    font-weight: 700;
+    font-size: 1.2vw;
+    line-height: 1.4vw;
+    color: #FFFFFF;
+}
+
+#NameTitle,
+#IdTitle,
+#PasswordTitle,
+#CheckPasswordTitle,
+#SchoolTitle,
+#FileTitle{
+    margin-top:3vw;
+    font-weight:700;
+    font-size:1vw;
+    line-height:1vw;
+    color:#7F85A3;
+}
+
+#signStaffName,
+#signStaffId,
+#signStaffPassword,
+#signStaffPasswordCheck,
+#signStaffSchool{
+    width:29vw;
+    height:3.2vw;
+    border-radius:0.4vw;
+    border:none;
+    background:#191B24;
+    font-weight:400;
+    font-size:1vw;
+    line-height:1vw;
+    color:#FFFFFF;
+    padding-left:1vw;
+    outline:none;
+    caret-color: #484A64;
+}
+
+#signStaffName:focus,
+#signStaffId:focus,
+#signStaffPassword:focus,
+#signStaffPasswordCheck:focus,
+#signStaffSchool:focus {
+    outline: 0.1vw solid #484A64;
+}
+
+#signStaffName::placeholder,
+#signStaffId::placeholder,
+#signStaffPassword::placeholder,
+#signStaffPasswordCheck::placeholder,
+#signStaffSchool::placeholder{
+    font-weight:400;
+    font-size:0.85vw;
+    line-height:0.85vw;
+    color:#7F85A3;
+}
+
+.fileUpload {
+    display: inline-block;
+    vertical-align: middle;
+    width:19vw;
+    height:3.2vw;
+    border:none;
+    border-radius:0.4vw;
+    background:#191B24;
+    padding-left:1vw;
+    font-weight:400;
+    font-size:1vw;
+    line-height:1vw;
+    color:#FFFFFF;
+    outline:none;
+}
+
+.fileUploadBtn{
+    width:9vw;
+    height:3.2vw;
+    border:0.1vw solid #484A64;
+    border-radius:0.4vw;
+    background:#2A2A3A;
+    font-weight:700;
+    font-size:1vw;
+    line-height:1.6vw;
+    color:#7F85A3;
+    margin-left:1vw;
+    cursor:pointer;
+}
+
+.selectedFileNameContainer {
+    padding-top:1vw;
+}
+
+.signStaff>.signStaffBody>form>.buttonContainer {  
+    margin-top:6.5vw;
+    display: flex;
+    justify-content: center;
+}
+
+#signStaffButton{
+    width:10vw;
+    height:3.2vw;
+    border:none;
+    border-radius:0.4vw;
+    background:#D2F75A;
+    font-weight:700;
+    font-size:1vw;
+    line-height:1vw;
+    color:#0F1015;
+    cursor:pointer;
+}
+
+#signStaffFooter {
+    width: 100vw;
+    height: 8vw;
+    background-color: #191B24;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top:7.2vw;
+}
