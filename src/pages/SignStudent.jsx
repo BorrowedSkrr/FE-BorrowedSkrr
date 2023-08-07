@@ -1,0 +1,56 @@
+import React from 'react';
+import { Link } from "react-router-dom";
+import logo_small from "../images/logo-small.png";
+import likelion from "../images/likelion.png";
+
+function SignStudent() {
+    return (
+        <div class="signStudent">
+            <nav id="signStudentNav">
+                <div className="logo-small">
+                    <Link to="/home">
+                        <img src={logo_small} alt="logo_small" id="logo_small"/>
+                    </Link>
+                </div>
+                <div className="buttonContainer">
+                    <button id="button-product">PRODUCT</button>
+                    <button id="button-login"><Link to="/loginStudent">LOGIN</Link></button>
+                </div>
+            </nav>
+
+            <div className="signStudentBody">
+                <div className="signButtonContianer">
+                    <button id="LoginstaffBtn"><Link to="/signStaff">교직원</Link></button>
+                    <button id="LoginstudentBtn">학생</button>
+                </div>
+
+                <p id="signStudentTitle">학생 회원가입</p>
+
+                <form>
+                    <p id="NameTitle">이름</p>
+                    <input type="text" placeholder="반드시 본명으로 입력" id="signStudentName" />
+                    <p id="IdTitle">아이디</p>
+                    <input type="text" placeholder="아이디 입력" id="signStudentId" />
+                    <p id="PasswordTitle">비밀번호</p>
+                    <input type="password" placeholder="영문, 숫자 포함 8자리 이상" id="signStudentPassword" />
+                    <p id="CheckPasswordTitle">비밀번호 확인</p>
+                    <input type="password" placeholder="영문, 숫자 포함 8자리 이상" id="signStudentPasswordCheck" />
+                    <p id="SchoolTitle">학교코드</p>
+                    <input type="text" placeholder="학교코드 입력" id="signStudentSchool" />
+                    <p id="InformationTitle">학년/반/번호</p>
+                    <input type="text" placeholder="ex. 1학년 1반 1번" id="signStudentInformation" />
+
+                    <div class="buttonContainer">
+                        <button type="submit" id="signStaffButton">회원가입 완료</button>
+                    </div>
+                </form>
+            </div>
+
+            <footer id="signStudentFooter">
+                <img src={likelion} alt="likelion" id="likelion" />
+            </footer>
+        </div>
+    )
+}
+
+export default SignStudent
