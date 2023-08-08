@@ -18,9 +18,7 @@ function LoginStudent() {
                 </div>
             </nav>
 
-            <div class="loginStudentBody">
-                <div class="noAccess">접근권한 허용 후에 이용할 수 있어요.</div>
-                
+            <div class="loginStudentBody">        
                 <div class="loginButtonContianer">
                     <button id="LoginstaffBtn"><Link to="/loginStaff">교직원</Link></button>
                     <button id="LoginstudentBtn">학생</button>
@@ -31,6 +29,8 @@ function LoginStudent() {
                     <input type="text" placeholder="아이디를 입력하세요" id="loginStudentId" />
                     <p id="passwordTitle">비밀번호</p>
                     <input type="password" placeholder="비밀번호를 입력하세요" id="loginStudentPassword" />
+
+                    <div class="noAccess">접근권한 허용 후에 이용할 수 있어요.</div>
 
                     <div class="buttonContainer">
                         <button type="submit" id="loginStudentButton">로그인</button>

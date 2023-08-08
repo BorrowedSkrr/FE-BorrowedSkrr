@@ -103,7 +103,7 @@
 #loginStudentButton {
     width: 12.6vw;
     height: 3.2vw;
-    margin-top: 3.4vw;
+    margin-top: 4.4vw;
     border: none;
     border-radius: 0.4vw;
     background: #D2F75A;
@@ -144,6 +144,8 @@
 }
 
 .noAccess{
+    position:absolute;
+    margin-top:1.8vw;
     width:29vw;
     height:1.65vw;
     border:0.05vw solid #8F4949;
