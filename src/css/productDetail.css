@@ -248,8 +248,104 @@
     color:#EBEDF8;
 }
 
+.rentalShow{
+    margin-top:-5vw;
+    width:100vw;
+    height:10.6vw;
+    border:none;
+    border-radius:2vw 2vw 0 0;
+    background:#191B24;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rentalShowContainer{
+    width: 39vw;
+    height:8vw;
+}
+
+.rentalShowTop{
+    width:39vw;
+    height:3.2vw;
+    display:flex;
+    justify-content: space-between;
+}
+
+.rentalDayBox,
+.rentalNumberBox{
+    display:flex;
+    white-space: nowrap;
+}
+
+#rentalDayTitle,
+#rentalNumberTitle,
+#totalPriceTitle{
+    font-weight:700;
+    font-size:1vw;
+    line-height:1vw;
+    color:#7F85A3;
+}
+
+#rentalDay,
+#rentalNumber{
+    width:6.1vw;
+    height:3.2vw;
+    border:none;
+    border-radius:0.4vw;
+    background:#2A2A3A;
+    font-weight:700;
+    font-size:1vw;
+    line-height:1vw;
+    text-align: center;
+    color:#EBEDF8;
+    outline:none;
+    caret-color: #D2F75A;
+}
+
+#rentalDay:focus,
+#rentalNumber:focus {
+    border:0.05vw solid #D2F75A;
+    margin-top:-0.1vw;
+}
+
+#button_minus1,
+#button_plus1,
+#button_minus2,
+#button_plus2{
+    width:2.4vw;
+    height:2.4vw;
+    margin-top:0.3vw;
+}
+
+#button_minus1,
+#button_minus2{
+    margin-left:1vw;
+}
+
+.rentalShowBottom{
+    display:flex;
+    justify-content: flex-end;
+    padding-top:1.2vw;
+}
+
+#totalPriceBox{
+    width:15.8vw;
+    height:3.2vw;
+    border:none;
+    border-radius:0.4vw;
+    background:#0F1015;
+    font-weight:500;
+    font-size:1.4vw;
+    line-height:1.65vw;
+    text-align: right;
+    color:#EBEDF8;
+    margin-left:1vw;
+}
+
 #ProductDetailFooter{
-    margin-top: 5.35vw;
+    margin-top: 5.65vw;
     width: 100vw;
     height: 10vw;
     background-color: #191B24;
@@ -265,7 +361,8 @@
     justify-content: flex-end;
 }
 
-#rentalOrderBtn{
+#rentalOrderBtn,
+#cartBtn{
     width:9.9vw;
     height:3.2vw;
     border:none;
@@ -276,4 +373,11 @@
     line-height:1vw;
     color:#0F1015;
     margin-top:-3vw;
+    cursor:pointer;
+}
+
+#cartBtn {
+    background: #484A64;
+    color: #FFFFFF;
+    margin-right:0.8vw;
 }
