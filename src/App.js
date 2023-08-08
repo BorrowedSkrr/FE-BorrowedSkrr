@@ -7,6 +7,7 @@ import SignStaff from "./pages/SignStaff";
 import Product from "./pages/Product";
 import LoginStudent from "./pages/LoginStudent";
 import SignStudent from "./pages/SignStudent";
+import ProductDetail from "./pages/ProductDetail";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route path="/product" element={<Product />} />
       <Route path="/loginStudent" element={<LoginStudent />} />
       <Route path="/signStudent" element={<SignStudent />} />
+      <Route path="/productDetail" element={<ProductDetail />} />
     </Routes>
   );
 }

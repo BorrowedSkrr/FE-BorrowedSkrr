@@ -6,7 +6,7 @@
 }
 
 .Product>#ProductNav>.buttonContainer {
-    margin-right: 1.6vw;
+    margin-right: 2.4vw;
 }
 
 .Product>.ProductBody{
@@ -184,14 +184,14 @@
     gap:1vw;
 }
 
-.productList>.left>.product1,
-.productList>.right>.product2,
-.productList>.left>.product3,
-.productList>.right>.product4,
-.productList>.left>.product5,
-.productList>.right>.product6,
-.productList>.left>.product7,
-.productList>.right>.product8{
+.product1,
+.product2,
+.product3,
+.product4,
+.product5,
+.product6,
+.product7,
+.product8{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -203,14 +203,22 @@
     background:#FFFFFF;
 }
 
-.productList>.left>.product1:hover,
-.productList>.right>.product2:hover,
-.productList>.left>.product3:hover,
-.productList>.right>.product4:hover,
-.productList>.left>.product5:hover,
-.productList>.right>.product6:hover,
-.productList>.left>.product7:hover,
-.productList>.right>.product8:hover{
+a{
+    text-decoration: none;
+}
+
+.product3{
+    opacity: 0.4;
+}
+
+.product1:hover,
+.product2:hover,
+.product3:hover,
+.product4:hover,
+.product5:hover,
+.product6:hover,
+.product7:hover,
+.product8:hover{
     border:0.2vw solid #D2F75A;
 }
 

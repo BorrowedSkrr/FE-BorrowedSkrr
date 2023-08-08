@@ -11,6 +11,7 @@ import "./css/signStaff.css";
 import "./css/product.css";
 import "./css/loginStudent.css";
 import "./css/signStudent.css";
+import "./css/productDetail.css";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
