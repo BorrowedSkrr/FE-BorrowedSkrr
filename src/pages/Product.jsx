@@ -95,11 +95,12 @@ function Product() {
 
                 <div class="productList">
                     <div class="left">
+                        <Link to="/productDetail">
                         <div class="product1">
                             <img src={product} id="productImage"/>
                             <div class="productExplain">
                                 <div class="topTitle">
-                                    <p id="productTitle">애플 에어팟 맥스</p>
+                                    <p id="productTitle">애플 에어팟 맥스1</p>
                                     <img
                                         src={isLiked1 ? icon_lbold_heart : icon_line_heart}
                                         id="icon_line_heart"
@@ -121,11 +122,12 @@ function Product() {
                                 </div>
                             </div>
                         </div>
+                        </Link>
                         <div class="product3">
                             <img src={product} id="productImage" />
                             <div class="productExplain">
                                 <div class="topTitle">
-                                    <p id="productTitle">애플 에어팟 맥스</p>
+                                    <p id="productTitle">애플 에어팟 맥스3</p>
                                     <img
                                         src={isLiked3 ? icon_lbold_heart : icon_line_heart}
                                         id="icon_line_heart"
@@ -143,7 +145,7 @@ function Product() {
                                         <p id="p12">1달 기준</p>
                                         <p id="p13">120,000원</p>
                                     </div>
-                                    <div class="number">30개 남음</div>
+                                    <div class="number">0개 남음</div>
                                 </div>
                             </div>
                         </div>
@@ -151,7 +153,7 @@ function Product() {
                             <img src={product} id="productImage" />
                             <div class="productExplain">
                                 <div class="topTitle">
-                                    <p id="productTitle">애플 에어팟 맥스</p>
+                                    <p id="productTitle">애플 에어팟 맥스5</p>
                                     <img
                                         src={isLiked5 ? icon_lbold_heart : icon_line_heart}
                                         id="icon_line_heart"
@@ -177,7 +179,7 @@ function Product() {
                             <img src={product} id="productImage" />
                             <div class="productExplain">
                                 <div class="topTitle">
-                                    <p id="productTitle">애플 에어팟 맥스</p>
+                                    <p id="productTitle">애플 에어팟 맥스7</p>
                                     <img
                                         src={isLiked7 ? icon_lbold_heart : icon_line_heart}
                                         id="icon_line_heart"
@@ -205,7 +207,7 @@ function Product() {
                             <img src={product} id="productImage" />
                             <div class="productExplain">
                                 <div class="topTitle">
-                                    <p id="productTitle">애플 에어팟 맥스</p>
+                                    <p id="productTitle">애플 에어팟 맥스2</p>
                                     <img
                                         src={isLiked2 ? icon_lbold_heart : icon_line_heart}
                                         id="icon_line_heart"
@@ -231,7 +233,7 @@ function Product() {
                             <img src={product} id="productImage" />
                             <div class="productExplain">
                                 <div class="topTitle">
-                                    <p id="productTitle">애플 에어팟 맥스</p>
+                                    <p id="productTitle">애플 에어팟 맥스4</p>
                                     <img
                                         src={isLiked4 ? icon_lbold_heart : icon_line_heart}
                                         id="icon_line_heart"
@@ -257,7 +259,7 @@ function Product() {
                             <img src={product} id="productImage" />
                             <div class="productExplain">
                                 <div class="topTitle">
-                                    <p id="productTitle">애플 에어팟 맥스</p>
+                                    <p id="productTitle">애플 에어팟 맥스6</p>
                                     <img
                                         src={isLiked6 ? icon_lbold_heart : icon_line_heart}
                                         id="icon_line_heart"
@@ -283,7 +285,7 @@ function Product() {
                             <img src={product} id="productImage" />
                             <div class="productExplain">
                                 <div class="topTitle">
-                                    <p id="productTitle">애플 에어팟 맥스</p>
+                                    <p id="productTitle">애플 에어팟 맥스8</p>
                                     <img
                                         src={isLiked8 ? icon_lbold_heart : icon_line_heart}
                                         id="icon_line_heart"
