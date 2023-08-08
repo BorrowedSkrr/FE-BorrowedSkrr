@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import logo_small from "../images/logo-small.png";
 import icon_back from "../images/icon-back.png";
@@ -8,12 +8,66 @@ import icon_clock from "../images/icon-clock.png";
 import icon_broken from "../images/icon-broken.png";
 import icon_warning from "../images/icon-warning.png";
 import white_lbold_heart from "../images/white-lbold-heart.png";
+import button_minus from "../images/button-minus.png"; 
+import button_plus from "../images/button-plus.png";
 
 function ProductDetail() {
+    const [marginTop, setMarginTop] = useState('5.65vw');
     const [isLiked9, setIsLiked9] = useState(false);
+    const [rentButtonText, setRentButtonText] = useState('대여하기');
+    const [showCartButton, setShowCartButton] = useState(false);
+    const [showForm, setShowForm] = useState(false);
+
     const handleHeartClick9 = () => {
         setIsLiked9(!isLiked9);
     };
+
+    const handleRentButtonClick = () => {
+        if (rentButtonText === '대여하기') {
+            setRentButtonText('결제하기');
+            setShowCartButton(true);
+            setShowForm(true);
+            setMarginTop('5.5vw');
+        }
+    };
+
+    const [rentalDay, setRentalDay] = useState(7);
+    const [rentalNumber, setRentalNumber] = useState(1);
+
+    const decreaseRentalDay = () => {
+        if (rentalDay > 0) {
+            setRentalDay(rentalDay - 7);
+        }
+    };
+
+    const increaseRentalDay = () => {
+        if (rentalDay < 28) {
+            setRentalDay(rentalDay + 7);
+        }
+    };
+
+    const decreaseRentalNumber = () => {
+        if (rentalNumber > 0) {
+            setRentalNumber(rentalNumber - 1);
+        }
+    };
+
+    const increaseRentalNumber = () => {
+        if (rentalNumber < 100) {
+            setRentalNumber(rentalNumber + 1);
+        }
+    };
+
+    useEffect(() => {
+        if (showForm) {
+            const totalPrice = calculateTotalPrice(rentalNumber, rentalDay);
+
+            const totalPriceBox = document.getElementById('totalPriceBox');
+            if (totalPriceBox) {
+                totalPriceBox.value = `${totalPrice} 원`;
+            }
+        }
+    }, [rentalNumber, rentalDay, showForm]);
 
     return (
         <div class="productDetail">
@@ -99,14 +153,54 @@ function ProductDetail() {
                     </div>
                 </div>
             </div>
+            
+            <form>
+                {showForm && (
+                    <div class="rentalShow" style={{ zIndex: 1, position: 'absolute' }}>
+                        <div class="rentalShowContainer">
+                            <div class="rentalShowTop">
+                                <div class="rentalDayBox">
+                                    <p id="rentalDayTitle">대여 일수</p>
+                                    <img src={button_minus} id="button_minus1" onClick={decreaseRentalDay} />
+                                    <input type="text" value={`${rentalDay} 일`} id="rentalDay"/>
+                                    <img src={button_plus} id="button_plus1" onClick={increaseRentalDay} />
+                                </div>
+                                <div class="rentalNumberBox">
+                                    <p id="rentalNumberTitle">수량 선택</p>
+                                    <img src={button_minus} id="button_minus2" onClick={decreaseRentalNumber} />
+                                    <input type="text" value={`${rentalNumber} 개`} id="rentalNumber" />
+                                    <img src={button_plus} id="button_plus2" onClick={increaseRentalNumber} />
+                                </div>
+                            </div>
+                            <div class="rentalShowBottom">
+                                <p id="totalPriceTitle">총 금액</p>
+                                <input type="text" id="totalPriceBox" readOnly></input>
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </form>
 
-            <footer id="ProductDetailFooter">
-                <div class="footerContainer">
-                    <button id="rentalOrderBtn">대여하기</button>
+            <footer id="ProductDetailFooter" style={{ marginTop, zIndex:2, position:'absolute' }}>
+                <div className="footerContainer">
+                    {showCartButton && (
+                        <button id="cartBtn">장바구니 추가</button>
+                    )}
+                    <button id="rentalOrderBtn" onClick={handleRentButtonClick}>
+                        {rentButtonText}
+                    </button>
                 </div>
             </footer>
         </div>
     )
 }
 
-export default ProductDetail
+export default ProductDetail;
+
+function calculateTotalPrice(quantity, days) {
+    const pricePerDay = 39000/7;
+    const pricePerMonth = 120000;
+
+    const totalPrice = (days <= 21) ? (quantity * pricePerDay * days) : (quantity * pricePerMonth);
+    return totalPrice;
+}
