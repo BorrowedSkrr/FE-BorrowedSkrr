@@ -1,0 +1,82 @@
+.CreditSuccess>#CreditSuccessNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5.4vw;
+}
+
+.CreditSuccess>#CreditSuccessNav>.buttonContainer {
+    margin-right: 2.4vw;
+}
+
+.CreditSuccessBody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#logo_skrr_black{
+    width:3vw;
+    height:3vw;
+    margin-top:3.4vw;
+}
+
+#CreditSuccessTitle{
+    font-weight: 700;
+    font-size:1.6vw;
+    line-height:1.9vw;
+    text-align: center;
+    color:#FFFFFF;
+    margin-top:0.9vw;
+}
+
+#CreditSuccessSubTitle1,
+#CreditSuccessSubTitle2{
+    margin-top:0;
+    font-weight: 400;
+    font-size:0.75vw;
+    line-height:1.25vw;
+    text-align: center;
+    color:#EBEDF8;
+    margin-top:1vw;
+}
+
+#CreditSuccessSubTitle2{
+    margin:0;
+}
+
+.CreditSuccessBtn{
+    display:flex;
+    justify-content: center;
+    margin-top:4vw;
+}
+
+#CreditSuccess_Home{
+    width:10vw;
+    height:3.2vw;
+    border:none;
+    border-radius:0.4vw;
+    background:#D2F75A;
+    font-weight: 700;
+    font-size:1vw;
+    line-height:1vw;
+    color:#0F1510;
+}
+
+#CreditSuccess_Home a{
+    text-decoration: none;
+    color:#0F1510;
+}
+
+#CreditSuccessFooter{
+    width: 100vw;
+    height: 8vw;
+    background-color: #191B24;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+}
