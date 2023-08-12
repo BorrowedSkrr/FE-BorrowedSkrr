@@ -29,11 +29,11 @@ function Home() {
             <div class="homeBody">
                 <div class="homeTitle">
                     <p>우리의 미래, 학생들을 위한 단 하나의 서비스</p>
-                    <img src={logo_title} alt="logo_title"/>
+                    <img src={logo_title} id="logo_title" alt="logo_title"/>
                 </div>
                 
                 <div class="homeBanner">
-                    <img src={home_banner} alt="home_banner"/>
+                    <img src={home_banner} id="home_banner" alt="home_banner"/>
                     <div class="pContainer">
                         <p id="p1">빌렸스컬은 전국 각지의 학교를 대상으로</p>
                         <p id="p2">더 나은 교육환경을 제공하기 위한 테크제품 렌탈서비스입니다</p>
