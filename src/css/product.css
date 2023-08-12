@@ -20,17 +20,18 @@
     width:63.4vw;
     height:8.5vw;
     border-radius:0.4vw;
-    background-color:aqua;
     display:flex;
     justify-content: center;
     text-align: center;
     margin-top:2.6vw;
 }
 
-.Product>.ProductBody>.ProductBanner>img{
+.Product>.ProductBody>.ProductBanner>#button_left,
+.Product>.ProductBody>.ProductBanner>#button_right{
     width:1.2vw;
     height:1.2vw;
     margin-top:3.5vw;
+    cursor:pointer;
 }
 
 #button_left{
@@ -42,20 +43,27 @@
 }
 
 .Product>.ProductBody>.ProductBanner>.slides{
-    background-color:pink;
     width:59vw;
     height:8.5vw;
     border:none;
     border-radius:0.4vw;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .Product>.ProductBody>.BannerButton{
     margin-top:0.6vw;
     width:3.5vw;
     height:0.5vw;
-    background-color:pink;
     display:flex;
     justify-content: space-between;
+}
+
+.Product .ProductBody .ProductBanner .slides #productImage {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0.4vw;
 }
 
 .Product>.ProductBody>.BannerButton>.circle1,
@@ -63,14 +71,16 @@
 .Product>.ProductBody>.BannerButton>.circle3{
     width:0.5vw;
     height:0.5vw;
-    background:#484A64;
+    background: #191B24;
     border:none;
     border-radius:50%;
+    cursor:pointer;
 }
 
-.Product>.ProductBody>.BannerButton>.circle2,
-.Product>.ProductBody>.BannerButton>.circle3{
-    background:#191B24;
+.Product>.ProductBody>.BannerButton>.circle1.active,
+.Product>.ProductBody>.BannerButton>.circle2.active,
+.Product>.ProductBody>.BannerButton>.circle3.active {
+    background: #484A64;
 }
 
 #ProductTitle{
@@ -81,8 +91,37 @@
     margin-top:4.25vw;
 }
 
+.ProductsearchBox{
+    position: relative;
+}
+
+#productSearch{
+    margin-top:1.2vw;
+    width:29vw;
+    height:2.7vw;
+    border:0.1vw solid #2A2A3A;
+    border-radius:1.6vw;
+    background:#191B24;
+    font-weight:500;
+    font-size:0.8vw;
+    line-height:0.8vw;
+    color:#484A64;
+    outline:none;
+    padding-left:3.6vw;
+    padding-right:1vw;
+}
+
+#icon_search{
+    width:1.2vw;
+    height:1.2vw;
+    position:absolute;
+    z-index: 1;
+    margin-top:2vw;
+    margin-left:-27.8vw;
+}
+
 .sortContainer{
-    margin-top:1.5vw;
+    margin-top:0.8vw;
     justify-content: flex-end;
     display:flex;
     width:59vw;
@@ -155,7 +194,7 @@
     cursor:pointer;
 }
 
-#notebook{
+.menuBar>button.activeButton{
     background:#8270FF;
 }
 
