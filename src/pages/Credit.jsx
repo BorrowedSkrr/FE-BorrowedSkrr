@@ -55,14 +55,14 @@ function Credit() {
 
             <div class="creditBody">
                 <div class="creditBox">
-                    <img src={logo_skrr_black} id="logo_skrr_black"/>
+                    <img src={logo_skrr_black} id="logo_skrr_black" alt="logo_skrr_black"/>
                     <p id="creditTitle">결제하기</p>
                 </div>
 
                 <div class="creditContainer">
                     <p id="creditNumber">총 2종류</p>
                     <div class="creditProduct">
-                        <img src={credit_product} id="credit_product"/>
+                        <img src={credit_product} id="credit_product" alt="credit_product"/>
                         <div class="creditProductRight">
                             <div class="creditProductBox">
                                 <p id="creditProductTitle">애플 에어팟 맥스</p>
@@ -75,7 +75,7 @@ function Credit() {
                         </div>
                     </div>
                     <div class="creditProduct">
-                        <img src={credit_product} id="credit_product" />
+                        <img src={credit_product} id="credit_product" alt="credit_product"/>
                         <div class="creditProductRight">
                             <div class="creditProductBox">
                                 <p id="creditProductTitle">애플 에어팟 맥스</p>

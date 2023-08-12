@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 import logo_small from "../images/logo-small.png";
 import icon_back from "../images/icon-back.png";
 import product from "../images/product.png";
@@ -17,6 +17,8 @@ function ProductDetail() {
     const [rentButtonText, setRentButtonText] = useState('대여하기');
     const [showCartButton, setShowCartButton] = useState(false);
     const [showForm, setShowForm] = useState(false);
+    const [redirectToCheckout, setRedirectToCheckout] = useState(false);
+    const navigate = useNavigate();
 
     const handleHeartClick9 = () => {
         setIsLiked9(!isLiked9);
@@ -28,6 +30,8 @@ function ProductDetail() {
             setShowCartButton(true);
             setShowForm(true);
             setMarginTop('5.5vw');
+        } else if (rentButtonText === '결제하기') {
+            setRedirectToCheckout(true);
         }
     };
 
@@ -85,10 +89,10 @@ function ProductDetail() {
 
             <div class="productDetailBody">
                 <div class="productDetailBodyAll">
-                    <button id="backButton"><Link to="/product"><img src={icon_back} id="icon_back"/>&nbsp;뒤로</Link></button>
+                    <button id="backButton"><Link to="/product"><img src={icon_back} id="icon_back" alt="icon_back"/>&nbsp;뒤로</Link></button>
 
                     <div class="productDetailContainer">
-                        <img src={product} id="productDetailImage"/>
+                        <img src={product} id="productDetailImage" alt="productDetailImage"/>
                         <div class="productDeatilExplain">
                             <div class="productDetailPContainer">
                                 <p id="productDetailTitle">애플 에어팟 맥스1</p>
@@ -123,7 +127,7 @@ function ProductDetail() {
                         <div class="caution1">
                             <div class="caution1All">
                                 <div class="caution1TitleBox">
-                                    <img src={icon_clock} id="icon_clock"/>
+                                    <img src={icon_clock} id="icon_clock" alt="icon_clock"/>
                                     <p id="caution1Title">시간 엄수</p>
                                 </div>
                                 <p id="cautionExplain">렌탈 일정을 반드시 지켜주시고 부득이하게 일정을 변경해야 하는 상황에는 미리 연락해주세요.</p>
@@ -132,7 +136,7 @@ function ProductDetail() {
                         <div class="caution2">
                             <div class="caution2All">
                                 <div class="caution1TitleBox">
-                                    <img src={icon_broken} id="icon_broken" />
+                                    <img src={icon_broken} id="icon_broken" alt ="icon_broken"/>
                                     <p id="caution2Title">파손 및 분실주의</p>
                                 </div>
                                 <p id="cautionExplain">소중한 제품을 조심해서 사용해주세요. 렌탈 전, 후로 제품에 이상이 있는지 잘 확인해주시고 해당 내용을 꼭 담당자에게 알려주세요. 영상이나 사진으로 제품 상태를 체크해두는 것이 도움이 될거예요!</p>
@@ -141,7 +145,7 @@ function ProductDetail() {
                         <div class="caution3">
                             <div class="caution3All">
                                 <div class="caution3TitleBox">
-                                    <img src={icon_warning} id="icon_warning" />
+                                    <img src={icon_warning} id="icon_warning" alt="icon_warning"/>
                                     <p id="caution3Title">기타 주의사항</p>
                                 </div>
                                 <p id="cautionExplain">
@@ -161,15 +165,15 @@ function ProductDetail() {
                             <div class="rentalShowTop">
                                 <div class="rentalDayBox">
                                     <p id="rentalDayTitle">대여 일수</p>
-                                    <img src={button_minus} id="button_minus1" onClick={decreaseRentalDay} />
+                                    <img src={button_minus} id="button_minus1" onClick={decreaseRentalDay} alt="button_minus"/>
                                     <input type="text" value={`${rentalDay} 일`} id="rentalDay"/>
-                                    <img src={button_plus} id="button_plus1" onClick={increaseRentalDay} />
+                                    <img src={button_plus} id="button_plus1" onClick={increaseRentalDay} alt="button_plus"/>
                                 </div>
                                 <div class="rentalNumberBox">
                                     <p id="rentalNumberTitle">수량 선택</p>
-                                    <img src={button_minus} id="button_minus2" onClick={decreaseRentalNumber} />
+                                    <img src={button_minus} id="button_minus2" onClick={decreaseRentalNumber} alt="button_minus"/>
                                     <input type="text" value={`${rentalNumber} 개`} id="rentalNumber" />
-                                    <img src={button_plus} id="button_plus2" onClick={increaseRentalNumber} />
+                                    <img src={button_plus} id="button_plus2" onClick={increaseRentalNumber} alt="button_plus"/>
                                 </div>
                             </div>
                             <div class="rentalShowBottom">
@@ -181,6 +185,7 @@ function ProductDetail() {
                 )}
             </form>
 
+            {redirectToCheckout && navigate('/credit')}
             <footer id="ProductDetailFooter" style={{ marginTop, zIndex:2, position:'absolute' }}>
                 <div className="footerContainer">
                     {showCartButton && (
@@ -202,5 +207,5 @@ function calculateTotalPrice(quantity, days) {
     const pricePerMonth = 120000;
 
     const totalPrice = (days <= 21) ? (quantity * pricePerDay * days) : (quantity * pricePerMonth);
-    return totalPrice;
+    return totalPrice.toLocaleString('en-US');
 }

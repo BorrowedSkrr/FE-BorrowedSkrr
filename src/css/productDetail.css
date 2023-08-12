@@ -3,6 +3,7 @@
     justify-content: space-between;
     align-items: center;
     height: 5.4vw;
+    white-space: nowrap;
 }
 
 .productDetail>#productDetailNav>.buttonContainer {
@@ -250,7 +251,7 @@
 
 .rentalShow{
     margin-top:-5vw;
-    width:100vw;
+    width:100%;
     height:10.6vw;
     border:none;
     border-radius:2vw 2vw 0 0;
@@ -364,6 +365,7 @@
 
 #rentalOrderBtn,
 #cartBtn{
+    white-space: nowrap;
     width:9.9vw;
     height:3.2vw;
     border:none;
