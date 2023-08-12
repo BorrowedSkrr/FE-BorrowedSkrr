@@ -10,6 +10,8 @@ import icon_lbold_heart from "../images/icon-lbold-heart.png";
 import button_more from "../images/button-more.png";
 import likelion from "../images/likelion.png";
 import icon_search from "../images/icon-search.png";
+import notcheck_radio from "../images/notcheck-radio.png";
+import yescheck_radio from "../images/yescheck-radio.png";
 
 function Product() {
     //카테고리 버튼 색상 변경
@@ -18,6 +20,32 @@ function Product() {
         setActiveButton(buttonId);
     };
 
+    //정렬
+    const [selectedOption, setSelectedOption] = useState('기본');
+    const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+    const [clickStatus, setClickStatus] = useState({
+        '기본': true,
+        '인기순': false,
+        '저가순': false,
+        '고가순': false,
+    });
+
+    const handleOptionClick = (option) => {
+        setSelectedOption(option);
+
+        const updatedClickStatus = {
+            '기본': false,
+            '인기순': false,
+            '저가순': false,
+            '고가순': false,
+        };
+        updatedClickStatus[option] = true;
+        setClickStatus(updatedClickStatus);
+    };
+
+    const toggleDropdown = () => {
+        setIsDropdownVisible(!isDropdownVisible);
+    };
 
     //관심상품 버튼
     const [isLiked1, setIsLiked1] = useState(false);
@@ -139,43 +167,48 @@ function Product() {
                     <img src={icon_search} id="icon_search" alt="icon_search"/>
                 </div>
 
-                <div className="sortContainer">
-                    <div className="customSelectContainer">
-                        <img src={icon_sort} alt="Sort Icon" className="sortIcon" />
-                        <select name="sortType" className="customSelect">
-                            <option value="기본" defaultValue>기본</option>
-                            <option value="인기순">인기순</option>
-                            <option value="저가순">저가순</option>
-                            <option value="고가순">고가순</option>
-                        </select>
+                <div class="sortContainer">
+                    <div class="sortSelect" onClick={toggleDropdown}>
+                        <img src={icon_sort} alt="icon_sort" id="icon_sort" />
+                        <p id="sortTitle">{selectedOption}</p>
                     </div>
+                    {isDropdownVisible && (
+                        <div class="dropdown-options" id="dropdown-options">
+                            {['기본', '인기순', '저가순', '고가순'].map((option) => (
+                                <div class="dropdown-option" key={option} onClick={() => handleOptionClick(option)}>
+                                    <img src={clickStatus[option] ? yescheck_radio : notcheck_radio} alt="radio" id="notcheck_radio" />
+                                    {option}
+                                </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
 
-                <div className="menuBar">
+                <div class="menuBar">
                     <button
                         id="notebook"
-                        className={activeButton === "notebook" ? "activeButton" : ""}
+                        class={activeButton === "notebook" ? "activeButton" : ""}
                         onClick={() => handleButtonClicked("notebook")}
                     >
                         💻 노트북/스마트기어
                     </button>
                     <button
                         id="sound"
-                        className={activeButton === "sound" ? "activeButton" : ""}
+                        class={activeButton === "sound" ? "activeButton" : ""}
                         onClick={() => handleButtonClicked("sound")}
                     >
                         🎧 사운드
                     </button>
                     <button
                         id="camera"
-                        className={activeButton === "camera" ? "activeButton" : ""}
+                        class={activeButton === "camera" ? "activeButton" : ""}
                         onClick={() => handleButtonClicked("camera")}
                     >
                         📸 카메라/촬영
                     </button>
                     <button
                         id="game"
-                        className={activeButton === "game" ? "activeButton" : ""}
+                        class={activeButton === "game" ? "activeButton" : ""}
                         onClick={() => handleButtonClicked("game")}
                     >
                         🎮 게임/VR
