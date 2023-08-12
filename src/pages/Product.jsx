@@ -9,8 +9,17 @@ import icon_line_heart from "../images/icon-line-heart.png";
 import icon_lbold_heart from "../images/icon-lbold-heart.png";
 import button_more from "../images/button-more.png";
 import likelion from "../images/likelion.png";
+import icon_search from "../images/icon-search.png";
 
 function Product() {
+    //카테고리 버튼 색상 변경
+    const [activeButton, setActiveButton] = useState("notebook");
+    const handleButtonClicked = (buttonId) => {
+        setActiveButton(buttonId);
+    };
+
+
+    //관심상품 버튼
     const [isLiked1, setIsLiked1] = useState(false);
     const [isLiked2, setIsLiked2] = useState(false);
     const [isLiked3, setIsLiked3] = useState(false);
@@ -45,6 +54,40 @@ function Product() {
         setIsLiked8(!isLiked8);
     };
 
+
+    // 배너
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    const handleSlideChange = (direction) => {
+        let newIndex = currentSlide + direction;
+
+        if (newIndex < 0) {
+            newIndex = 2;
+        } else if (newIndex > 2) {
+            newIndex = 0;
+        }
+
+        setCurrentSlide(newIndex);
+    };
+
+    const images = [
+        product,
+        icon_line_heart,
+        icon_lbold_heart
+    ];
+    
+    //엔터 검색
+    const [searchText, setSearchText] = useState('');
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            handleSearch();
+        }
+    };
+
+    const handleSearch = () => {
+        console.log('검색 내용:', searchText);
+    };
+
     return (
         <div class="Product">
             <nav id="ProductNav">
@@ -60,47 +103,94 @@ function Product() {
             </nav>
 
             <div class="ProductBody">
-                <div class="ProductBanner">
-                    <img src={button_left} id="button_left"/>
-                    <div class="slides">배너 미완성</div>
-                    <img src={button_right} id="button_right"/>
+                <div className="ProductBanner">
+                    <img src={button_left} id="button_left" onClick={() => handleSlideChange(-1)} alt="button_left"/>
+                    <div className="slides">
+                        <img src={images[currentSlide]} alt={`Slide ${currentSlide + 1}`} id="productImage"/>
+                    </div>
+                    <img src={button_right} id="button_right" onClick={() => handleSlideChange(1)} alt="button_right"/>
                 </div>
-                <div class="BannerButton">
-                    <div class="circle1"></div>
-                    <div class="circle2"></div>
-                    <div class="circle3"></div>
+                <div className="BannerButton">
+                    {[0, 1, 2].map((circleIndex) => (
+                        <div
+                            key={circleIndex}
+                            className={`circle${circleIndex + 1} ${currentSlide === circleIndex ? 'active' : ''}`}
+                            onClick={() => {
+                                setCurrentSlide(circleIndex);
+                                if (circleIndex === 0) setCurrentSlide(0);
+                                else if (circleIndex === 1) setCurrentSlide(1);
+                                else if (circleIndex === 2) setCurrentSlide(2);
+                            }}
+                        />
+                    ))}
                 </div>
 
                 <p id="ProductTitle">테크 제품</p>
-                <div className="sortContainer">
-                    <form>
-                        <div className="customSelectContainer">
-                            <img src={icon_sort} alt="Sort Icon" className="sortIcon" />
-                            <select name="sortType" className="customSelect">
-                                <option value="기본" defaultValue>기본</option>
-                                <option value="인기순">인기순</option>
-                                <option value="저가순">저가순</option>
-                                <option value="고가순">고가순</option>
-                            </select>
-                        </div>
-                    </form>
+
+                <div class="ProductsearhBox">
+                    <input
+                        type="search"
+                        id="productSearch"
+                        placeholder="제품명으로 검색해보세요"
+                        value={searchText}
+                        onChange={(e) => setSearchText(e.target.value)}
+                        onKeyPress={handleKeyPress}
+                    />
+                    <img src={icon_search} id="icon_search" alt="icon_search"/>
                 </div>
 
-                <div class="menuBar">
-                    <button id="notebook">💻 노트북/스마트기어</button>
-                    <button id="sound">🎧 사운드</button>
-                    <button id="camera">📸 카메라/촬영</button>
-                    <button id="game">🎮 게임/VR</button>
+                <div className="sortContainer">
+                    <div className="customSelectContainer">
+                        <img src={icon_sort} alt="Sort Icon" className="sortIcon" />
+                        <select name="sortType" className="customSelect">
+                            <option value="기본" defaultValue>기본</option>
+                            <option value="인기순">인기순</option>
+                            <option value="저가순">저가순</option>
+                            <option value="고가순">고가순</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div className="menuBar">
+                    <button
+                        id="notebook"
+                        className={activeButton === "notebook" ? "activeButton" : ""}
+                        onClick={() => handleButtonClicked("notebook")}
+                    >
+                        💻 노트북/스마트기어
+                    </button>
+                    <button
+                        id="sound"
+                        className={activeButton === "sound" ? "activeButton" : ""}
+                        onClick={() => handleButtonClicked("sound")}
+                    >
+                        🎧 사운드
+                    </button>
+                    <button
+                        id="camera"
+                        className={activeButton === "camera" ? "activeButton" : ""}
+                        onClick={() => handleButtonClicked("camera")}
+                    >
+                        📸 카메라/촬영
+                    </button>
+                    <button
+                        id="game"
+                        className={activeButton === "game" ? "activeButton" : ""}
+                        onClick={() => handleButtonClicked("game")}
+                    >
+                        🎮 게임/VR
+                    </button>
                 </div>
 
                 <div class="productList">
                     <div class="left">
-                        <Link to="/productDetail">
                         <div class="product1">
-                            <img src={product} id="productImage"/>
+                            <img src={product} id="productImage" alt="productImage"/>
                             <div class="productExplain">
                                 <div class="topTitle">
+                                    <Link to="/productDetail">
                                     <p id="productTitle">애플 에어팟 맥스1</p>
+                                    </Link>
                                     <img
                                         src={isLiked1 ? icon_lbold_heart : icon_line_heart}
                                         id="icon_line_heart"
@@ -122,12 +212,13 @@ function Product() {
                                 </div>
                             </div>
                         </div>
-                        </Link>
                         <div class="product3">
-                            <img src={product} id="productImage" />
+                            <img src={product} id="productImage" alt="productImage" />
                             <div class="productExplain">
                                 <div class="topTitle">
+                                    <Link to="/productDetail">
                                     <p id="productTitle">애플 에어팟 맥스3</p>
+                                    </Link>
                                     <img
                                         src={isLiked3 ? icon_lbold_heart : icon_line_heart}
                                         id="icon_line_heart"
@@ -150,10 +241,12 @@ function Product() {
                             </div>
                         </div>
                         <div class="product5">
-                            <img src={product} id="productImage" />
+                            <img src={product} id="productImage" alt="productImage" />
                             <div class="productExplain">
                                 <div class="topTitle">
+                                    <Link to="/productDetail">
                                     <p id="productTitle">애플 에어팟 맥스5</p>
+                                    </Link>
                                     <img
                                         src={isLiked5 ? icon_lbold_heart : icon_line_heart}
                                         id="icon_line_heart"
@@ -176,10 +269,12 @@ function Product() {
                             </div>
                         </div>
                         <div class="product7">
-                            <img src={product} id="productImage" />
+                            <img src={product} id="productImage" alt="productImage" />
                             <div class="productExplain">
                                 <div class="topTitle">
+                                    <Link to="/productDetail">
                                     <p id="productTitle">애플 에어팟 맥스7</p>
+                                    </Link>
                                     <img
                                         src={isLiked7 ? icon_lbold_heart : icon_line_heart}
                                         id="icon_line_heart"
@@ -204,10 +299,12 @@ function Product() {
                     </div>
                     <div class="right">
                         <div class="product2">
-                            <img src={product} id="productImage" />
+                            <img src={product} id="productImage" alt="productImage" />
                             <div class="productExplain">
                                 <div class="topTitle">
+                                    <Link to="/productDetail">
                                     <p id="productTitle">애플 에어팟 맥스2</p>
+                                    </Link>
                                     <img
                                         src={isLiked2 ? icon_lbold_heart : icon_line_heart}
                                         id="icon_line_heart"
@@ -230,10 +327,12 @@ function Product() {
                             </div>
                         </div>
                         <div class="product4">
-                            <img src={product} id="productImage" />
+                            <img src={product} id="productImage" alt="productImage" />
                             <div class="productExplain">
                                 <div class="topTitle">
+                                    <Link to="/productDetail">
                                     <p id="productTitle">애플 에어팟 맥스4</p>
+                                    </Link>
                                     <img
                                         src={isLiked4 ? icon_lbold_heart : icon_line_heart}
                                         id="icon_line_heart"
@@ -256,10 +355,12 @@ function Product() {
                             </div>
                         </div>
                         <div class="product6">
-                            <img src={product} id="productImage" />
+                            <img src={product} id="productImage" alt="productImage" />
                             <div class="productExplain">
                                 <div class="topTitle">
+                                    <Link to="/productDetail">
                                     <p id="productTitle">애플 에어팟 맥스6</p>
+                                    </Link>
                                     <img
                                         src={isLiked6 ? icon_lbold_heart : icon_line_heart}
                                         id="icon_line_heart"
@@ -282,10 +383,12 @@ function Product() {
                             </div>
                         </div>
                         <div class="product8">
-                            <img src={product} id="productImage" />
+                            <img src={product} id="productImage" alt="productImage" />
                             <div class="productExplain">
                                 <div class="topTitle">
+                                    <Link to="/productDetail">
                                     <p id="productTitle">애플 에어팟 맥스8</p>
+                                    </Link>
                                     <img
                                         src={isLiked8 ? icon_lbold_heart : icon_line_heart}
                                         id="icon_line_heart"
@@ -312,7 +415,7 @@ function Product() {
 
                 <div class="addView">
                     <p id="p14">더보기</p>
-                    <img src={button_more} id="button_more"/>
+                    <img src={button_more} id="button_more" alt="button_more"/>
                 </div>
             </div>
 
