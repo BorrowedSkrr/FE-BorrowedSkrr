@@ -122,6 +122,7 @@
 
 #p11>a{
     color: #7F85A3;
+    text-decoration: underline;
 }
 
 #loginStaffFooter {
@@ -134,4 +135,21 @@
     align-items: center;
     position: fixed;
     bottom: 0;
+}
+
+#IdExplain,
+#Password1Explain,
+#Password2Explain,
+#PasswordCheckExplain {
+    position: absolute;
+    font-weight:500;
+    font-size:0.65vw;
+    line-height:0.65vw;
+    color:#D2F75A;
+    margin:0;
+    margin-top:0.5vw;
+}
+
+#Password2Explain{
+    margin-top:1.5vw;
 }
