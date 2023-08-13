@@ -20,58 +20,87 @@ function ProductDetail() {
     const [redirectToCheckout, setRedirectToCheckout] = useState(false);
     const navigate = useNavigate();
 
+    //관심상품 버튼
     const handleHeartClick9 = () => {
         setIsLiked9(!isLiked9);
     };
 
+    //대여하기 버튼 -> 결제하기 버튼, 결제하기 버튼일때, 대여일수가 7일 이상이어야 페이지 넘어감
     const handleRentButtonClick = () => {
         if (rentButtonText === '대여하기') {
             setRentButtonText('결제하기');
             setShowCartButton(true);
             setShowForm(true);
             setMarginTop('5.5vw');
-        } else if (rentButtonText === '결제하기') {
+        } else if (rentButtonText === '결제하기' && rentalDay >= 7) {
             setRedirectToCheckout(true);
         }
     };
 
+    //대여일수, 수량 증가 감소 버튼
     const [rentalDay, setRentalDay] = useState(7);
     const [rentalNumber, setRentalNumber] = useState(1);
 
     const decreaseRentalDay = () => {
-        if (rentalDay > 0) {
+        if (rentalDay > 7) {
             setRentalDay(rentalDay - 7);
         }
     };
 
     const increaseRentalDay = () => {
-        if (rentalDay < 28) {
-            setRentalDay(rentalDay + 7);
-        }
+        const currentValue = parseInt(rentalDay, 10);
+        const adjustedRentalDay = currentValue + 7;
+        setRentalDay(adjustedRentalDay);
     };
 
     const decreaseRentalNumber = () => {
-        if (rentalNumber > 0) {
+        if (rentalNumber > 1) {
             setRentalNumber(rentalNumber - 1);
         }
     };
 
+    //이거 수량 남은거에 맞춰서 최대 조정해줘야 합니다.
     const increaseRentalNumber = () => {
-        if (rentalNumber < 100) {
-            setRentalNumber(rentalNumber + 1);
+        const currentValue = parseInt(rentalNumber, 10);
+        if (currentValue < 100) {
+            setRentalNumber(currentValue + 1);
         }
     };
 
+    //이것도 가격에 맞춰서 바꿔주셔야합니다.
+    function calculateTotalPrice(quantity, days) {
+        const pricePerDay = 39000 / 7;
+        const pricePerMonth = 120000;
+
+        if (days % 28 === 0) {
+            const totalMonths = days / 28;
+            const totalPrice = quantity * pricePerMonth * totalMonths;
+            return Math.floor(totalPrice).toLocaleString('en-US');
+        } else {
+            const totalPrice = quantity * pricePerDay * days;
+            return Math.floor(totalPrice).toLocaleString('en-US');
+        }
+    }
+
+    //총금액 출력
     useEffect(() => {
         if (showForm) {
-            const totalPrice = calculateTotalPrice(rentalNumber, rentalDay);
-
-            const totalPriceBox = document.getElementById('totalPriceBox');
-            if (totalPriceBox) {
-                totalPriceBox.value = `${totalPrice} 원`;
+            if (rentalDay < 7) {
+                const totalPriceBox = document.getElementById('totalPriceBox');
+                if (totalPriceBox) {
+                    totalPriceBox.value = "7일 미만입니다 :(";
+                    totalPriceBox.style.color = "#FF5D47";
+                }
+            } else {
+                const totalPrice = calculateTotalPrice(rentalNumber, rentalDay);
+                const totalPriceBox = document.getElementById('totalPriceBox');
+                if (totalPriceBox) {
+                    totalPriceBox.value = `${totalPrice} 원`;
+                    totalPriceBox.style.color = "#FFFFFF";
+                }
             }
         }
-    }, [rentalNumber, rentalDay, showForm]);
+    }, [showForm, rentalNumber, rentalDay]);
 
     return (
         <div class="productDetail">
@@ -165,20 +194,34 @@ function ProductDetail() {
                             <div class="rentalShowTop">
                                 <div class="rentalDayBox">
                                     <p id="rentalDayTitle">대여 일수</p>
-                                    <img src={button_minus} id="button_minus1" onClick={decreaseRentalDay} alt="button_minus"/>
-                                    <input type="text" value={`${rentalDay} 일`} id="rentalDay"/>
-                                    <img src={button_plus} id="button_plus1" onClick={increaseRentalDay} alt="button_plus"/>
+                                    <img src={button_minus} id="button_minus1" onClick={decreaseRentalDay} alt="button_minus" />
+                                    <div className="inputWithUnit">
+                                        <input
+                                            type="text"
+                                            value={`${rentalDay}일`}
+                                            onChange={(e) => setRentalDay(e.target.value.replace(/[^0-9]/g, ''))}
+                                            id="rentalDay"
+                                        />
+                                    </div>
+                                    <img src={button_plus} id="button_plus1" onClick={increaseRentalDay} alt="button_plus" />
                                 </div>
                                 <div class="rentalNumberBox">
                                     <p id="rentalNumberTitle">수량 선택</p>
-                                    <img src={button_minus} id="button_minus2" onClick={decreaseRentalNumber} alt="button_minus"/>
-                                    <input type="text" value={`${rentalNumber} 개`} id="rentalNumber" />
-                                    <img src={button_plus} id="button_plus2" onClick={increaseRentalNumber} alt="button_plus"/>
+                                    <img src={button_minus} id="button_minus2" onClick={decreaseRentalNumber} alt="button_minus" />
+                                    <div className="inputWithUnit">
+                                        <input
+                                            type="text"
+                                            value={`${rentalNumber}개`}
+                                            onChange={(e) => setRentalNumber(e.target.value.replace(/[^0-9]/g, ''))}
+                                            id="rentalNumber"
+                                        />
+                                    </div>
+                                    <img src={button_plus} id="button_plus2" onClick={increaseRentalNumber} alt="button_plus" />
                                 </div>
                             </div>
                             <div class="rentalShowBottom">
                                 <p id="totalPriceTitle">총 금액</p>
-                                <input type="text" id="totalPriceBox" readOnly></input>
+                                <input type="text" value={`${calculateTotalPrice()} 원`} id="totalPriceBox" readOnly />
                             </div>
                         </div>
                     </div>
@@ -201,11 +244,3 @@ function ProductDetail() {
 }
 
 export default ProductDetail;
-
-function calculateTotalPrice(quantity, days) {
-    const pricePerDay = 39000/7;
-    const pricePerMonth = 120000;
-
-    const totalPrice = (days <= 21) ? (quantity * pricePerDay * days) : (quantity * pricePerMonth);
-    return totalPrice.toLocaleString('en-US');
-}
