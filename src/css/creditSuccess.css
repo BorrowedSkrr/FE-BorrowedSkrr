@@ -3,6 +3,7 @@
     justify-content: space-between;
     align-items: center;
     height: 5.4vw;
+    white-space: nowrap;
 }
 
 .CreditSuccess>#CreditSuccessNav>.buttonContainer {
