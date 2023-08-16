@@ -24,10 +24,43 @@ function SignStaff() {
     };
 
     //유효성 검사 문구
-    const isIdAvailable = true;
-    const isPassword1Available = true;
-    const isPassword2Available = true;
-    const isPasswordCheckAvailable = true;
+    const isIdAvailable = true; 
+    const [isPasswordConfirmationStarted, setIsPasswordConfirmationStarted] = useState(false);
+    const [isPasswordCheckAvailable, setIsPasswordCheckAvailable] = useState(false);
+    const [isPassword1Available, setIsPassword1Available] = useState(false);
+    const [isPassword2Available, setIsPassword2Available] = useState(false);
+
+    const handlePasswordChange = (e) => {
+        const password = document.getElementById('signStaffPassword').value;
+        const passwordCheck = document.getElementById('signStaffPasswordCheck').value;
+
+        if (e.target.id === 'signStaffPasswordCheck') {
+            // 비밀번호와 비밀번호 확인 간의 일치 여부 검사
+            if (passwordCheck === password) {
+                setIsPasswordCheckAvailable(true);
+            } else {
+                setIsPasswordCheckAvailable(false);
+            }
+
+            setIsPasswordConfirmationStarted(true);
+        } else if (e.target.id === 'signStaffPassword') {
+            setIsPasswordConfirmationStarted(true); // 입력 시작하면 문구 표시
+            setIsPasswordCheckAvailable(passwordCheck === password); // 비밀번호 입력 시에 true/false를 바꾸며 문구를 표시
+
+            // 비밀번호 8자 이상 판별
+            setIsPassword1Available(password.length >= 8);
+
+            // 영문과 숫자 포함 여부 판별
+            setIsPassword2Available(/^(?=.*[a-zA-Z])(?=.*[0-9])/.test(password));
+        }
+
+        // 비밀번호 확인과 비밀번호 입력이 모두 비어있을 때 문구 숨기기
+        if (!password && !passwordCheck) {
+            setIsPasswordCheckAvailable(false);
+            setIsPasswordConfirmationStarted(false);
+        }
+    };
+
 
     return (
         <div className="signStaff">
@@ -63,25 +96,32 @@ function SignStaff() {
                     )}
 
                     <p id="PasswordTitle">비밀번호</p>
-                    <input type="password" placeholder="영문, 숫자 포함 8자리 이상" id="signStaffPassword" />
-                    {isPassword1Available ? (
-                        <p id="Password1Explain">︎✓ 8자 이상 입력</p>
-                    ) : (
-                        <p id="Password1Explain" style={{ color: "#FF5D47" }}>︎✓ 8자 이상 입력</p>
-                    )} 
-                    {isPassword2Available ? (
+                    <input type="password" placeholder="영문, 숫자 포함 8자리 이상" id="signStaffPassword" onChange={handlePasswordChange} />
+                    {(isPasswordConfirmationStarted && !isPassword1Available) && (
+                        <p id="Password1Explain" style={{ color: "#FF5D47" }}>✓ 8자 이상 입력</p>
+                    )}
+                    {(isPasswordConfirmationStarted && !isPassword2Available) && (
+                        <p id="Password2Explain" style={{ color: "#FF5D47" }}>✓ 영문, 숫자 포함</p>
+                    )}
+                    {isPassword1Available && (
+                        <p id="Password1Explain">✓ 8자 이상 입력</p>
+                    )}
+                    {isPassword2Available && (
                         <p id="Password2Explain">✓ 영문, 숫자 포함</p>
-                    ) : (
-                            <p id="Password2Explain" style={{ color: "#FF5D47" }}>✓ 영문, 숫자 포함</p>
-                    )} 
+                    )}
 
                     <p id="CheckPasswordTitle">비밀번호 확인</p>
-                    <input type="password" placeholder="영문, 숫자 포함 8자리 이상" id="signStaffPasswordCheck" />
-                    {isPasswordCheckAvailable ? (
-                        <p id="PasswordCheckExplain">확인 완료되었습니다 :)</p>
-                    ) : (
-                        <p id="PasswordCheckExplain" style={{ color: "#FF5D47" }}>동일하지 않은 비밀번호입니다 :(</p>
-                    )} 
+                    <input type="password" placeholder="영문, 숫자 포함 8자리 이상" id="signStaffPasswordCheck" onChange={handlePasswordChange} />
+                    {(isPasswordConfirmationStarted && !isPasswordCheckAvailable) && (
+                        <p id="PasswordCheckExplain" style={{ color: '#FF5D47' }}>
+                            동일하지 않은 비밀번호입니다 :(
+                        </p>
+                    )}
+                    {isPasswordConfirmationStarted && isPasswordCheckAvailable && (
+                        <p id="PasswordCheckExplain" style={{ color: '#D2F75A' }}>
+                            확인 완료되었습니다 :)
+                        </p>
+                    )}
 
                     <p id="SchoolTitle">학교이름</p>
                     <input type="text" placeholder="풀네임으로 입력 (ex. 스컬고등학교)" id="signStaffSchool" />
@@ -96,8 +136,15 @@ function SignStaff() {
                     <button className="fileUploadBtn" onClick={handleFileButtonClick}>파일선택</button>
 
                     <div class="buttonContainer">
-                        <button type="submit" id="signStaffButton">회원가입 완료</button>
+                        {isIdAvailable && isPassword1Available && isPassword2Available && isPasswordCheckAvailable ? (
+                            <Link to="/loginstaff">
+                                <button type="submit" id="signStaffButton">회원가입 완료</button>
+                            </Link>
+                        ) : (
+                            <button type="submit" id="signStaffButton" disabled>회원가입 완료</button>
+                        )}
                     </div>
+
                 </form>
             </div>
 
