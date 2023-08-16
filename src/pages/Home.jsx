@@ -14,7 +14,7 @@ import likelion from "../images/likelion.png";
 function Home() {
     return (
         <div class="home">
-            <nav id="homeNav">
+            {/* <nav id="homeNav">
                 <div class="logo-small">
                     <Link to="/">
                     <img src={logo_small} alt="logo_small" id="logo_small"/>
@@ -24,7 +24,7 @@ function Home() {
                     <button id="button-product">PRODUCT</button>
                     <button id="button-login"><Link to="/loginStaff">LOGIN</Link></button>
                 </div>
-            </nav>
+            </nav> */}
 
             <div class="homeBody">
                 <div class="homeTitle">
