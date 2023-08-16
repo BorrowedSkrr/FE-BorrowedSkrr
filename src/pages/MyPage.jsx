@@ -12,6 +12,8 @@ import imgProfile from "../images/profile-teacher.svg";
 import imgCopy from "../images/icon-copy.svg";
 import { styled } from 'styled-components';
 import MyPageCopy from '../components/MyPage-Copy';
+import Modal from '../components/modal/modal';
+import Modal2 from '../components/modal/modal2';
 
 const StyleButton = styled.button`
     background-color: ${colors.gray4};
@@ -107,6 +109,7 @@ const MyPage = () => {
 
             <MyPageStudent studentData={studentData}/>
             <MyPageRental rentalData={rentalData}/>
+            <Modal2 isReject={true} name={'김스컬'}/>
         </div>
     )
 }
