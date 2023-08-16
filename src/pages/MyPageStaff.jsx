@@ -33,7 +33,7 @@ const MyPageStaff = () => {
     // 권한 요청 학생 데이터
     const [studentData, setStudentData] = useState([]);
     // 대여 현황 데이터
-    const [rentalData, setRentalData] = useState([])
+    const [rentalData, setRentalData] = useState([]);
     // 모달창
     const [isModalVisible, setModalVisible] = useState(false);
     // 학생 관리에서 버튼이 눌린 객체 정보. (state - 거절, 허용, 삭제)

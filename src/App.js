@@ -13,6 +13,9 @@ import GlobalStyle from './styles/globalStyles';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import MyPageStaffEdit from './pages/MyPageStaffEdit';
+import LikeStaff from './pages/LikeStaff';
+import CartStaff from './pages/CartStaff';
+import SubScribeStaff from './pages/SubscribeStaff';
 
 function App() {
   return (
@@ -33,6 +36,9 @@ function App() {
           <Route path="/creditSuccess" element={<CreditSuccess/>}/>
           <Route path='/myPageStaff' element={<MyPageStaff/>} />
           <Route path='/myPageStaffEdit' element={<MyPageStaffEdit/>} />
+          <Route path='/likeStaff' element={<LikeStaff/>}/>
+          <Route path='/CartStaff' element={<CartStaff/>}/>
+          <Route path='/SubscribeStaff' element={<SubScribeStaff/>} />
         </Routes>
         <Footer/>
       </Router>
