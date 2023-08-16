@@ -6,6 +6,7 @@ const StyleDiv = styled.div`
     display: flex;
     flex-direction: row;
     margin-left: 130px;
+    margin-bottom: 10px;
     grid-column: 1 / 5;
     grid-row: 2 / 3;
     background-color: ${colors.gray1};
@@ -36,7 +37,7 @@ const StyleGrid = styled.div`
     align-items: center;
     background-color: #fff;
     border-radius: 0.417vw;
-    padding: 10px 20px 20px 20px;
+    padding: 10px 20px 10px 20px;
     cursor: pointer;
 
     p {

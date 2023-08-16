@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from "./pages/Home";
 import LoginStaff from "./pages/LoginStaff";
-import MyPage from "./pages/MyPage";
+import MyPageStaff from "./pages/MyPageStaff";
 import SignStaff from "./pages/SignStaff";
 import Product from "./pages/Product";
 import LoginStudent from "./pages/LoginStudent";
@@ -12,6 +12,7 @@ import CreditSuccess from "./pages/CreditSuccess";
 import GlobalStyle from './styles/globalStyles';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import MyPageStaffEdit from './pages/MyPageStaffEdit';
 
 function App() {
   return (
@@ -30,7 +31,8 @@ function App() {
           <Route path="/productDetail" element={<ProductDetail />} />
           <Route path="/credit" element={<Credit/>}/>
           <Route path="/creditSuccess" element={<CreditSuccess/>}/>
-          <Route path='/myPage' element={<MyPage/>} />
+          <Route path='/myPageStaff' element={<MyPageStaff/>} />
+          <Route path='/myPageStaffEdit' element={<MyPageStaffEdit/>} />
         </Routes>
         <Footer/>
       </Router>

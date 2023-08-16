@@ -14,7 +14,7 @@ const StyleDiv = styled.div`
     border-radius: 0.833vw;
 `;
 
-const MyPageStudent = ({studentData}) => {
+const MyPageStudent = ({studentData, studentButtonListener}) => {
     const [slicedData, setSlicedData] = useState([]);
     const [page, setPage] = useState(1);
     const itemsPerPage = 4; // 페이지당 항목 수
@@ -48,7 +48,7 @@ const MyPageStudent = ({studentData}) => {
             
             {/* studentData가 존재할 때만 ListManageStudent 컴포넌트를 렌더링 */}
             {studentData.length === 0 && <p style={{position: 'absolute', color:'#7F85A3', fontSize: '2rem', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}>권한을 요청한 학생이 없습니다.</p>}
-            {studentData.length > 0 && <ListManageStudent data={slicedData}/>}
+            {studentData.length > 0 && <ListManageStudent data={slicedData} studentButtonListener={studentButtonListener }/>}
             {studentData.length > 0 && <CustomPagination page={page} itemsPerPage={itemsPerPage} totalPageCount={totalPageCount} totalDataCount={studentData.length} pageListener={pageListener} />}
         </StyleDiv>
     )

@@ -30,6 +30,10 @@ const customReset = css`
         border: none;
         padding: 0;
         cursor: pointer;
+        &:hover {
+            transition: all 0.3s ease 0s;
+            filter: brightness(0.6);
+        }
     }
     a {
         text-decoration: none;
@@ -67,6 +71,9 @@ const customReset = css`
         -webkit-user-select: text;
         font-size: 16px;
     }
+    input::placeholder{
+        color: ${colors.gray2};
+    }
     /* Chrome autofill 스타일 제거, 커스텀 */
     input:-webkit-autofill,
     input:-webkit-autofill:hover,
@@ -87,8 +94,36 @@ const GlobalStyle = createGlobalStyle`
         -webkit-touch-callout: none;
         -webkit-tap-highlight-color:rgba(255,255,255,0);
     }
+    
+    /* 빅데스크탑 */
     html{
         font-size: 62.5%;
+    }
+    
+    @media screen and (max-width:1799px) {
+        /* 데스크탑 */
+        html{
+            font-size: 50%;
+        }
+    }
+    @media screen and (max-width:1199px) {
+        /* 데스크탑 */
+        html{
+            font-size: 45%;
+        }
+    }
+
+    @media screen and (max-width:991px) {
+        /* 타블렛 */
+        html{
+            font-size: 40%;
+        }
+    }
+    @media screen and (max-width:767px) {
+        /* 모바일 */
+        html{
+            font-size: 30%;
+        }
     }
     body{
         display: flex;

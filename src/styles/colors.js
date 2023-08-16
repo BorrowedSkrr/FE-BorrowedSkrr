@@ -9,7 +9,8 @@ const colors = {
     gray3: "#484A46",
     gray4: "#2A2A3A",
     gray5: "#191B24",
-    gray6: "#464655"
+    gray6: "#464655",
+    error: "#FF5D47"
 };
 
 export default colors;

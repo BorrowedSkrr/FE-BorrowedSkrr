@@ -1,3 +1,6 @@
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+
 import { styled } from "styled-components";
 import colors from "../../styles/colors";
 
@@ -20,6 +23,7 @@ const StyleModal = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
 `
+
 const StyleButton = styled.button`
     flex-grow: 1;
     display: flex;
@@ -44,18 +48,30 @@ const StyleTitle = styled.p`
     margin-bottom: 4.7rem;
 `
 
-const Modal = ({name, state}) => {
-    return (
-        <StyleModal>
-            {state === '거절' && <StyleTitle>'{name}'님의 허용 요청을 거절할까요?</StyleTitle>}
-            {state === '삭제' && <StyleTitle>'{name}'님의 학생정보를 삭제할까요?</StyleTitle>}
-            <div style={{display:'flex', flexDirection:'row', gap:'1.6rem'}}>
-                <StyleButton text={'취소'}>취소</StyleButton>
-                {state === '거절' && <StyleButton text={'거절'}>거절</StyleButton>}
-                {state === '삭제' && <StyleButton text={'삭제'}>삭제</StyleButton>}
-            </div>
-        </StyleModal>
-    )
-};
+const CustomModal = (props) => {
+  const onClick = () => {
 
-export default Modal;
+  }
+  
+  return (
+    <Modal
+      {... props}
+      centered
+      backdrop="static"
+      keyboard={false}
+    >
+      <StyleModal>
+        {props.state === '거절' && <StyleTitle>'{props.name}'님의 허용 요청을 거절할까요?</StyleTitle>}
+        {props.state === '삭제' && <StyleTitle>'{props.name}'님의 학생정보를 삭제할까요?</StyleTitle>}
+        <div style={{display:'flex', flexDirection:'row', gap:'1.6rem'}}>
+            <StyleButton text={'취소'} onClick={props.onHide}>취소</StyleButton>
+            {props.state === '거절' && <StyleButton text={'거절'}>거절</StyleButton>}
+            {props.state === '삭제' && <StyleButton text={'삭제'}>삭제</StyleButton>}
+        </div>
+      </StyleModal>
+
+    </Modal>
+  );
+}
+
+export default CustomModal;

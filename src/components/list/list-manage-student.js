@@ -1,6 +1,6 @@
 import ItemManageStudent from "../listItem/item-manage-student"
 
-const ListManageStudent = ({data}) => {
+const ListManageStudent = ({data, studentButtonListener}) => {
     const studentArray = [
         {
             'name':'김스컬', 
@@ -30,9 +30,11 @@ const ListManageStudent = ({data}) => {
                 return(
                     <ItemManageStudent 
                         key={index}
+                        studentButtonListener={studentButtonListener}
                         name={item.name}
                         info={item.email}
                         date={item.website}
+                        isManaged={false}
                     />
                 )
             })}

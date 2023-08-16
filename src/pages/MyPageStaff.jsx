@@ -13,7 +13,8 @@ import imgCopy from "../images/icon-copy.svg";
 import { styled } from 'styled-components';
 import MyPageCopy from '../components/MyPage-Copy';
 import Modal from '../components/modal/modal';
-import Modal2 from '../components/modal/modal2';
+import Button from 'react-bootstrap/Button';
+import CustomModal from '../components/modal/customModal';
 
 const StyleButton = styled.button`
     background-color: ${colors.gray4};
@@ -23,7 +24,8 @@ const StyleButton = styled.button`
     padding: 0.8rem 2.1rem;
 `
 
-const MyPage = () => {
+const MyPageStaff = () => {
+    const [modalShow, setModalShow] = useState(false);
     // 학교 코드
     const [schoolCode, setSchoolCode] = useState();
     // 관리자 정보
@@ -32,6 +34,10 @@ const MyPage = () => {
     const [studentData, setStudentData] = useState([]);
     // 대여 현황 데이터
     const [rentalData, setRentalData] = useState([])
+    // 모달창
+    const [isModalVisible, setModalVisible] = useState(false);
+    // 학생 관리에서 버튼이 눌린 객체 정보. (state - 거절, 허용, 삭제)
+    const [manageStudent, setManageStudent] = useState({'name':'','state':''})
 
     // 여러 개의 상태를 업데이트하는 함수
     const initData = (schoolCode, user, studentData, rentalData) => {
@@ -40,6 +46,33 @@ const MyPage = () => {
         setStudentData(studentData);
         setRentalData(rentalData);
     };
+
+    const manageStudentListener = ({name, state}) => {
+        if(state === '거절'){
+            // 모달창 띄운 후, 거절 누르면 거절 눌렀다는 정보 서버로 넘긴후 정보 다시 받아오기. 취소 누르면 냅두기
+        } else if(state === '허용'){
+            // 서버로 허용되었다는 정보 넘긴 후, 학생 정보 다시 받아오기
+        } else if(state === '삭제'){
+            // 모달창 띄운 후, 삭제 누르면 삭제됐다는 정보 서버로 넘긴 후 정보 다시 받아오기. 취소 누르면 냅두기
+        }
+    }
+
+    const studentButtonListener = (name, state) => {
+        console.log('클릭', name, state)
+        if(state === '거절'){
+            // 모달창 띄운 후, 거절 누르면 거절 눌렀다는 정보 서버로 넘긴후 정보 다시 받아오기. 취소 누르면 냅두기
+            setManageStudent({name,state})
+            setModalVisible(true);
+            setModalShow(true);
+        } else if(state === '허용'){
+            // 서버로 허용되었다는 정보 넘긴 후, 학생 정보 다시 받아오기
+        } else if(state === '삭제'){
+            // 모달창 띄운 후, 삭제 누르면 삭제됐다는 정보 서버로 넘긴 후 정보 다시 받아오기. 취소 누르면 냅두기
+            setManageStudent({name,state})
+            setModalVisible(true);
+            setModalShow(true);
+        }
+    }
 
     useEffect(() => {
         let isMounted = true; // 마운트 상태를 나타내는 변수
@@ -107,11 +140,20 @@ const MyPage = () => {
                 <ButtonMypage img={'icon-money.svg'} alt={'아이콘'} text={"구독 내역"} />
             </div>
 
-            <MyPageStudent studentData={studentData}/>
+            <MyPageStudent studentData={studentData} studentButtonListener={studentButtonListener}/>
             <MyPageRental rentalData={rentalData}/>
-            <Modal2 isReject={true} name={'김스컬'}/>
+            {/* {isModalVisible && <Modal name={manageStudent.name} state={manageStudent.state}/>} */}
+
+            {modalShow && 
+                <CustomModal
+                    name={manageStudent.name} 
+                    state={manageStudent.state}
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                />
+            }
         </div>
     )
 }
 
-export default MyPage;
+export default MyPageStaff;

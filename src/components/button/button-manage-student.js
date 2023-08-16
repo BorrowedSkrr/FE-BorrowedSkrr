@@ -3,8 +3,15 @@ import colors from "../../styles/colors";
 
 const StyleButton = styled.button`
     color: ${colors.black};
-    background-color: ${({text}) => 
-        text === '허용' ? colors.mainGreen : colors.gray1};
+    background-color: ${({text}) => {
+        if (text === "허용") {
+            return colors.mainGreen;
+        } else if (text === "거절") {
+            return colors.gray1;
+        } else {
+            return colors.gray3;
+        }
+    }};
     border-radius: 0.417vw;
     font-size: 1.6rem;
     padding: 1.4rem 3.4rem;
@@ -13,7 +20,7 @@ const StyleButton = styled.button`
 
 const ButtonManageStudent = ({text, onClick}) => {
     return (
-        <StyleButton text={text} onClick={() => onClick()}>
+        <StyleButton text={text} onClick={() => onClick(text)}>
             {text}
         </StyleButton>
     )
