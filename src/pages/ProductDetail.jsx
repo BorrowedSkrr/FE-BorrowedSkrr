@@ -260,11 +260,9 @@ function ProductDetail() {
                                                 const newValue = e.target.value.replace(/[^0-9]/g, '');
                                                 setRentalDay(newValue);
 
-                                                // Calculate end date and total price here
                                                 const endDate = getEndDate(parseInt(newValue, 10));
                                                 const totalPrice = calculateTotalPrice(rentalNumber, parseInt(newValue, 10));
 
-                                                // Update end date and total price elements
                                                 const endDateBox = document.getElementById('endDateBox');
                                                 const totalPriceBox = document.getElementById('totalPriceBox');
                                                 if (endDateBox) {

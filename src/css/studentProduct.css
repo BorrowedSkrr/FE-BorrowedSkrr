@@ -1,0 +1,193 @@
+.StudentProduct>#StudentProductNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5.4vw;
+    white-space: nowrap;
+}
+
+.StudentProduct>#StudentProductNav>.buttonContainer {
+    margin-right: 2.4vw;
+}
+
+.StudentProductBody{
+    margin-top: 2.9vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.StudentProductBodyAll{
+    width: 39vw;
+}
+
+.StudentProductContainer{
+    width: 39vw;
+    display: flex;
+    margin-top: 1.2vw;
+}
+
+#StudentProductImage{
+    width: 11.3vw;
+    height: 11.3vw;
+    border: none;
+    border-radius: 0.8vw;
+}
+
+.StudentProductExplain{
+    width: 27.7vw;
+    height: 11.3vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.StudentProductPContainer{
+    width: 23.3vw;
+    height: 6.5vw;
+    text-align: left;
+    margin-top: -1vw;
+}
+
+#StudentProductTitle{
+    font-weight: 700;
+    font-size: 1.2vw;
+    line-height: 1.4vw;
+    color: #FFFFFF;
+}
+
+#StudentProductText{
+    font-weight: 400;
+    font-size: 0.75vw;
+    line-height: 1.25vw;
+    color: #FFFFFF;
+}
+
+.StudentProductBottom{
+    width: 27.7vw;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3vw;
+}
+
+.StudentProductNumber{
+    width: 4.5vw;
+    height: 1.6vw;
+    border: none;
+    border-radius: 0.75vw;
+    background: #EBEDF8;
+    font-weight: 700;
+    font-size: 0.8vw;
+    line-height: 0.8vw;
+    color: #484A64;
+    white-space: nowrap;
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    margin-left: 2.5vw;
+}
+
+#StdProductTitle1{
+    margin:0;
+    font-weight:700;
+    font-size:1.2vw;
+    line-height:1.4vw;
+    color:#FFFFFF;
+    text-align: left;
+    margin-top:4.25vw;
+}
+
+#StdProductTitle2{
+    margin:0;
+    font-weight:400;
+    font-size:1vw;
+    line-height:1vw;
+    color:#EBEDF8;
+    text-align: left;
+    margin-top:1.2vw;
+}
+
+#cautionTitle2{
+    margin:0;
+    font-weight: 700;
+    font-size: 1.2vw;
+    line-height: 1.4vw;
+    color: #FFFFFF;
+    margin-top: 4vw;
+    display: flex;
+    flex-direction: left;
+}
+
+.cautionBox2{
+    margin:0;
+    width: 39vw;
+    height: 21.3vw;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+    margin-top:1.2vw;
+}
+
+#StudentProductFooter {
+    margin-top: 5.65vw;
+    width: 100vw;
+    height: 10vw;
+    background-color: #191B24;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footerContainer {
+    width: 39vw;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.rentalShow2 {
+    margin-top: -3vw;
+    width: 100%;
+    height: 6.6vw;
+    border: none;
+    border-radius: 2vw 2vw 0 0;
+    background: #191B24;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rentalShowContainer2 {
+    width: 39vw;
+    height: 3vw;
+}
+
+.rentalNumberBox{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#rentalNumber2{
+    width: 6.1vw;
+    height: 3.2vw;
+    border: none;
+    border-radius: 0.4vw;
+    background: #2A2A3A;
+    font-weight: 700;
+    font-size: 1vw;
+    line-height: 1vw;
+    text-align: center;
+    color: #EBEDF8;
+    outline: none;
+    caret-color: #D2F75A;
+}
+
+#rentalNumber2:focus {
+    border: 0.05vw solid #D2F75A;
+    margin-top: -0.1vw;
+}
