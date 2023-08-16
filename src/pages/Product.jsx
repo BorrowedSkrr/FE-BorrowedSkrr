@@ -14,6 +14,7 @@ import notcheck_radio from "../images/notcheck-radio.png";
 import yescheck_radio from "../images/yescheck-radio.png";
 
 function Product() {
+    //정렬 박스(셀렉트 박스)
     const [activeButton, setActiveButton] = useState("notebook");
     const [selectedOption, setSelectedOption] = useState('기본');
     const [isDropdownVisible, setIsDropdownVisible] = useState(false);
@@ -24,6 +25,38 @@ function Product() {
         '고가순': false,
     });
 
+    const dropdownRef = useRef(null);
+
+    const handleOptionClick = (option) => {
+        setSelectedOption(option);
+
+        const updatedClickStatus = {
+            '기본': false,
+            '인기순': false,
+            '저가순': false,
+            '고가순': false,
+        };
+        updatedClickStatus[option] = true;
+        setClickStatus(updatedClickStatus);
+    };
+
+    const toggleDropdown = () => {
+        setIsDropdownVisible(!isDropdownVisible);
+    };
+
+    const handleClickOutside = (event) => {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            setIsDropdownVisible(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('click', handleClickOutside);
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, []);
+
     //관심상품 버튼
     const [isLiked1] = useState(false);
     const [isLiked2] = useState(false);
@@ -33,6 +66,11 @@ function Product() {
     const [isLiked6] = useState(false);
     const [isLiked7] = useState(false);
     const [isLiked8] = useState(false);
+
+    const [likedStatus, setLikedStatus] = useState([
+        isLiked1, isLiked2, isLiked3, isLiked4,
+        isLiked5, isLiked6, isLiked7, isLiked8
+    ]);
 
     const handleHeartClick = (productId) => {
         const updatedLikedState = [...likedStatus];
@@ -62,6 +100,7 @@ function Product() {
         setProductData2(updatedProductData2);
     };
 
+    //왼쪽 줄 상품 데이터
     const [productData, setProductData] = useState([
         {
             id: 1,
@@ -97,6 +136,7 @@ function Product() {
         }
     ]);
 
+    //오른쪽 줄 상품 데이터
     const [productData2, setProductData2] = useState([
         {
             id: 2,
@@ -132,36 +172,15 @@ function Product() {
         }
     ]);
 
-    const [likedStatus, setLikedStatus] = useState([
-        isLiked1, isLiked2, isLiked3, isLiked4,
-        isLiked5, isLiked6, isLiked7, isLiked8
-    ]);
+    //배너
+    const images = [
+        productImage,
+        icon_line_heart,
+        icon_lbold_heart
+    ];
 
     const [currentSlide, setCurrentSlide] = useState(0);
     const [searchText, setSearchText] = useState('');
-
-    const dropdownRef = useRef(null);
-
-    const handleButtonClicked = (buttonId) => {
-        setActiveButton(buttonId);
-    };
-
-    const handleOptionClick = (option) => {
-        setSelectedOption(option);
-
-        const updatedClickStatus = {
-            '기본': false,
-            '인기순': false,
-            '저가순': false,
-            '고가순': false,
-        };
-        updatedClickStatus[option] = true;
-        setClickStatus(updatedClickStatus);
-    };
-
-    const toggleDropdown = () => {
-        setIsDropdownVisible(!isDropdownVisible);
-    };
 
     const handleSlideChange = (direction) => {
         let newIndex = currentSlide + direction;
@@ -174,35 +193,6 @@ function Product() {
 
         setCurrentSlide(newIndex);
     };
-
-    const handleKeyPress = (e) => {
-        if (e.key === 'Enter') {
-            handleSearch();
-        }
-    };
-
-    const handleSearch = () => {
-        console.log('검색 내용:', searchText);
-    };
-
-    const handleClickOutside = (event) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-            setIsDropdownVisible(false);
-        }
-    };
-
-    useEffect(() => {
-        document.addEventListener('click', handleClickOutside);
-        return () => {
-            document.removeEventListener('click', handleClickOutside);
-        };
-    }, []);
-
-    const images = [
-        productImage,
-        icon_line_heart,
-        icon_lbold_heart
-    ];
 
     useEffect(() => {
         const autoSlideTimer = setInterval(() => {
@@ -221,6 +211,24 @@ function Product() {
             clearInterval(autoSlideTimer);
         };
     }, [images.length]);
+
+
+    //제품 검색
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            handleSearch();
+        }
+    };
+
+    const handleSearch = () => {
+        console.log('검색 내용:', searchText);
+    };
+
+
+    //카테고리
+    const handleButtonClicked = (buttonId) => {
+        setActiveButton(buttonId);
+    };
 
 
     return (
