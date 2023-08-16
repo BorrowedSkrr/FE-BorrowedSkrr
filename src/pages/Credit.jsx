@@ -9,7 +9,7 @@ function Credit() {
     const [currentDate] = useState(new Date()); // 현재 날짜 상태
     const futureDate = new Date(currentDate);
 
-    futureDate.setDate(futureDate.getDate() + 28);
+    futureDate.setDate(futureDate.getDate() + 28);  //임의로 28일 해놨음
 
     const currentYear = currentDate.getFullYear();
     const currentMonth = (currentDate.getMonth() + 1).toString().padStart(2, '0');

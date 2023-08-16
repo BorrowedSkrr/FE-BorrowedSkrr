@@ -1,0 +1,246 @@
+.StudentHome>#StudentHomeNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5.4vw;
+    white-space: nowrap;
+}
+
+.StudentHome>#StudentHomeNav>.buttonContainer {
+    margin-right: 2.4vw;
+}
+
+.StudentHome>.StudentHomeBody {
+    margin:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    white-space: nowrap;
+}
+
+.StudentHomeBox{
+    width:59vw;
+    height:10vw;
+    margin-top:3.2vw;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.StudentHomeleft{
+    display:flex;
+    gap:1.5vw;
+    align-items: center;
+}
+
+#profile_teacher{
+    width:5vw;
+    height:5vw;
+}
+
+.StudentHomePContainer{
+    display:flex;
+    flex-direction: column;
+    margin-top:-1vw;
+    justify-content: space-between;
+}
+
+#StudentProfile{
+    font-weight:400;
+    font-size:1vw;
+    line-height:1.1vw;
+    color:#FFFFFF;
+    height:1.2vw;
+}
+
+.StudentHomePContainer2{
+    display:flex;
+    text-align:left;
+    align-items: center;
+    gap:0.5vw;
+    height:1.65vw;
+}
+
+#StudentHomeName,
+#StudentHomeTitle{
+    font-weight:700;
+    font-size:1.4vw;
+    line-height:1.65vw;
+    color:#FFFFFF;
+}
+
+#StudentHomeTitle{
+    font-size:1vw;
+}
+
+.StudentHomeBtnContainer{
+    display:flex;
+    flex-direction: column;
+    gap:1vw;
+    margin-right:0.5vw;
+}
+
+#StudentHomeBtn1,
+#StudentHomeBtn2{
+    width:4.75vw;
+    height:1.7vw;
+    border-radius:0.4vw;
+    border:none;
+    background:#2A2A3A;
+    font-weight:400;
+    font-size:0.75vw;
+    line-height:0.9vw;
+    color:#7F85A3;
+    text-align: center;
+    cursor:pointer;
+}
+
+.StudentHomeBtnContainer2{
+    margin-top:0;
+    display:flex;
+    width:59vw;
+    justify-content: space-between;
+    gap:1vw;
+    margin-top:1vw;
+}
+
+#StudentHomeBtn3,
+#StudentHomeBtn4{
+    width:29vw;
+    height:4.5vw;
+    border:0.1vw solid #484A64;
+    border-radius:0.8vw;
+    background:#191B24;
+    display:flex;
+    align-items: center;
+    padding-left:10vw;
+    gap:0.8vw;
+    cursor:pointer;
+}
+
+#white_line_heartHome,
+#icon_moneyHome{
+    width:1.6vw;
+    height:1.6vw;
+}
+
+#StudentHomeBtnP1,
+#StudentHomeBtnP2{
+    font-weight:500;
+    font-size:1.4vw;
+    line-height:1.67vw;
+    color:#FFFFFF;
+}
+
+#StudentHomeP{
+    margin: 0;
+    font-weight:700;
+    font-size:1.6vw;
+    line-height:1.9vw;
+    color:#FFFFFF;
+    width:59vw;
+    text-align: left;
+    margin-top:4.1vw;
+}
+
+.menuBar2{
+    margin: 0;
+    display: flex;
+    gap: 1vw;
+    margin-top: 2.4vw;
+}
+
+.menuBar2>button {
+    width: 14vw;
+    height: 4vw;
+    border: none;
+    border-radius: 0.8vw;
+    font-weight: 700;
+    font-size: 1vw;
+    line-height: 1vw;
+    color: #FFFFFF;
+    background: #2A2A3A;
+    cursor: pointer;
+}
+
+.menuBar2>button.activeButton {
+    background: #8270FF;
+}
+
+#StudentHomeP3{
+    margin:0;
+    font-weight:400;
+    font-size:1vw;
+    line-height:1vw;
+    color:#7F85A3;
+    text-align: center;
+    margin-top: 5vw;
+}
+
+#StudentHomeFooter {
+    width: 100vw;
+    height: 8vw;
+    background-color: #191B24;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vw;
+}
+
+.StudentHomeList{
+    width: 59vw;
+    display: flex;
+    margin-top: 2.5vw;
+    gap: 1vw;
+}
+
+.StudentHomeleft2,
+.StudentHomeright{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.productExplain2{
+    width: 19vw;
+    height: 5.6vw;
+    margin-top: -1.5vw;
+}
+
+.bottomTitle2{
+    align-items: center;
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height:3.5vw;
+}
+
+#endDayTitle{
+    font-weight:500;
+    font-size:0.8vw;
+    line-height:0.8vw;
+    color:#7F85A3;
+}
+
+.number2{
+    width: 4.2vw;
+    height: 1.5vw;
+    border: none;
+    border-radius: 0.75vw;
+    background: #EBEDF8;
+    font-weight: 400;
+    font-size: 0.75vw;
+    line-height: 0.75;
+    color: #484A64;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    margin-bottom:0.5vw;
+}

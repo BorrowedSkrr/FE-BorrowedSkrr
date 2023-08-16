@@ -1,0 +1,197 @@
+.StudentRental>#StudentRentalNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5.4vw;
+    white-space: nowrap;
+}
+
+.StudentRental>#StudentRentalNav>.buttonContainer {
+    margin-right: 2.4vw;
+}
+
+.StudentRentalBody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    white-space: nowrap;
+}
+
+.StudentRentalBox {
+    margin: 0;
+    padding: 0;
+    width: 7vw;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#StudentRentalTitle{
+    font-weight:700;
+    font-size:1.6vw;
+    line-height:1.9vw;
+    text-align: center;
+    color:#FFFFFF;
+    margin-top:1vw;
+}
+
+#rental_product{
+    width: 6.65vw;
+    height: 6.65vw;
+    border: none;
+    border-radius: 0.4vw;
+}
+
+.StudentRentalContainer{
+    width: 39vw;
+    margin-top: 4.5vw;
+}
+
+#StudentRentalNumber{
+    width: 4.15vw;
+    height: 1.45vw;
+    font-weight: 700;
+    font-size: 1.2vw;
+    line-height: 1.4vw;
+    color: #FFFFFF;
+}
+
+.StudentRentalProduct{
+    margin:0;
+    width: 39vw;
+    height: 6.65vw;
+    margin-top: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.StudentRentalBox2{
+    display:flex;
+    width:32vw;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#StudentRentalTitle2,
+#StudentRentalNumber2{
+    font-weight:700;
+    font-size:1.2vw;
+    line-height:1.4vw;
+    color:#FFFFFF;
+}
+
+#StudentRentalTitle2{
+    margin-left:2.4vw;
+}
+
+.StudentRentalBar{
+    margin:0;
+    margin-top:2.2vw;
+    width: 39vw;
+    border: 0.1vw solid #191B24;
+}
+
+.StudentRentalDay,
+.StudentRentalReason{
+    display:flex;
+    width:39vw;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top:1.35vw;
+}
+
+#StudentRentalDayTitle,
+#StudentRentalReasonTitle{
+    font-weight:700;
+    font-size:1.2vw;
+    line-height:1.4vw;
+    color:#FFFFFF;
+}
+
+#StudentRentalReasonTitle{
+    margin-bottom:10vw;
+}
+
+input[type="date"]{
+    width:13.5vw;
+    height:2.6vw;
+    border:0.1vw solid #484A64;
+    border-radius:0.4vw;
+    background:#191B24;
+    font-weight:400;
+    font-size:1vw;
+    line-height:1vw;
+    color:#7F85A3;
+    text-align: center;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(50%);
+    color: #7F85A3;
+    padding-right:1vw;
+    cursor:pointer;
+}
+
+#rentalStart{
+    margin-left:4vw;
+}
+
+#rentalBetween{
+    font-weight:700;
+    font-size:1.2vw;
+    line-height:1.4vw;
+    color:#484A64;
+}
+
+#reason{
+    width:29vw;
+    height:11.3vw;
+    border:none;
+    border-radius:0.4vw;
+    background:#191B24;
+    font-weight:400;
+    font-size:1vw;
+    line-height:1.8vw;
+    color:#FFFFFF;
+}
+
+.StudentRentalReason textarea:focus {
+    background-color: #191B24;
+    outline:none;
+    padding-left:1vw;
+    padding-right:1vw;
+    padding-top:1vw;
+    padding-bottom:1vw;
+}
+
+#StudentRentalBtn{
+    width:10vw;
+    height:3.15vw;
+    border:none;
+    border-radius:0.4vw;
+    background:#D2F75A;
+    text-align:center;
+    font-weight:700;
+    font-size:1vw;
+    line-height:1.15vw;
+    color:#0F1015;
+    margin-top:3.7vw;
+}
+
+#StudentRentalBtn a{
+    color:#0F1015;
+}
+
+#StudentRentalFooter{
+    width: 100vw;
+    height: 8vw;
+    background-color: #191B24;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 12.5vw;
+}

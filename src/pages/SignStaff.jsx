@@ -19,11 +19,12 @@ function SignStaff() {
         }
     };
 
+    //폼 제출
     const handleFormSubmit = (e) => {
         e.preventDefault();
     };
 
-    //유효성 검사 문구
+    //유효성 검사
     const isIdAvailable = true; 
     const [isPasswordConfirmationStarted, setIsPasswordConfirmationStarted] = useState(false);
     const [isPasswordCheckAvailable, setIsPasswordCheckAvailable] = useState(false);
@@ -35,7 +36,6 @@ function SignStaff() {
         const passwordCheck = document.getElementById('signStaffPasswordCheck').value;
 
         if (e.target.id === 'signStaffPasswordCheck') {
-            // 비밀번호와 비밀번호 확인 간의 일치 여부 검사
             if (passwordCheck === password) {
                 setIsPasswordCheckAvailable(true);
             } else {
@@ -44,8 +44,8 @@ function SignStaff() {
 
             setIsPasswordConfirmationStarted(true);
         } else if (e.target.id === 'signStaffPassword') {
-            setIsPasswordConfirmationStarted(true); // 입력 시작하면 문구 표시
-            setIsPasswordCheckAvailable(passwordCheck === password); // 비밀번호 입력 시에 true/false를 바꾸며 문구를 표시
+            setIsPasswordConfirmationStarted(true);
+            setIsPasswordCheckAvailable(passwordCheck === password);
 
             // 비밀번호 8자 이상 판별
             setIsPassword1Available(password.length >= 8);
@@ -54,13 +54,11 @@ function SignStaff() {
             setIsPassword2Available(/^(?=.*[a-zA-Z])(?=.*[0-9])/.test(password));
         }
 
-        // 비밀번호 확인과 비밀번호 입력이 모두 비어있을 때 문구 숨기기
         if (!password && !passwordCheck) {
             setIsPasswordCheckAvailable(false);
             setIsPasswordConfirmationStarted(false);
         }
     };
-
 
     return (
         <div className="signStaff">
