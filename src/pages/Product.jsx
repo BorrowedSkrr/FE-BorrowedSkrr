@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from "react-router-dom";
 import logo_small from "../images/logo-small.png";
 import button_left from "../images/button-left.png";
 import button_right from "../images/button-right.png";
 import icon_sort from "../images/icon-sort.png";
-import product from "../images/product.png";
+import productImage from "../images/product.png";
 import icon_line_heart from "../images/icon-line-heart.png";
 import icon_lbold_heart from "../images/icon-lbold-heart.png";
 import button_more from "../images/button-more.png";
@@ -14,13 +14,7 @@ import notcheck_radio from "../images/notcheck-radio.png";
 import yescheck_radio from "../images/yescheck-radio.png";
 
 function Product() {
-    //카테고리 버튼 색상 변경
     const [activeButton, setActiveButton] = useState("notebook");
-    const handleButtonClicked = (buttonId) => {
-        setActiveButton(buttonId);
-    };
-
-    //정렬
     const [selectedOption, setSelectedOption] = useState('기본');
     const [isDropdownVisible, setIsDropdownVisible] = useState(false);
     const [clickStatus, setClickStatus] = useState({
@@ -29,6 +23,128 @@ function Product() {
         '저가순': false,
         '고가순': false,
     });
+
+    //관심상품 버튼
+    const [isLiked1] = useState(false);
+    const [isLiked2] = useState(false);
+    const [isLiked3] = useState(false);
+    const [isLiked4] = useState(false);
+    const [isLiked5] = useState(false);
+    const [isLiked6] = useState(false);
+    const [isLiked7] = useState(false);
+    const [isLiked8] = useState(false);
+
+    const handleHeartClick = (productId) => {
+        const updatedLikedState = [...likedStatus];
+        updatedLikedState[productId - 1] = !updatedLikedState[productId - 1];
+        setLikedStatus(updatedLikedState);
+        const updatedProductData = productData.map((product) => {
+            if (product.id === productId) {
+                return {
+                    ...product,
+                    isLiked: !product.isLiked,
+                };
+            }
+            return product;
+        });
+
+        setProductData(updatedProductData);
+
+        const updatedProductData2 = productData2.map((product) => {
+            if (product.id === productId) {
+                return {
+                    ...product,
+                    isLiked: !product.isLiked,
+                };
+            }
+            return product;
+        });
+        setProductData2(updatedProductData2);
+    };
+
+    const [productData, setProductData] = useState([
+        {
+            id: 1,
+            name: '애플 에어팟 맥스1',
+            isLiked: isLiked1,
+            weekPrice: '39,000원',
+            monthPrice: '120,000원',
+            remaining: 30,
+        },
+        {
+            id: 3,
+            name: '애플 에어팟 맥스3',
+            isLiked: isLiked3,
+            weekPrice: '39,000원',
+            monthPrice: '120,000원',
+            remaining: 0,
+        },
+        {
+            id: 5,
+            name: '애플 에어팟 맥스5',
+            isLiked: isLiked5,
+            weekPrice: '39,000원',
+            monthPrice: '120,000원',
+            remaining: 0,
+        },
+        {
+            id: 7,
+            name: '애플 에어팟 맥스7',
+            isLiked: isLiked7,
+            weekPrice: '39,000원',
+            monthPrice: '120,000원',
+            remaining: 30,
+        }
+    ]);
+
+    const [productData2, setProductData2] = useState([
+        {
+            id: 2,
+            name: '애플 에어팟 맥스2',
+            isLiked: isLiked2,
+            weekPrice: '39,000원',
+            monthPrice: '120,000원',
+            remaining: 20,
+        },
+        {
+            id: 4,
+            name: '애플 에어팟 맥스4',
+            isLiked: isLiked4,
+            weekPrice: '39,000원',
+            monthPrice: '120,000원',
+            remaining: 0,
+        },
+        {
+            id: 6,
+            name: '애플 에어팟 맥스6',
+            isLiked: isLiked6,
+            weekPrice: '39,000원',
+            monthPrice: '120,000원',
+            remaining: 5,
+        },
+        {
+            id: 8,
+            name: '애플 에어팟 맥스8',
+            isLiked: isLiked8,
+            weekPrice: '39,000원',
+            monthPrice: '120,000원',
+            remaining: 50,
+        }
+    ]);
+
+    const [likedStatus, setLikedStatus] = useState([
+        isLiked1, isLiked2, isLiked3, isLiked4,
+        isLiked5, isLiked6, isLiked7, isLiked8
+    ]);
+
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [searchText, setSearchText] = useState('');
+
+    const dropdownRef = useRef(null);
+
+    const handleButtonClicked = (buttonId) => {
+        setActiveButton(buttonId);
+    };
 
     const handleOptionClick = (option) => {
         setSelectedOption(option);
@@ -47,65 +163,18 @@ function Product() {
         setIsDropdownVisible(!isDropdownVisible);
     };
 
-    //관심상품 버튼
-    const [isLiked1, setIsLiked1] = useState(false);
-    const [isLiked2, setIsLiked2] = useState(false);
-    const [isLiked3, setIsLiked3] = useState(false);
-    const [isLiked4, setIsLiked4] = useState(false);
-    const [isLiked5, setIsLiked5] = useState(false);
-    const [isLiked6, setIsLiked6] = useState(false);
-    const [isLiked7, setIsLiked7] = useState(false);
-    const [isLiked8, setIsLiked8] = useState(false);
-
-    const handleHeartClick1 = () => {
-        setIsLiked1(!isLiked1);
-    };
-    const handleHeartClick2 = () => {
-        setIsLiked2(!isLiked2);
-    };
-    const handleHeartClick3 = () => {
-        setIsLiked3(!isLiked3);
-    };
-    const handleHeartClick4 = () => {
-        setIsLiked4(!isLiked4);
-    };
-    const handleHeartClick5 = () => {
-        setIsLiked5(!isLiked5);
-    };
-    const handleHeartClick6 = () => {
-        setIsLiked6(!isLiked6);
-    };
-    const handleHeartClick7 = () => {
-        setIsLiked7(!isLiked7);
-    };
-    const handleHeartClick8 = () => {
-        setIsLiked8(!isLiked8);
-    };
-
-
-    // 배너
-    const [currentSlide, setCurrentSlide] = useState(0);
-
     const handleSlideChange = (direction) => {
         let newIndex = currentSlide + direction;
 
         if (newIndex < 0) {
-            newIndex = 2;
-        } else if (newIndex > 2) {
+            newIndex = images.length - 1;
+        } else if (newIndex >= images.length) {
             newIndex = 0;
         }
 
         setCurrentSlide(newIndex);
     };
 
-    const images = [
-        product,
-        icon_line_heart,
-        icon_lbold_heart
-    ];
-    
-    //엔터 검색
-    const [searchText, setSearchText] = useState('');
     const handleKeyPress = (e) => {
         if (e.key === 'Enter') {
             handleSearch();
@@ -116,12 +185,50 @@ function Product() {
         console.log('검색 내용:', searchText);
     };
 
+    const handleClickOutside = (event) => {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            setIsDropdownVisible(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('click', handleClickOutside);
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, []);
+
+    const images = [
+        productImage,
+        icon_line_heart,
+        icon_lbold_heart
+    ];
+
+    useEffect(() => {
+        const autoSlideTimer = setInterval(() => {
+            setCurrentSlide((prevSlide) => {
+                let newIndex = prevSlide + 1;
+
+                if (newIndex >= images.length) {
+                    newIndex = 0;
+                }
+
+                return newIndex;
+            });
+        }, 3000);
+
+        return () => {
+            clearInterval(autoSlideTimer);
+        };
+    }, [images.length]);
+
+
     return (
-        <div class="Product">
+        <div className="Product">
             <nav id="ProductNav">
                 <div class="logo-small">
                     <Link to="/">
-                    <img src={logo_small} alt="logo_small" id="logo_small"/>
+                        <img src={logo_small} alt="logo_small" id="logo_small" />
                     </Link>
                 </div>
                 <div class="buttonContainer">
@@ -132,11 +239,11 @@ function Product() {
 
             <div class="ProductBody">
                 <div className="ProductBanner">
-                    <img src={button_left} id="button_left" onClick={() => handleSlideChange(-1)} alt="button_left"/>
+                    <img src={button_left} id="button_left" onClick={() => handleSlideChange(-1)} alt="button_left" />
                     <div className="slides">
-                        <img src={images[currentSlide]} alt={`Slide ${currentSlide + 1}`} id="productImage"/>
+                        <img src={images[currentSlide]} alt={`Slide ${currentSlide + 1}`} id="productImage" />
                     </div>
-                    <img src={button_right} id="button_right" onClick={() => handleSlideChange(1)} alt="button_right"/>
+                    <img src={button_right} id="button_right" onClick={() => handleSlideChange(1)} alt="button_right" />
                 </div>
                 <div className="BannerButton">
                     {[0, 1, 2].map((circleIndex) => (
@@ -164,7 +271,7 @@ function Product() {
                         onChange={(e) => setSearchText(e.target.value)}
                         onKeyPress={handleKeyPress}
                     />
-                    <img src={icon_search} id="icon_search" alt="icon_search"/>
+                    <img src={icon_search} id="icon_search" alt="icon_search" />
                 </div>
 
                 <div class="sortContainer">
@@ -216,240 +323,83 @@ function Product() {
                 </div>
 
                 <div class="productList">
-                    <div class="left">
-                        <div class="product1">
-                            <img src={product} id="productImage" alt="productImage"/>
-                            <div class="productExplain">
-                                <div class="topTitle">
-                                    <Link to="/productDetail">
-                                    <p id="productTitle">애플 에어팟 맥스1</p>
-                                    </Link>
-                                    <img
-                                        src={isLiked1 ? icon_lbold_heart : icon_line_heart}
-                                        id="icon_line_heart"
-                                        alt="icon_line_heart"
-                                        onClick={handleHeartClick1}
-                                    />
-                                </div>
-                                <div class="bar"></div>
-                                <div class="bottomTitle">
-                                    <div class="weekTitle">
-                                        <p id="p12">7일 기준</p>
-                                        <p id="p13">39,000원</p>
+                    <div className="left">
+                        {productData.map((product) => (
+                            <div
+                                className={`product${product.id}`}
+                                style={{ opacity: product.remaining === 0 ? 0.4 : 1 }}
+                            >
+                                <img src={productImage} id="productImage" alt="productImage" />
+                                <div className="productExplain">
+                                    <div className="topTitle">
+                                        <Link to="/productDetail">
+                                            <p id="productTitle">{product.name}</p>
+                                        </Link>
+                                        <img
+                                            src={product.isLiked ? icon_lbold_heart : icon_line_heart}
+                                            id="icon_line_heart"
+                                            alt="icon_line_heart"
+                                            onClick={() => handleHeartClick(product.id)}
+                                        />
                                     </div>
-                                    <div class="monthTitle">
-                                        <p id="p12">1달 기준</p>
-                                        <p id="p13">120,000원</p>
+                                    <div className="bar"></div>
+                                    <div className="bottomTitle">
+                                        <div className="weekTitle">
+                                            <p id="p12">7일 기준</p>
+                                            <p id="p13">{product.weekPrice}</p>
+                                        </div>
+                                        <div className="monthTitle">
+                                            <p id="p12">1달 기준</p>
+                                            <p id="p13">{product.monthPrice}</p>
+                                        </div>
+                                        <div className="number">{product.remaining}개 남음</div>
                                     </div>
-                                    <div class="number">30개 남음</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product3">
-                            <img src={product} id="productImage" alt="productImage" />
-                            <div class="productExplain">
-                                <div class="topTitle">
-                                    <Link to="/productDetail">
-                                    <p id="productTitle">애플 에어팟 맥스3</p>
-                                    </Link>
-                                    <img
-                                        src={isLiked3 ? icon_lbold_heart : icon_line_heart}
-                                        id="icon_line_heart"
-                                        alt="icon_line_heart"
-                                        onClick={handleHeartClick3}
-                                    />
-                                </div>
-                                <div class="bar"></div>
-                                <div class="bottomTitle">
-                                    <div class="weekTitle">
-                                        <p id="p12">7일 기준</p>
-                                        <p id="p13">39,000원</p>
-                                    </div>
-                                    <div class="monthTitle">
-                                        <p id="p12">1달 기준</p>
-                                        <p id="p13">120,000원</p>
-                                    </div>
-                                    <div class="number">0개 남음</div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="product5">
-                            <img src={product} id="productImage" alt="productImage" />
-                            <div class="productExplain">
-                                <div class="topTitle">
-                                    <Link to="/productDetail">
-                                    <p id="productTitle">애플 에어팟 맥스5</p>
-                                    </Link>
-                                    <img
-                                        src={isLiked5 ? icon_lbold_heart : icon_line_heart}
-                                        id="icon_line_heart"
-                                        alt="icon_line_heart"
-                                        onClick={handleHeartClick5}
-                                    />
-                                </div>
-                                <div class="bar"></div>
-                                <div class="bottomTitle">
-                                    <div class="weekTitle">
-                                        <p id="p12">7일 기준</p>
-                                        <p id="p13">39,000원</p>
-                                    </div>
-                                    <div class="monthTitle">
-                                        <p id="p12">1달 기준</p>
-                                        <p id="p13">120,000원</p>
-                                    </div>
-                                    <div class="number">30개 남음</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product7">
-                            <img src={product} id="productImage" alt="productImage" />
-                            <div class="productExplain">
-                                <div class="topTitle">
-                                    <Link to="/productDetail">
-                                    <p id="productTitle">애플 에어팟 맥스7</p>
-                                    </Link>
-                                    <img
-                                        src={isLiked7 ? icon_lbold_heart : icon_line_heart}
-                                        id="icon_line_heart"
-                                        alt="icon_line_heart"
-                                        onClick={handleHeartClick7}
-                                    />
-                                </div>
-                                <div class="bar"></div>
-                                <div class="bottomTitle">
-                                    <div class="weekTitle">
-                                        <p id="p12">7일 기준</p>
-                                        <p id="p13">39,000원</p>
-                                    </div>
-                                    <div class="monthTitle">
-                                        <p id="p12">1달 기준</p>
-                                        <p id="p13">120,000원</p>
-                                    </div>
-                                    <div class="number">30개 남음</div>
-                                </div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
-                    <div class="right">
-                        <div class="product2">
-                            <img src={product} id="productImage" alt="productImage" />
-                            <div class="productExplain">
-                                <div class="topTitle">
-                                    <Link to="/productDetail">
-                                    <p id="productTitle">애플 에어팟 맥스2</p>
-                                    </Link>
-                                    <img
-                                        src={isLiked2 ? icon_lbold_heart : icon_line_heart}
-                                        id="icon_line_heart"
-                                        alt="icon_line_heart"
-                                        onClick={handleHeartClick2}
-                                    />
-                                </div>
-                                <div class="bar"></div>
-                                <div class="bottomTitle">
-                                    <div class="weekTitle">
-                                        <p id="p12">7일 기준</p>
-                                        <p id="p13">39,000원</p>
+                    <div className="right">
+                        {productData2.map((product) => (
+                            <div
+                                className={`product${product.id}`}
+                                style={{ opacity: product.remaining === 0 ? 0.4 : 1 }}
+                            >
+                                <img src={productImage} id="productImage" alt="productImage" />
+                                <div className="productExplain">
+                                    <div className="topTitle">
+                                        <Link to="/productDetail">
+                                            <p id="productTitle">{product.name}</p>
+                                        </Link>
+                                        <img
+                                            src={product.isLiked ? icon_lbold_heart : icon_line_heart}
+                                            id="icon_line_heart"
+                                            alt="icon_line_heart"
+                                            onClick={() => handleHeartClick(product.id)}
+                                        />
                                     </div>
-                                    <div class="monthTitle">
-                                        <p id="p12">1달 기준</p>
-                                        <p id="p13">120,000원</p>
+                                    <div className="bar"></div>
+                                    <div className="bottomTitle">
+                                        <div className="weekTitle">
+                                            <p id="p12">7일 기준</p>
+                                            <p id="p13">{product.weekPrice}</p>
+                                        </div>
+                                        <div className="monthTitle">
+                                            <p id="p12">1달 기준</p>
+                                            <p id="p13">{product.monthPrice}</p>
+                                        </div>
+                                        <div className="number">{product.remaining}개 남음</div>
                                     </div>
-                                    <div class="number">30개 남음</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product4">
-                            <img src={product} id="productImage" alt="productImage" />
-                            <div class="productExplain">
-                                <div class="topTitle">
-                                    <Link to="/productDetail">
-                                    <p id="productTitle">애플 에어팟 맥스4</p>
-                                    </Link>
-                                    <img
-                                        src={isLiked4 ? icon_lbold_heart : icon_line_heart}
-                                        id="icon_line_heart"
-                                        alt="icon_line_heart"
-                                        onClick={handleHeartClick4}
-                                    />
-                                </div>
-                                <div class="bar"></div>
-                                <div class="bottomTitle">
-                                    <div class="weekTitle">
-                                        <p id="p12">7일 기준</p>
-                                        <p id="p13">39,000원</p>
-                                    </div>
-                                    <div class="monthTitle">
-                                        <p id="p12">1달 기준</p>
-                                        <p id="p13">120,000원</p>
-                                    </div>
-                                    <div class="number">30개 남음</div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="product6">
-                            <img src={product} id="productImage" alt="productImage" />
-                            <div class="productExplain">
-                                <div class="topTitle">
-                                    <Link to="/productDetail">
-                                    <p id="productTitle">애플 에어팟 맥스6</p>
-                                    </Link>
-                                    <img
-                                        src={isLiked6 ? icon_lbold_heart : icon_line_heart}
-                                        id="icon_line_heart"
-                                        alt="icon_line_heart"
-                                        onClick={handleHeartClick6}
-                                    />
-                                </div>
-                                <div class="bar"></div>
-                                <div class="bottomTitle">
-                                    <div class="weekTitle">
-                                        <p id="p12">7일 기준</p>
-                                        <p id="p13">39,000원</p>
-                                    </div>
-                                    <div class="monthTitle">
-                                        <p id="p12">1달 기준</p>
-                                        <p id="p13">120,000원</p>
-                                    </div>
-                                    <div class="number">30개 남음</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product8">
-                            <img src={product} id="productImage" alt="productImage" />
-                            <div class="productExplain">
-                                <div class="topTitle">
-                                    <Link to="/productDetail">
-                                    <p id="productTitle">애플 에어팟 맥스8</p>
-                                    </Link>
-                                    <img
-                                        src={isLiked8 ? icon_lbold_heart : icon_line_heart}
-                                        id="icon_line_heart"
-                                        alt="icon_line_heart"
-                                        onClick={handleHeartClick8}
-                                    />
-                                </div>
-                                <div class="bar"></div>
-                                <div class="bottomTitle">
-                                    <div class="weekTitle">
-                                        <p id="p12">7일 기준</p>
-                                        <p id="p13">39,000원</p>
-                                    </div>
-                                    <div class="monthTitle">
-                                        <p id="p12">1달 기준</p>
-                                        <p id="p13">120,000원</p>
-                                    </div>
-                                    <div class="number">30개 남음</div>
-                                </div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
 
                 <div class="addView">
                     <p id="p14">더보기</p>
-                    <img src={button_more} id="button_more" alt="button_more"/>
+                    <img src={button_more} id="button_more" alt="button_more" />
                 </div>
+
             </div>
 
             <footer id="ProductFooter">
@@ -459,4 +409,4 @@ function Product() {
     )
 }
 
-export default Product
+export default Product;
