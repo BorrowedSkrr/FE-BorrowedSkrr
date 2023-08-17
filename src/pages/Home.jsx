@@ -29,21 +29,25 @@ function Home() {
 
             <div className="homeBody">
                 <div className="homeTitle">
-                    <p>우리의 미래, 학생들을 위한 단 하나의 서비스</p>
+                    <p id="homeTitleP">우리의 미래, 학생들을 위한 단 하나의 서비스</p>
                     <img src={logo_title} id="logo_title" alt="logo_title"/>
                 </div>
                 
                 <div className="homeBanner">
                     <img src={home_banner} id="home_banner" alt="home_banner"/>
                     <div className="pContainer">
-                        <p id="p1">빌렸스컬은 전국 각지의 학교를 대상으로</p>
-                        <p id="p2">더 나은 교육환경을 제공하기 위한 테크제품 렌탈서비스입니다</p>
+                        <div className="p2Container">
+                            <p id="p1">빌렸스컬은 전국 각지의 학교를 대상으로</p>
+                            <p id="p2">더 나은 교육환경을 제공하기 위한 테크제품 렌탈서비스입니다</p>
+                        </div>
                         <p id="p3">사지말고, 대여하세요!</p>
                     </div>
                 </div>
 
-                <img src={icon_skrr_black} alt="icon_skrr_black" id="icon1"/>
-                <p id="p4">빌렸스컬 이용법</p>
+                <div className="homeMenuBox">
+                    <img src={icon_skrr_black} alt="icon_skrr_black" id="icon1"/>
+                    <p id="p4">빌렸스컬 이용법</p>
+                </div>
 
                 <div className="explainContainer">
                     <div className="explainBox1">
@@ -72,8 +76,10 @@ function Home() {
                 </div>
 
                 <div className="advantagesBanner">
-                    <img src={icon_skrr_purple} alt="icon_skrr_purple" id="icon2"/>
-                    <p id="p6">빌렸스컬만의 장점이에요</p>
+                    <div className="homeMenuBox2">
+                        <img src={icon_skrr_purple} alt="icon_skrr_purple" id="icon2"/>
+                        <p id="p6">빌렸스컬만의 장점이에요</p>
+                    </div>
                     <div className="advantagesContainer">
                         <div className="advantagesBox1">
                             <p id="p7">부담없는!</p>
