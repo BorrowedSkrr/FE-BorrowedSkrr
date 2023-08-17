@@ -1,37 +1,40 @@
-.productDetail>#productDetailNav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 5.4vw;
-    white-space: nowrap;
-}
-
-.productDetail>#productDetailNav>.buttonContainer {
-    margin-right: 1.6vw;
-}
-
-.productDetail>.productDetailBody {
-    margin-top:2.9vw;
+.productDetail{
+    width:100%;
+    margin:0;
+    padding:0;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
+}
+
+.productDetailBody {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
+    width:100vw;
 }
 
 .productDetailBodyAll{
     width:39vw;
 }
 
+#Link1{
+    display:flex;
+    gap:1vw;
+    align-items: center;
+}
+
 #backButton{
-    background:#0F1015;
+    margin-top:2.8vw;
+    height:1vw;
     border:none;
     color:#EBEDF8;
     font-weight:700;
     font-size:0.8vw;
     line-height:0.8vw;
-    display:flex;
-    align-items:flex-start;
 }
 
 #backButton>a{
@@ -39,13 +42,14 @@
     color:#EBEDF8;
 }
 
-#icon_back{
+#icon_back2{
     width:0.3vw;
     height:0.65vw;
 }
 
 .productDetailContainer{
     width:39vw;
+    height:11.35vw;
     display:flex;
     margin-top:1.2vw;
 }
@@ -59,21 +63,25 @@
 
 .productDeatilExplain{
     width:27.7vw;
-    height:11.3vw;
+    height:11.35vw;
     display:flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    gap:0.4vw;
 }
 
 .productDetailPContainer{
     width:23.3vw;
-    height:6.5vw;
+    height:6.55vw;
     text-align: left;
-    margin-top:-1vw;
+    display:flex;
+    flex-direction: column;
+    gap:0.7vw;
 }
 
 #productDetailTitle{
+    height:1.45vw;
     font-weight:700;
     font-size:1.2vw;
     line-height:1.4vw;
@@ -81,6 +89,7 @@
 }
 
 #productDetailText{
+    height:4.4vw;
     font-weight:400;
     font-size:0.75vw;
     line-height:1.25vw;
@@ -91,7 +100,6 @@
     width:27.7vw;
     display:flex;
     justify-content: space-between;
-    margin-top:3vw;
 }
 
 .productDetailNumber{
@@ -120,6 +128,7 @@
 }
 
 #priceTitle{
+    height:1.45vw;
     font-weight:700;
     font-size:1.2vw;
     line-height:1.4vw;
@@ -133,9 +142,9 @@
     width: 39vw;
     height:6vw;
     display:flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap:1.5vw;
+    margin-top:1.2vw;
 }
 
 .weekBox,
@@ -147,24 +156,26 @@
     border-radius:0.4vw;
     text-align: start;
     padding-left:1.6vw;
+    align-items: center;
 }
 
 #productweekTtile,
 #productmonthTitle{
+    height:0.95vw;
     font-weight:700;
     font-size:0.8vw;
     line-height:1vw;
     color:#7F85A3;
-    margin-top:1.1vw;
+    margin-top:1.5vw;
 }
 
 #productweekPrice,
 #productmonthPrice{
+    height:1.45vw;
     font-weight:700;
     font-size:1.2vw;
     line-height:1.4vw;
     color:#FFFFFF;
-    margin-top:-0.1vw;
 }
 
 #cautionTitle{
@@ -183,6 +194,7 @@
     display:flex;
     flex-direction: column;
     gap:0.5vw;
+    margin-top:1.2vw;
 }
 
 .caution1,
@@ -210,6 +222,9 @@
     text-align: left;
     width:37vw;
     height:3.3vw;
+    display:flex;
+    gap:0.8vw;
+    flex-direction: column;
 }
 
 .caution2All,
@@ -250,8 +265,7 @@
 }
 
 .rentalShow{
-    margin-top:-5vw;
-    width:100%;
+    width: 100vw;
     height:10.6vw;
     border:none;
     border-radius:2vw 2vw 0 0;
@@ -278,6 +292,7 @@
 .rentalNumberBox{
     display:flex;
     white-space: nowrap;
+    align-items: center;
 }
 
 #rentalDayTitle,
@@ -330,6 +345,7 @@
     display:flex;
     justify-content: flex-end;
     padding-top:1.2vw;
+    align-items: center;
 }
 
 #totalPriceBox{
@@ -348,9 +364,8 @@
 }
 
 #ProductDetailFooter{
-    margin-top: 5.65vw;
     width: 100vw;
-    height: 10vw;
+    height: 5vw;
     background-color: #191B24;
     display: flex;
     justify-content: center;
@@ -360,7 +375,6 @@
 
 .footerContainer {
     width: 39vw;
-    display: flex;
     justify-content: flex-end;
 }
 
@@ -376,7 +390,6 @@
     font-size:1vw;
     line-height:1vw;
     color:#0F1015;
-    margin-top:-3vw;
     cursor:pointer;
 }
 

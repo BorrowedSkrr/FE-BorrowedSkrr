@@ -12,7 +12,7 @@ import button_minus from "../images/button-minus.png";
 import button_plus from "../images/button-plus.png";
 
 function ProductDetail() {
-    const [marginTop, setMarginTop] = useState('5.65vw');
+    const [marginTop, setMarginTop] = useState('8.65vw');
     const [isLiked9, setIsLiked9] = useState(false);
     const [rentButtonText, setRentButtonText] = useState('대여하기');
     const [showCartButton, setShowCartButton] = useState(false);
@@ -31,7 +31,7 @@ function ProductDetail() {
             setRentButtonText('결제하기');
             setShowCartButton(true);
             setShowForm(true);
-            setMarginTop('5.5vw');
+            setMarginTop('-1.5vw');
         } else if (rentButtonText === '결제하기') {
             if (isNaN(rentalDay) || rentalDay < 7) {
                 console.log('대여 일수가 7일 이상이어야 합니다.');
@@ -175,7 +175,10 @@ function ProductDetail() {
 
             <div className="productDetailBody">
                 <div className="productDetailBodyAll">
-                    <button id="backButton"><Link to="/product"><img src={icon_back} id="icon_back" alt="icon_back"/>&nbsp;뒤로</Link></button>
+                    <button id="backButton"><Link to="/product" id="Link1">
+                        <img src={icon_back} id="icon_back2" alt="icon_back"/>
+                        <p id="backBtnTitle">뒤로</p>
+                    </Link></button>
 
                     <div className="productDetailContainer">
                         <img src={product} id="productDetailImage" alt="productDetailImage"/>
@@ -246,7 +249,7 @@ function ProductDetail() {
             
             <form>
                 {showForm && (
-                    <div className="rentalShow" style={{ zIndex: 1, position: 'absolute' }}>
+                    <div className="rentalShow" style={{ zIndex: 1 }}>
                         <div className="rentalShowContainer">
                             <div className="rentalShowTop">
                                 <div className="rentalDayBox">
@@ -306,8 +309,8 @@ function ProductDetail() {
                     </div>
                 )}
             </form>
-
-            <footer id="ProductDetailFooter" style={{ marginTop, zIndex:2, position:'absolute' }}>
+            
+            <div id="ProductDetailFooter" style={{ marginTop, zIndex:2}}>
                 <div className="footerContainer">
                     {showCartButton && (
                         <button id="cartBtn">장바구니 추가</button>
@@ -316,7 +319,7 @@ function ProductDetail() {
                         {rentButtonText}
                     </button>
                 </div>
-            </footer>
+            </div>
         </div>
     )
 }
