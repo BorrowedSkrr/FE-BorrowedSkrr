@@ -16,6 +16,8 @@ import MyPageStaffEdit from './pages/MyPageStaffEdit';
 import LikeStaff from './pages/LikeStaff';
 import CartStaff from './pages/CartStaff';
 import SubScribeStaff from './pages/SubscribeStaff';
+import LikeStudent from './pages/LikeStudent';
+import RentalStudent from './pages/RentalStudent';
 
 function App() {
   return (
@@ -37,8 +39,10 @@ function App() {
           <Route path='/myPageStaff' element={<MyPageStaff/>} />
           <Route path='/myPageStaffEdit' element={<MyPageStaffEdit/>} />
           <Route path='/likeStaff' element={<LikeStaff/>}/>
-          <Route path='/CartStaff' element={<CartStaff/>}/>
-          <Route path='/SubscribeStaff' element={<SubScribeStaff/>} />
+          <Route path='/cartStaff' element={<CartStaff/>}/>
+          <Route path='/subscribeStaff' element={<SubScribeStaff/>} />
+          <Route path='/likeStudent' element={<LikeStudent/>} />
+          <Route path='/rentalStudent' element={<RentalStudent/>} />
         </Routes>
         <Footer/>
       </Router>
