@@ -46,8 +46,8 @@ function SignStudent() {
     };
 
     return (
-        <div className="signStudent">
-            <nav id="signStudentNav">
+        <div class="signStudent">
+            {/* <nav id="signStudentNav">
                 <div className="logo-small">
                     <Link to="/home">
                         <img src={logo_small} alt="logo_small" id="logo_small"/>
@@ -57,7 +57,7 @@ function SignStudent() {
                     <button id="button-product">PRODUCT</button>
                     <button id="button-login"><Link to="/loginStudent">LOGIN</Link></button>
                 </div>
-            </nav>
+            </nav> */}
 
             <div className="signStudentBody">
                 <div className="signButtonContianer">
@@ -124,10 +124,10 @@ function SignStudent() {
                     </div>
                 </form>
             </div>
-
+{/* 
             <footer id="signStudentFooter">
                 <img src={likelion} alt="likelion" id="likelion" />
-            </footer>
+            </footer> */}
         </div>
     )
 }

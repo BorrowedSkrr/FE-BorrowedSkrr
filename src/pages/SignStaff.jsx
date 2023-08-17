@@ -62,7 +62,7 @@ function SignStaff() {
 
     return (
         <div className="signStaff">
-            <nav id="signStaffNav">
+            {/* <nav id="signStaffNav">
                 <div className="logo-small">
                     <Link to="/">
                     <img src={logo_small} alt="logo_small" id="logo_small"/>
@@ -72,7 +72,7 @@ function SignStaff() {
                     <button id="button-product">PRODUCT</button>
                     <button id="button-login"><Link to="/loginStaff">LOGIN</Link></button>
                 </div>
-            </nav>
+            </nav> */}
 
             <div className="signStaffBody">
                 <div className="signButtonContianer">
@@ -146,9 +146,9 @@ function SignStaff() {
                 </form>
             </div>
 
-            <footer id="signStaffFooter">
+            {/* <footer id="signStaffFooter">
                 <img src={likelion} alt="likelion" id="likelion" />
-            </footer>
+            </footer> */}
         </div>
     )
 }

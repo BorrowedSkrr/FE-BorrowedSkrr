@@ -6,9 +6,9 @@ import likelion from "../images/likelion.png";
 
 function CreditSuccess() {
     return (
-        <div className="CreditSuccess">
-            <nav id="CreditSuccessNav">
-                <div className="logo-small">
+        <div class="CreditSuccess">
+            {/* <nav id="CreditSuccessNav">
+                <div class="logo-small">
                     <Link to="/">
                         <img src={logo_small} alt="logo_small" id="logo_small" />
                     </Link>
@@ -17,7 +17,7 @@ function CreditSuccess() {
                     <button id="button-product">PRODUCT</button>
                     <button id="button-login">MY PAGE</button>
                 </div>
-            </nav>
+            </nav> */}
 
             <div className="CreditSuccessBody">
                 <img src={logo_skrr_black} id="logo_skrr_black" alt="logo_skrr_black"/>
@@ -30,9 +30,9 @@ function CreditSuccess() {
                 </div>
             </div>
 
-            <footer id="CreditSuccessFooter">
+            {/* <footer id="CreditSuccessFooter">
                 <img src={likelion} alt="likelion" id="likelion" />
-            </footer>
+            </footer> */}
         </div>
     )
 }

@@ -13,9 +13,9 @@ import likelion from "../images/likelion.png";
 
 function Home() {
     return (
-        <div className="home">
-            <nav id="homeNav">
-                <div className="logo-small">
+        <div class="home">
+            {/* <nav id="homeNav">
+                <div class="logo-small">
                     <Link to="/">
                     <img src={logo_small} alt="logo_small" id="logo_small"/>
                     </Link>
@@ -24,7 +24,7 @@ function Home() {
                     <button id="button-product">PRODUCT</button>
                     <button id="button-login"><Link to="/loginStaff">LOGIN</Link></button>
                 </div>
-            </nav>
+            </nav> */}
 
             <div className="homeBody">
                 <div className="homeTitle">
@@ -124,9 +124,9 @@ function Home() {
                 <button id="viewButton">제품 보러가기</button>
             </div>
 
-            <footer id="homeFooter">
+            {/* <footer id="homeFooter">
                 <img src={likelion} alt="likelion" id="likelion"/>
-            </footer>
+            </footer> */}
         </div>
     )
 }

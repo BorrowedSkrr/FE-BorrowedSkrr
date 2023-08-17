@@ -5,9 +5,9 @@ import likelion from "../images/likelion.png";
 
 function LoginStaff() {
     return (
-        <div className="loginStaff">
-            <nav id="loginStaffNav">
-                <div className="logo-small">
+        <div class="loginStaff">
+            {/* <nav id="loginStaffNav">
+                <div class="logo-small">
                     <Link to="/">
                     <img src={logo_small} alt="logo_small" id="logo_small"/>
                     </Link>
@@ -16,7 +16,7 @@ function LoginStaff() {
                     <button id="button-product">PRODUCT</button>
                     <button id="button-login"><Link to="/loginStaff">LOGIN</Link></button>
                 </div>
-            </nav>
+            </nav> */}
 
             <div className="loginStaffBody">
                 <div className="loginButtonContianer">
@@ -41,9 +41,9 @@ function LoginStaff() {
                 </div>
             </div>
 
-            <footer id="loginStaffFooter">
+            {/* <footer id="loginStaffFooter">
                 <img src={likelion} alt="likelion" id="likelion" />
-            </footer>
+            </footer> */}
         </div>
     )
 }
