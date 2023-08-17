@@ -1,4 +1,5 @@
-import ItemManageRental from "../listItem/item-manage-rental";
+
+import ItemStudentRental from "../listItem/item-student-rental";
 
 const ListStudentRental = ({data}) => {
 
@@ -6,9 +7,9 @@ const ListStudentRental = ({data}) => {
         <div style={{marginTop:"16px", marginBottom:"32px", display:"flex", flexDirection:"column", gap:"8px"}}>
             {data.map((item, index) => {
                 return(
-                    <ItemManageRental 
+                    <ItemStudentRental
                         key={index}
-                        img={item.thumbnailUrl}
+                        img={'https://via.placeholder.com/150/92c952'}
                         name={item.id}
                         num={item.id}
                         date='2023. 07. 06. ~ 2023. 08. 06.'

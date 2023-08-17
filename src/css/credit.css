@@ -1,4 +1,4 @@
-.credit>#creditNav {
+/* .credit>#creditNav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,7 +7,7 @@
 
 .credit>#creditNav>.buttonContainer {
     margin-right: 2.4vw;
-}
+} */
 
 .credit>.creditBody {
     display: flex;

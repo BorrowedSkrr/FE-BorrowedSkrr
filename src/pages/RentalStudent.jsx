@@ -8,6 +8,25 @@ import CustomPagination from "../components/paging/pagination";
 import ItemLike from "../components/listItem/item-like";
 import ListLike from "../components/list/list-like";
 import ListStudentRental from "../components/list/list-student-rental";
+import { styled } from "styled-components";
+
+const StyleGrid = styled.div`
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 6fr 1fr 3fr;
+    justify-items:center;
+    align-items: center;
+    border-radius: 0.417vw;
+    padding: 0 1.6rem;
+    cursor: pointer;
+    margin-top: 6.6rem;
+    
+    p {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: ${colors.gray2}; /* Set the font color to black */
+    }
+`
 
 const RentalStudent = () => {
     // 관심 리스트
@@ -65,8 +84,15 @@ const RentalStudent = () => {
             </Link>
             <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'2rem'}}>
                 <img src={iconHeart} alt="아이콘" style={{width: '3.2rem'}}/>
-                <p style={{fontSize:'3.2rem', fontWeight:'700'}}>관심 목록</p>
+                <p style={{fontSize:'3.2rem', fontWeight:'700'}}>대여 내역</p>
             </div>
+            {rentalData.length > 0 && 
+                <StyleGrid>
+                    <p style={{justifySelf:'start', paddingLeft: '130px'}}>제품명</p>
+                    <p>수량</p>
+                    <p>대여 일시</p>
+                </StyleGrid>
+            }
             {rentalData.length > 0 && 
                 <ListStudentRental data={slicedData}/>
             }

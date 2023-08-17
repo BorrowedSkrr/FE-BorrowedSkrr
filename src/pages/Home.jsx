@@ -124,9 +124,9 @@ function Home() {
                 <button id="viewButton">제품 보러가기</button>
             </div>
 
-            <footer id="homeFooter">
+            {/* <footer id="homeFooter">
                 <img src={likelion} alt="likelion" id="likelion"/>
-            </footer>
+            </footer> */}
         </div>
     )
 }

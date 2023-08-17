@@ -6,8 +6,8 @@ const StyleDiv = styled.div`
     display: flex;
     flex-direction: row;
     margin-left: 130px;
-    margin-bottom: 10px;
-    grid-column: 1 / 5;
+    margin-top: 1rem;
+    grid-column: 1 / 4;
     grid-row: 2 / 3;
     background-color: ${colors.gray1};
     justify-self: stretch;
@@ -37,7 +37,7 @@ const StyleGrid = styled.div`
     align-items: center;
     background-color: #fff;
     border-radius: 0.417vw;
-    padding: 10px 20px 10px 20px;
+    padding: 1rem 2rem 2rem 2rem;
     cursor: pointer;
 
     p {
@@ -48,7 +48,8 @@ const StyleGrid = styled.div`
 `
 
 const ItemStudentRental = (props) => {
-    const {img, name, num, date, by} = props;
+    // 제품 이미지 url, 제품명, 수량, 대여 일시, 사유
+    const {img, name, num, date, reason} = props;
     const [isStyleDivVisible, setIsStyleDivVisible] = useState(false); // 가시성 상태
 
     const toggleStyleDiv = () => {
@@ -59,11 +60,11 @@ const ItemStudentRental = (props) => {
         <StyleGrid onClick={toggleStyleDiv}>
             <div style={{display:'flex', flexDirection:'row', alignItems:'center', justifySelf:'start'}}>
                 <img 
-                    style={{width:'113px', height:'113px', padding:'10px'}}
+                    style={{width:'113px', height:'113px'}}
                     src={img}
                     alt='제품 이미지'
                 />
-                <p style={{marginLeft:'20px', fontWeight: '700'}}>{name}</p>
+                <p style={{marginLeft:'3rem', fontWeight: '700'}}>{name}</p>
             </div>
             <div style={{fontSize: '2rem'}}>
                 <p style={{fontWeight: '700'}}>{num}개</p>
@@ -71,12 +72,10 @@ const ItemStudentRental = (props) => {
             <div>
                 <p style={{color:`${colors.gray4}`}}>{date}</p>
             </div>
-            {isStyleDivVisible && (
-                <StyleDiv>
-                    <p style={{fontWeight:'700'}}>사유</p>
-                    <div>Lorem ipsum dolor sit amet consectetur. Mattis netus a ut suspendisse neque. Blandit semper porttitor nunc adipiscing gravida faucibus proin nunc. Eu a sit placerat amet non semper mauris iaculis. </div>
-                </StyleDiv>
-            )}
+            <StyleDiv>
+                <p style={{fontWeight:'700'}}>사유</p>
+                <div>Lorem ipsum dolor sit amet consectetur. Mattis netus a ut suspendisse neque. Blandit semper porttitor nunc adipiscing gravida faucibus proin nunc. Eu a sit placerat amet non semper mauris iaculis. </div>
+            </StyleDiv>
         </StyleGrid>
     );
 }

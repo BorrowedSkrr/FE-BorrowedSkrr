@@ -118,7 +118,7 @@ function Product() {
 
     return (
         <div class="Product">
-            <nav id="ProductNav">
+            {/* <nav id="ProductNav">
                 <div class="logo-small">
                     <Link to="/">
                     <img src={logo_small} alt="logo_small" id="logo_small"/>
@@ -128,7 +128,7 @@ function Product() {
                     <button id="button-product">PRODUCT</button>
                     <button id="button-login">MY PAGE</button>
                 </div>
-            </nav>
+            </nav> */}
 
             <div class="ProductBody">
                 <div className="ProductBanner">
@@ -452,9 +452,9 @@ function Product() {
                 </div>
             </div>
 
-            <footer id="ProductFooter">
+            {/* <footer id="ProductFooter">
                 <img src={likelion} alt="likelion" id="likelion" />
-            </footer>
+            </footer> */}
         </div>
     )
 }

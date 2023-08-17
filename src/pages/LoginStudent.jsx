@@ -6,7 +6,7 @@ import likelion from "../images/likelion.png";
 function LoginStudent() {
     return (
         <div class="loginStudent">
-            <nav id="loginStudentNav">
+            {/* <nav id="loginStudentNav">
                 <div class="logo-small">
                     <Link to="/">
                     <img src={logo_small} alt="logo_small" id="logo_small"/>
@@ -16,7 +16,7 @@ function LoginStudent() {
                     <button id="button-product">PRODUCT</button>
                     <button id="button-login"><Link to="/loginStudent">LOGIN</Link></button>
                 </div>
-            </nav>
+            </nav> */}
 
             <div class="loginStudentBody">        
                 <div class="loginButtonContianer">
@@ -43,9 +43,9 @@ function LoginStudent() {
                 </div>
             </div>
 
-            <footer id="loginStudentFooter">
+            {/* <footer id="loginStudentFooter">
                 <img src={likelion} alt="likelion" id="likelion" />
-            </footer>
+            </footer> */}
         </div>
     )
 }
