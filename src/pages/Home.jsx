@@ -11,9 +11,10 @@ import icon_number2 from "../images/icon-number2.png";
 import icon_skrr_purple from "../images/icon-skrr-purple.png";
 import likelion from "../images/likelion.png";
 
+
 function Home() {
     return (
-        <div class="home">
+        <div className="home">
             {/* <nav id="homeNav">
                 <div class="logo-small">
                     <Link to="/">
