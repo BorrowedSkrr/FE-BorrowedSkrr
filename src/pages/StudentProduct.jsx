@@ -62,20 +62,20 @@ function StudentProduct() {
     }, [redirectToCheckout, navigate]);
 
     return (
-        <div class="StudentProduct">
+        <div className="StudentProduct">
             <nav id="StudentProductNav">
-                <div class="logo-small">
+                <div className="logo-small">
                     <Link to="/">
                         <img src={logo_small} alt="logo_small" id="logo_small" />
                     </Link>
                 </div>
-                <div class="buttonContainer">
+                <div className="buttonContainer">
                     <button id="button-product">PRODUCT</button>
                     <button id="button-login">MY PAGE</button>
                 </div>
             </nav>
 
-            <div class="StudentProductBody">
+            <div className="StudentProductBody">
                 <div className="StudentProductBodyAll">
                     <button id="backButton"><Link to="/studentHome"><img src={icon_back} id="icon_back" alt="icon_back" />&nbsp;뒤로</Link></button>
 
@@ -141,7 +141,7 @@ function StudentProduct() {
                 {showForm && (
                     <div className="rentalShow2" style={{ zIndex: 1, position: 'absolute' }}>
                         <div className="rentalShowContainer2">
-                            <div class="rentalNumberBox">
+                            <div className="rentalNumberBox">
                                 <p id="rentalNumberTitle">수량 선택</p>
                                 <img src={button_minus} id="button_minus2" onClick={decreaseRentalNumber} alt="button_minus" />
                                 <div className="inputWithUnit">

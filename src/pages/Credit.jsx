@@ -40,71 +40,71 @@ function Credit() {
     };
 
     return (
-        <div class="credit">
+        <div className="credit">
             <nav id="creditNav">
-                <div class="logo-small">
+                <div className="logo-small">
                     <Link to="/">
                         <img src={logo_small} alt="logo_small" id="logo_small" />
                     </Link>
                 </div>
-                <div class="buttonContainer">
+                <div className="buttonContainer">
                     <button id="button-product">PRODUCT</button>
                     <button id="button-login">MY PAGE</button>
                 </div>
             </nav>
 
-            <div class="creditBody">
-                <div class="creditBox">
+            <div className="creditBody">
+                <div className="creditBox">
                     <img src={logo_skrr_black} id="logo_skrr_black" alt="logo_skrr_black"/>
                     <p id="creditTitle">결제하기</p>
                 </div>
 
-                <div class="creditContainer">
+                <div className="creditContainer">
                     <p id="creditNumber">총 2종류</p>
-                    <div class="creditProduct">
+                    <div className="creditProduct">
                         <img src={credit_product} id="credit_product" alt="credit_product"/>
-                        <div class="creditProductRight">
-                            <div class="creditProductBox">
+                        <div className="creditProductRight">
+                            <div className="creditProductBox">
                                 <p id="creditProductTitle">애플 에어팟 맥스</p>
                                 <p id="creditProductNumber">20개</p>
                                 <p id="creditProductTime">{currentYear}. {currentMonth}. {currentDay} ~ {futureYear}. {futureMonth}. {futureDay}.</p>
                             </div>
-                            <div class="creditProductBox2">
+                            <div className="creditProductBox2">
                                 <p id="creditProductPrice">120,000원</p>
                             </div>
                         </div>
                     </div>
-                    <div class="creditProduct">
+                    <div className="creditProduct">
                         <img src={credit_product} id="credit_product" alt="credit_product"/>
-                        <div class="creditProductRight">
-                            <div class="creditProductBox">
+                        <div className="creditProductRight">
+                            <div className="creditProductBox">
                                 <p id="creditProductTitle">애플 에어팟 맥스</p>
                                 <p id="creditProductNumber">20개</p>
                                 <p id="creditProductTime">{currentYear}. {currentMonth}. {currentDay} ~ {futureYear}. {futureMonth}. {futureDay}.</p>
                             </div>
-                            <div class="creditProductBox2">
+                            <div className="creditProductBox2">
                                 <p id="creditProductPrice">120,000원</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="creditBar"></div>
+                    <div className="creditBar"></div>
 
-                    <div class="creditDiscount">
+                    <div className="creditDiscount">
                         <p id="creditDiscountTitle">할인 적용</p>
-                        <div class="creditDiscountRight">
-                            <div class="creditRight1">
+                        <div className="creditDiscountRight">
+                            <div className="creditRight1">
                                 <p id="creditRight1Title">보유 쿠폰 0장</p>
                                 <input type="text" id="creditRight1Box"></input>
                             </div>
-                            <div class="creditRight2">
+                            <div className="creditRight2">
                                 <p id="creditRight2Title">포인트</p>
                                 <input type="text" id="creditRight2Box"></input>
                             </div>
                         </div>
                     </div>
 
-                    <div class="creditBar"></div>
+                    <div className="creditBar"></div>
 
                     <div class="creditWay">
                         <p id="creditWayTitle">결제 방식</p>
@@ -116,15 +116,15 @@ function Credit() {
                         </form>
                     </div>
 
-                    <div class="creditBar"></div>
+                    <div className="creditBar"></div>
 
-                    <div class="totalCredit">
+                    <div className="totalCredit">
                         <p id="totalCreditTitle">총 결제 내역</p>
                         <p id="totalCreditPrice">{totalPrice.toLocaleString()}원</p>
                     </div>
 
-                    <div class="noCreditBox" style={{ display: showNoCreditMessage ? 'flex' : 'none' }}>
-                        <div class="noCredit">결제 방식을 선택해주세요.</div>
+                    <div className="noCreditBox" style={{ display: showNoCreditMessage ? 'flex' : 'none' }}>
+                        <div className="noCredit">결제 방식을 선택해주세요.</div>
                     </div>
 
                     <div className="creditBtn">

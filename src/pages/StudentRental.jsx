@@ -23,39 +23,39 @@ function StudentRental() {
     const isFormValid = reason.trim() !== '';
 
     return (
-        <div class="StudentRental">
+        <div className="StudentRental">
             <nav id="StudentRentalNav">
-                <div class="logo-small">
+                <div className="logo-small">
                     <Link to="/">
                         <img src={logo_small} alt="logo_small" id="logo_small" />
                     </Link>
                 </div>
-                <div class="buttonContainer">
+                <div className="buttonContainer">
                     <button id="button-product">PRODUCT</button>
                     <button id="button-login">MY PAGE</button>
                 </div>
             </nav>
 
-            <div class="StudentRentalBody">
-                <div class="StudentRentalBox">
+            <div className="StudentRentalBody">
+                <div className="StudentRentalBox">
                     <img src={logo_skrr_black} id="logo_skrr_black" alt="logo_skrr_black" />
                     <p id="StudentRentalTitle">대여 신청</p>
                 </div>
                 
 
                 <form onSubmit={handleFormSubmit}>
-                    <div class="StudentRentalContainer">
+                    <div className="StudentRentalContainer">
                         <p id="StudentRentalNumber">총 1종류</p>
-                        <div class="StudentRentalProduct">
+                        <div className="StudentRentalProduct">
                             <img src={rental_product} id="rental_product" alt="rental_product" />
-                            <div class="StudentRentalBox2">
+                            <div className="StudentRentalBox2">
                                 <p id="StudentRentalTitle2">애플 에어팟 맥스</p>
                                 <p id="StudentRentalNumber2">10개</p>
                             </div>
                         </div>
 
-                        <div class="StudentRentalBar"></div>
-                        <div class="StudentRentalDay">
+                        <div className="StudentRentalBar"></div>
+                        <div className="StudentRentalDay">
                             <p id="StudentRentalDayTitle">예약 날짜</p>
                             <input
                                 type="date"
@@ -76,7 +76,7 @@ function StudentRental() {
                             />
                         </div>
 
-                        <div class="StudentRentalReason">
+                        <div className="StudentRentalReason">
                             <p id="StudentRentalReasonTitle">사유</p>
                             <textarea
                                 id="reason"

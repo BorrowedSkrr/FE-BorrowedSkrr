@@ -46,7 +46,7 @@ function SignStudent() {
     };
 
     return (
-        <div class="signStudent">
+        <div className="signStudent">
             <nav id="signStudentNav">
                 <div className="logo-small">
                     <Link to="/home">

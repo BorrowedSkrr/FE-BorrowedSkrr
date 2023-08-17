@@ -5,21 +5,21 @@ import likelion from "../images/likelion.png";
 
 function LoginStudent() {
     return (
-        <div class="loginStudent">
+        <div className="loginStudent">
             <nav id="loginStudentNav">
-                <div class="logo-small">
+                <div className="logo-small">
                     <Link to="/">
                     <img src={logo_small} alt="logo_small" id="logo_small"/>
                     </Link>
                 </div>
-                <div class="buttonContainer">
+                <div className="buttonContainer">
                     <button id="button-product">PRODUCT</button>
                     <button id="button-login"><Link to="/loginStudent">LOGIN</Link></button>
                 </div>
             </nav>
 
-            <div class="loginStudentBody">        
-                <div class="loginButtonContianer">
+            <div className="loginStudentBody">        
+                <div className="loginButtonContianer">
                     <button id="LoginstaffBtn"><Link to="/loginStaff">교직원</Link></button>
                     <button id="LoginstudentBtn">학생</button>
                 </div>
@@ -30,14 +30,14 @@ function LoginStudent() {
                     <p id="passwordTitle">비밀번호</p>
                     <input type="password" placeholder="비밀번호를 입력하세요" id="loginStudentPassword" />
 
-                    <div class="noAccess">접근권한 허용 후에 이용할 수 있어요.</div>
+                    <div className="noAccess">접근권한 허용 후에 이용할 수 있어요.</div>
 
-                    <div class="buttonContainer">
+                    <div className="buttonContainer">
                         <button type="submit" id="loginStudentButton">로그인</button>
                     </div>
                 </form>
 
-                <div class="pContainer5">
+                <div className="pContainer5">
                     <p id="p11">혹시, 처음이신가요?</p>
                     <p id="p11"><Link to="/SignStudent">회원가입하기</Link></p>
                 </div>
