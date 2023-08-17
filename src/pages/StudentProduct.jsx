@@ -63,7 +63,7 @@ function StudentProduct() {
 
     return (
         <div className="StudentProduct">
-            <nav id="StudentProductNav">
+            {/* <nav id="StudentProductNav">
                 <div className="logo-small">
                     <Link to="/">
                         <img src={logo_small} alt="logo_small" id="logo_small" />
@@ -73,7 +73,7 @@ function StudentProduct() {
                     <button id="button-product">PRODUCT</button>
                     <button id="button-login">MY PAGE</button>
                 </div>
-            </nav>
+            </nav> */}
 
             <div className="StudentProductBody">
                 <div className="StudentProductBodyAll">
@@ -170,4 +170,4 @@ function StudentProduct() {
     )
 }
 
-export default StudentProduct
+export default StudentProduct;

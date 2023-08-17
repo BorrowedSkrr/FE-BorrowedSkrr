@@ -6,7 +6,7 @@ import likelion from "../images/likelion.png";
 
 function CreditSuccess() {
     return (
-        <div class="CreditSuccess">
+        <div className="CreditSuccess">
             {/* <nav id="CreditSuccessNav">
                 <div class="logo-small">
                     <Link to="/">

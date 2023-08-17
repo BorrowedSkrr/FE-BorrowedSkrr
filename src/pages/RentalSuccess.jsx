@@ -7,7 +7,7 @@ import likelion from "../images/likelion.png";
 function RentalSuccess() {
     return (
         <div className="RentalSuccess">
-            <nav id="RentalSuccessNav">
+            {/* <nav id="RentalSuccessNav">
                 <div className="logo-small">
                     <Link to="/">
                         <img src={logo_small} alt="logo_small" id="logo_small" />
@@ -17,7 +17,7 @@ function RentalSuccess() {
                     <button id="button-product">PRODUCT</button>
                     <button id="button-login">MY PAGE</button>
                 </div>
-            </nav>
+            </nav> */}
 
             <div className="RentalSuccessBody">
                 <img src={logo_skrr_black} id="logo_skrr_black" alt="logo_skrr_black" />
@@ -28,12 +28,12 @@ function RentalSuccess() {
                     <button id="RentalSuccess_Home"><Link to="/home">홈으로 가기</Link></button>
                 </div>
             </div>
-
+{/* 
             <footer id="RentalSuccessFooter">
                 <img src={likelion} alt="likelion" id="likelion" />
-            </footer>
+            </footer> */}
         </div>
     )
 }
 
-export default RentalSuccess
+export default RentalSuccess;

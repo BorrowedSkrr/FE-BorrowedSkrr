@@ -24,7 +24,7 @@ function StudentRental() {
 
     return (
         <div className="StudentRental">
-            <nav id="StudentRentalNav">
+            {/* <nav id="StudentRentalNav">
                 <div className="logo-small">
                     <Link to="/">
                         <img src={logo_small} alt="logo_small" id="logo_small" />
@@ -34,7 +34,7 @@ function StudentRental() {
                     <button id="button-product">PRODUCT</button>
                     <button id="button-login">MY PAGE</button>
                 </div>
-            </nav>
+            </nav> */}
 
             <div className="StudentRentalBody">
                 <div className="StudentRentalBox">
@@ -98,11 +98,11 @@ function StudentRental() {
                 )}
             </div>
 
-            <footer id="StudentRentalFooter">
+            {/* <footer id="StudentRentalFooter">
                 <img src={likelion} alt="likelion" id="likelion" />
-            </footer>
+            </footer> */}
         </div>
     )
 }
 
-export default StudentRental
+export default StudentRental;

@@ -18,6 +18,10 @@ import CartStaff from './pages/CartStaff';
 import SubScribeStaff from './pages/SubscribeStaff';
 import LikeStudent from './pages/LikeStudent';
 import RentalStudent from './pages/RentalStudent';
+import StudentHome from './pages/StudentHome';
+import StudentProduct from './pages/StudentProduct';
+import RentalSuccess from './pages/RentalSuccess';
+import StudentRental from './pages/StudentRental';
 
 function App() {
   return (

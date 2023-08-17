@@ -40,7 +40,7 @@ function Credit() {
     };
 
     return (
-        <div class="credit">
+        <div className="credit">
             {/* <nav id="creditNav">
                 <div class="logo-small">
                     <Link to="/">
