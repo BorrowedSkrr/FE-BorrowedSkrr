@@ -38,6 +38,10 @@ function App() {
           <Route path="/creditSuccess" element={<CreditSuccess/>}/>
           <Route path='/myPageStaff' element={<MyPageStaff/>} />
           <Route path='/myPageStaffEdit' element={<MyPageStaffEdit/>} />
+          <Route path="/studentHome" element={<StudentHome/>}/>
+          <Route path="/studentProduct" element={<StudentProduct />} />
+          <Route path="/studentRental" element={<StudentRental />} />
+          <Route path="/rentalSuccess" element={<RentalSuccess />} />
           <Route path='/likeStaff' element={<LikeStaff/>}/>
           <Route path='/cartStaff' element={<CartStaff/>}/>
           <Route path='/subscribeStaff' element={<SubScribeStaff/>} />

@@ -12,6 +12,10 @@ import "./css/signStudent.css";
 import "./css/productDetail.css";
 import "./css/credit.css";
 import "./css/creditSuccess.css";
+import "./css/studentHome.css";
+import "./css/studentProduct.css";
+import "./css/studentRental.css";
+import "./css/rentalSuccess.css";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
