@@ -334,6 +334,7 @@ function Product() {
                     <div className="left">
                         {productData.map((product) => (
                             <div
+                                key={product.id}
                                 className={`product${product.id}`}
                                 style={{ opacity: product.remaining === 0 ? 0.4 : 1 }}
                             >
@@ -369,6 +370,7 @@ function Product() {
                     <div className="right">
                         {productData2.map((product) => (
                             <div
+                                key={product.id}
                                 className={`product${product.id}`}
                                 style={{ opacity: product.remaining === 0 ? 0.4 : 1 }}
                             >

@@ -106,7 +106,7 @@ function Credit() {
 
                     <div className="creditBar"></div>
 
-                    <div class="creditWay">
+                    <div className="creditWay">
                         <p id="creditWayTitle">결제 방식</p>
                         <form className="radioForm">
                             <label id="radioLabel">
