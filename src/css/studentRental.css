@@ -1,20 +1,20 @@
-.StudentRental>#StudentRentalNav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 5.4vw;
-    white-space: nowrap;
-}
-
-.StudentRental>#StudentRentalNav>.buttonContainer {
-    margin-right: 2.4vw;
-}
-
-.StudentRentalBody{
+.StudentRental{
+    width:100%;
+    margin:0;
+    padding:0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.StudentRentalBody{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width:100vw;
     white-space: nowrap;
 }
 
@@ -103,6 +103,10 @@
     margin-top:1.35vw;
 }
 
+.StudentRentalDay{
+    align-items: flex-start;
+}
+
 #StudentRentalDayTitle,
 #StudentRentalReasonTitle{
     font-weight:700;
@@ -132,6 +136,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(50%);
     color: #7F85A3;
     padding-right:1vw;
+    padding-left:1vw;
     cursor:pointer;
 }
 
@@ -156,6 +161,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-size:1vw;
     line-height:1.8vw;
     color:#FFFFFF;
+    padding-left:1vw;
+    padding-right:1vw;
+    padding-top:1vw;
+    padding-bottom:1vw;
 }
 
 .StudentRentalReason textarea:focus {
@@ -179,6 +188,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     line-height:1.15vw;
     color:#0F1015;
     margin-top:3.7vw;
+    margin-bottom:13vw;
 }
 
 #StudentRentalBtn a{
