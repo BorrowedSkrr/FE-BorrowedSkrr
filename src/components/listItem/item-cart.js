@@ -27,6 +27,7 @@ const StyleImg = styled.img`
 const ItemCart = (props) => {
     // 상품 이미지, 이름, 개수, 기간, 가격
     const {cartListener, img, name, num, period, price} = props;
+    
     // 선택 여부
     const [isCheck, setCheck] = useState(false);
 
@@ -42,9 +43,9 @@ const ItemCart = (props) => {
 
     useEffect(() => {
         if (isCheck){
-            cartListener(price);
+            cartListener(price, true);
         } else{
-            cartListener(-price);
+            cartListener(-price, false);
         }
     }, [isCheck])
 
