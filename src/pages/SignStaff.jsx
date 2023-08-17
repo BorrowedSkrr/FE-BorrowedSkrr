@@ -133,7 +133,7 @@ function SignStaff() {
                     </div>
                     <button className="fileUploadBtn" onClick={handleFileButtonClick}>파일선택</button>
 
-                    <div class="buttonContainer">
+                    <div className="buttonContainer">
                         {isIdAvailable && isPassword1Available && isPassword2Available && isPasswordCheckAvailable ? (
                             <Link to="/loginstaff">
                                 <button type="submit" id="signStaffButton">회원가입 완료</button>

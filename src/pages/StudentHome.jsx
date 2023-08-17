@@ -125,35 +125,35 @@ function StudentHome() {
     return (
         <div className="StudentHome">
             <nav id="StudentHomeNav">
-                <div class="logo-small">
+                <div className="logo-small">
                     <Link to="/">
                         <img src={logo_small} alt="logo_small" id="logo_small" />
                     </Link>
                 </div>
-                <div class="buttonContainer">
+                <div className="buttonContainer">
                     <button id="button-product">PRODUCT</button>
                     <button id="button-login">MY PAGE</button>
                 </div>
             </nav>
 
-            <div class="StudentHomeBody">
-                <div class="StudentHomeBox">
-                    <div class="StudentHomeleft">
+            <div className="StudentHomeBody">
+                <div className="StudentHomeBox">
+                    <div className="StudentHomeleft">
                         <img src={profile_teacher} alt="profile_teacher" id="profile_teacher"/>
-                        <div class="StudentHomePContainer">
+                        <div className="StudentHomePContainer">
                             <p id="StudentProfile">스컬고등학교 1학년 2반</p>
-                            <div class="StudentHomePContainer2">
+                            <div className="StudentHomePContainer2">
                                 <p id="StudentHomeName">김스컬</p>
                                 <p id="StudentHomeTitle">학생</p>
                             </div>
                         </div>
                     </div>
-                    <div class="StudentHomeBtnContainer">
+                    <div className="StudentHomeBtnContainer">
                         <button id="StudentHomeBtn1">정보수정</button>
                         <button id="StudentHomeBtn2">로그아웃</button>
                     </div>
                 </div>
-                <div class="StudentHomeBtnContainer2">
+                <div className="StudentHomeBtnContainer2">
                     <button id="StudentHomeBtn3">
                         <img src={white_line_heartHome} alt="white_line_heartHome" id="white_line_heartHome"/>
                         <p id="StudentHomeBtnP1">관심목록</p>
@@ -166,31 +166,31 @@ function StudentHome() {
 
                 <p id="StudentHomeP">우리 학교 대여 현황</p>
                 
-                <div class="menuBar2">
+                <div className="menuBar2">
                     <button
                         id="notebook"
-                        class={activeButton === "notebook" ? "activeButton" : ""}
+                        className={activeButton === "notebook" ? "activeButton" : ""}
                         onClick={() => handleButtonClicked("notebook")}
                     >
                         💻 노트북/스마트기어
                     </button>
                     <button
                         id="sound"
-                        class={activeButton === "sound" ? "activeButton" : ""}
+                        className={activeButton === "sound" ? "activeButton" : ""}
                         onClick={() => handleButtonClicked("sound")}
                     >
                         🎧 사운드
                     </button>
                     <button
                         id="camera"
-                        class={activeButton === "camera" ? "activeButton" : ""}
+                        className={activeButton === "camera" ? "activeButton" : ""}
                         onClick={() => handleButtonClicked("camera")}
                     >
                         📸 카메라/촬영
                     </button>
                     <button
                         id="game"
-                        class={activeButton === "game" ? "activeButton" : ""}
+                        className={activeButton === "game" ? "activeButton" : ""}
                         onClick={() => handleButtonClicked("game")}
                     >
                         🎮 게임/VR
@@ -199,10 +199,11 @@ function StudentHome() {
                 <p id="StudentHomeP3" style={{ display: productData.length === 0 && productData2.length === 0 ? 'block' : 'none'}}>아직 대여 현황이 없습니다</p>
 
                 {productData.length > 0 || productData2.length > 0 ? (
-                    <div class="StudentHomeList">
+                    <div className="StudentHomeList">
                         <div className="StudentHomeleft2">
                             {productData.map((product) => (
                                 <div
+                                    key={product.id}
                                     className={`product${product.id}`}
                                     style={{ opacity: product.remaining === 0 ? 0.4 : 1 }}
                                 >
@@ -231,6 +232,7 @@ function StudentHome() {
                         <div className="StudentHomeright">
                             {productData2.map((product) => (
                                 <div
+                                    key={product.id}
                                     className={`product${product.id}`}
                                     style={{ opacity: product.remaining === 0 ? 0.4 : 1 }}
                                 >

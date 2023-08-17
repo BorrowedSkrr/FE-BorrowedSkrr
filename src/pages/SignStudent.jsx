@@ -46,7 +46,7 @@ function SignStudent() {
     };
 
     return (
-        <div class="signStudent">
+        <div className="signStudent">
             <nav id="signStudentNav">
                 <div className="logo-small">
                     <Link to="/home">
@@ -113,7 +113,7 @@ function SignStudent() {
                     <p id="InformationTitle">학년/반/번호</p>
                     <input type="text" placeholder="ex. 1학년 1반 1번" id="signStudentInformation" />
 
-                    <div class="buttonContainer">
+                    <div className="buttonContainer">
                         {isIdAvailable && isPassword1Available && isPassword2Available && isPasswordCheckAvailable ? (
                             <Link to="/loginstudent">
                                 <button type="submit" id="signStudentButton">회원가입 완료</button>

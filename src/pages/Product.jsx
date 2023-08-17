@@ -234,18 +234,18 @@ function Product() {
     return (
         <div className="Product">
             <nav id="ProductNav">
-                <div class="logo-small">
+                <div className="logo-small">
                     <Link to="/">
                         <img src={logo_small} alt="logo_small" id="logo_small" />
                     </Link>
                 </div>
-                <div class="buttonContainer">
+                <div className="buttonContainer">
                     <button id="button-product">PRODUCT</button>
                     <button id="button-login">MY PAGE</button>
                 </div>
             </nav>
 
-            <div class="ProductBody">
+            <div className="ProductBody">
                 <div className="ProductBanner">
                     <img src={button_left} id="button_left" onClick={() => handleSlideChange(-1)} alt="button_left" />
                     <div className="slides">
@@ -270,7 +270,7 @@ function Product() {
 
                 <p id="ProductTitle">테크 제품</p>
 
-                <div class="ProductsearhBox">
+                <div className="ProductsearhBox">
                     <input
                         type="search"
                         id="productSearch"
@@ -282,13 +282,13 @@ function Product() {
                     <img src={icon_search} id="icon_search" alt="icon_search" />
                 </div>
 
-                <div class="sortContainer">
-                    <div class="sortSelect" onClick={toggleDropdown}>
+                <div className="sortContainer">
+                    <div className="sortSelect" onClick={toggleDropdown}>
                         <img src={icon_sort} alt="icon_sort" id="icon_sort" />
                         <p id="sortTitle">{selectedOption}</p>
                     </div>
                     {isDropdownVisible && (
-                        <div class="dropdown-options" id="dropdown-options">
+                        <div className="dropdown-options" id="dropdown-options">
                             {['기본', '인기순', '저가순', '고가순'].map((option) => (
                                 <div class="dropdown-option" key={option} onClick={() => handleOptionClick(option)}>
                                     <img src={clickStatus[option] ? yescheck_radio : notcheck_radio} alt="radio" id="notcheck_radio" />
@@ -299,41 +299,42 @@ function Product() {
                     )}
                 </div>
 
-                <div class="menuBar">
+                <div className="menuBar">
                     <button
                         id="notebook"
-                        class={activeButton === "notebook" ? "activeButton" : ""}
+                        className={activeButton === "notebook" ? "activeButton" : ""}
                         onClick={() => handleButtonClicked("notebook")}
                     >
                         💻 노트북/스마트기어
                     </button>
                     <button
                         id="sound"
-                        class={activeButton === "sound" ? "activeButton" : ""}
+                        className={activeButton === "sound" ? "activeButton" : ""}
                         onClick={() => handleButtonClicked("sound")}
                     >
                         🎧 사운드
                     </button>
                     <button
                         id="camera"
-                        class={activeButton === "camera" ? "activeButton" : ""}
+                        className={activeButton === "camera" ? "activeButton" : ""}
                         onClick={() => handleButtonClicked("camera")}
                     >
                         📸 카메라/촬영
                     </button>
                     <button
                         id="game"
-                        class={activeButton === "game" ? "activeButton" : ""}
+                        className={activeButton === "game" ? "activeButton" : ""}
                         onClick={() => handleButtonClicked("game")}
                     >
                         🎮 게임/VR
                     </button>
                 </div>
 
-                <div class="productList">
+                <div className="productList">
                     <div className="left">
                         {productData.map((product) => (
                             <div
+                                key={product.id}
                                 className={`product${product.id}`}
                                 style={{ opacity: product.remaining === 0 ? 0.4 : 1 }}
                             >
@@ -369,6 +370,7 @@ function Product() {
                     <div className="right">
                         {productData2.map((product) => (
                             <div
+                                key={product.id}
                                 className={`product${product.id}`}
                                 style={{ opacity: product.remaining === 0 ? 0.4 : 1 }}
                             >
@@ -403,7 +405,7 @@ function Product() {
                     </div>
                 </div>
 
-                <div class="addView">
+                <div className="addView">
                     <p id="p14">더보기</p>
                     <img src={button_more} id="button_more" alt="button_more" />
                 </div>

@@ -284,7 +284,7 @@ function ProductDetail() {
                                     </div>
                                     <img src={button_plus} id="button_plus1" onClick={increaseRentalDay} alt="button_plus" />
                                 </div>
-                                <div class="rentalNumberBox">
+                                <div className="rentalNumberBox">
                                     <p id="rentalNumberTitle">수량 선택</p>
                                     <img src={button_minus} id="button_minus2" onClick={decreaseRentalNumber} alt="button_minus" />
                                     <div className="inputWithUnit">
