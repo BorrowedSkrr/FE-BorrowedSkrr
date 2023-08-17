@@ -2,6 +2,7 @@ import styled from "styled-components";
 import colors from "../../styles/colors";
 
 const StyleButton = styled.button`
+    width:100%;
     flex-grow: 1;
     color: #ffffff;
     background-color: ${colors.gray5};
@@ -14,9 +15,9 @@ const StyleButton = styled.button`
     gap: 0.833vw;
 `;
 
-const ButtonMypage = ({ img, alt, text, onClick }) => {
+const ButtonMypage = ({ img, alt, text }) => {
     return (
-        <StyleButton onClick={() => onClick()}>
+        <StyleButton>
             <img
                 src={require(`../../images/${img}`)}
                 alt={`${alt}`}

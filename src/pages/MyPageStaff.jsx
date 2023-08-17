@@ -1,20 +1,14 @@
 import axios from 'axios';
-import Header from "../components/Header"
 import ButtonMypage from "../components/button/button-mypage";
-import ListManageStudent from "../components/list/list-manage-student";
 import colors from "../styles/colors";
 import { useEffect, useState } from 'react';
-import Pagination from 'react-bootstrap/Pagination';
-import CustomPagination from '../components/paging/pagination';
 import MyPageStudent from '../components/MyPage-Student';
 import MyPageRental from '../components/MyPage-Rental';
 import imgProfile from "../images/profile-teacher.svg";
-import imgCopy from "../images/icon-copy.svg";
 import { styled } from 'styled-components';
 import MyPageCopy from '../components/MyPage-Copy';
-import Modal from '../components/modal/modal';
-import Button from 'react-bootstrap/Button';
 import CustomModal from '../components/modal/customModal';
+import { Link } from 'react-router-dom';
 
 const StyleButton = styled.button`
     background-color: ${colors.gray4};
@@ -135,9 +129,9 @@ const MyPageStaff = () => {
 
             
             <div style={{width:'100%', display: 'grid', gridAutoFlow: 'row', gridTemplateColumns: '1fr 1fr 1fr', gap: "1vw"}}>
-                <ButtonMypage img={'white-line-heart.png'} alt={'아이콘'} text={"관심목록"} />
-                <ButtonMypage img={'icon-shop-bag.svg'} alt={'아이콘'} text={"장바구니"} />
-                <ButtonMypage img={'icon-money.svg'} alt={'아이콘'} text={"구독 내역"} />
+                <Link to="/likeStaff"><ButtonMypage img={'white-line-heart.png'} alt={'아이콘'} text={"관심목록"} /></Link>
+                <Link to="/cartStaff"><ButtonMypage img={'icon-shop-bag.svg'} alt={'아이콘'} text={"장바구니"} /></Link>
+                <Link to="/subscribeStaff"><ButtonMypage img={'icon-money.svg'} alt={'아이콘'} text={"구독 내역"} /></Link>
             </div>
 
             <MyPageStudent studentData={studentData} studentButtonListener={studentButtonListener}/>
