@@ -24,16 +24,14 @@ function LoginStaff() {
                     <button id="student"><Link to="/loginStudent">학생</Link></button>
                 </div>
                 <p id="loginStaffTitle">교직원 로그인</p>
-                <form>
+                <form id="loginStaffForm">
                     <p id="idTitle">아이디</p>
                     <input type="text" placeholder="아이디를 입력하세요" id="loginStaffId"/>
                     <p id="passwordTitle">비밀번호</p>
                     <input type="password" placeholder="비밀번호를 입력하세요" id="loginStaffPassword"/>
-
-                    <div className="buttonContainer">
-                        <button type="submit" id="loginStaffButton">로그인</button>
-                    </div>
                 </form>
+
+                <button type="submit" id="loginStaffButton">로그인</button>
 
                 <div className="pContainer5">
                     <p id="p11">혹시, 처음이신가요?</p>
@@ -41,9 +39,7 @@ function LoginStaff() {
                 </div>
             </div>
 
-            {/* <footer id="loginStaffFooter">
-                <img src={likelion} alt="likelion" id="likelion" />
-            </footer> */}
+            <footer id="loginStaffFooter"></footer>
         </div>
     )
 }

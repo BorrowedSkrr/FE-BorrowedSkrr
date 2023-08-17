@@ -67,7 +67,7 @@ function SignStudent() {
 
                 <p id="signStudentTitle">학생 회원가입</p>
 
-                <form onSubmit={handleFormSubmit}>
+                <form onSubmit={handleFormSubmit} id="signStudentForm">
                     <p id="NameTitle">이름</p>
                     <input type="text" placeholder="반드시 본명으로 입력" id="signStudentName" />
 
@@ -81,18 +81,20 @@ function SignStudent() {
 
                     <p id="PasswordTitle">비밀번호</p>
                     <input type="password" placeholder="영문, 숫자 포함 8자리 이상" id="signStudentPassword" onChange={handlePasswordChange} />
-                    {(isPasswordConfirmationStarted && !isPassword1Available) && (
-                        <p id="Password1Explain" style={{ color: "#FF5D47" }}>✓ 8자 이상 입력</p>
-                    )}
-                    {(isPasswordConfirmationStarted && !isPassword2Available) && (
-                        <p id="Password2Explain" style={{ color: "#FF5D47" }}>✓ 영문, 숫자 포함</p>
-                    )}
-                    {isPassword1Available && (
-                        <p id="Password1Explain">✓ 8자 이상 입력</p>
-                    )}
-                    {isPassword2Available && (
-                        <p id="Password2Explain">✓ 영문, 숫자 포함</p>
-                    )}
+                    <div class="psExplain">
+                        {(isPasswordConfirmationStarted && !isPassword1Available) && (
+                            <p id="Password1Explain" style={{ color: "#FF5D47" }}>✓ 8자 이상 입력</p>
+                        )}
+                        {(isPasswordConfirmationStarted && !isPassword2Available) && (
+                            <p id="Password2Explain" style={{ color: "#FF5D47" }}>✓ 영문, 숫자 포함</p>
+                        )}
+                        {isPassword1Available && (
+                            <p id="Password1Explain">✓ 8자 이상 입력</p>
+                        )}
+                        {isPassword2Available && (
+                            <p id="Password2Explain">✓ 영문, 숫자 포함</p>
+                        )}
+                    </div>
 
                     <p id="CheckPasswordTitle">비밀번호 확인</p>
                     <input type="password" placeholder="영문, 숫자 포함 8자리 이상" id="signStudentPasswordCheck" onChange={handlePasswordChange} />
@@ -112,17 +114,15 @@ function SignStudent() {
                     
                     <p id="InformationTitle">학년/반/번호</p>
                     <input type="text" placeholder="ex. 1학년 1반 1번" id="signStudentInformation" />
+                </form>
 
-                    <div className="buttonContainer">
-                        {isIdAvailable && isPassword1Available && isPassword2Available && isPasswordCheckAvailable ? (
+                {isIdAvailable && isPassword1Available && isPassword2Available && isPasswordCheckAvailable ? (
                             <Link to="/loginstudent">
                                 <button type="submit" id="signStudentButton">회원가입 완료</button>
                             </Link>
                         ) : (
                             <button type="submit" id="signStudentButton" disabled>회원가입 완료</button>
                         )}
-                    </div>
-                </form>
             </div>
 {/* 
             <footer id="signStudentFooter">

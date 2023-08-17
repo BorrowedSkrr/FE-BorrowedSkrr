@@ -1,21 +1,19 @@
-.loginStaff>#loginStaffNav {
+.loginStaff{
+    width:100%;
+    margin:0;
+    padding:0;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 5.4vw;
-    white-space: nowrap;
-}
-
-.loginStaff>#loginStaffNav>.buttonContainer {
-    margin-right: 1.6vw;
-}
-
-.loginStaff>.loginStaffBody{
-    display:flex;
     justify-content: center;
     align-items: center;
+}
+
+.loginStaffBody{
+    display:flex;
     flex-direction: column;
-    white-space: nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width:100vw;
 }
 
 .loginStaff>.loginStaffBody>.loginButtonContianer{
@@ -48,23 +46,29 @@
 }
 
 #loginStaffTitle{
-    margin-top:3vw;
+    margin-top:4vw;
     font-weight:700;
     font-size:1.2vw;
     line-height:1.4vw;
     color:#FFFFFF;
 }
 
+#loginStaffForm{
+   width:29vw;
+    text-align: left;
+    margin-top:1.6vw; 
+}
+
 .loginStaff>.loginStaffBody>form>#idTitle,
 .loginStaff>.loginStaffBody>form>#passwordTitle{
-    font-weight:400;
-    font-size:0.75vw;
-    line-height:0.75vw;
+    font-weight:700;
+    font-size:0.8vw;
+    line-height:0.8vw;
     color:#7F85A3;
 }
 
 .loginStaff>.loginStaffBody>form>#passwordTitle{
-    margin-top:0.6vw;
+    margin-top:1.6vw;
 }
 
 #loginStaffId,
@@ -80,6 +84,7 @@
     font-size:1vw;
     line-height:1vw;
     color:#FFFFFF;
+    margin-top:0.5vw;
 }
 
 #loginStaffId::placeholder,
@@ -88,11 +93,6 @@
     font-size: 0.75vw;
     line-height: 0.75vw;
     color: #7F85A3;
-}
-
-.loginStaff>.loginStaffBody>form>.buttonContainer{
-    display:flex;
-    justify-content: center;
 }
 
 #loginStaffButton{
@@ -110,16 +110,18 @@
 }
 
 .loginStaff>.loginStaffBody>.pContainer5{
-    margin-top: 0.5vw;
+    margin-top: 1.5vw;
     display:flex;
     gap:1vw;
 }
 
 #p11{
+    height:0.8vw;
     font-weight:700;
     font-size:0.8vw;
     line-height:0.8vw;
     color:#7F85A3;
+    margin-bottom:3.7vw;
 }
 
 #p11>a{
@@ -127,31 +129,7 @@
     text-decoration: underline;
 }
 
-#loginStaffFooter {
-    width: 100vw;
-    height: 8vw;
-    background-color: #191B24;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+#loginStaffFooter{
     position: fixed;
     bottom: 0;
-}
-
-#IdExplain,
-#Password1Explain,
-#Password2Explain,
-#PasswordCheckExplain {
-    position: absolute;
-    font-weight:500;
-    font-size:0.65vw;
-    line-height:0.65vw;
-    color:#D2F75A;
-    margin:0;
-    margin-top:0.5vw;
-}
-
-#Password2Explain{
-    margin-top:1.5vw;
 }
