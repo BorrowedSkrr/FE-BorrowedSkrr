@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
 import logo_small from "../images/logo-small.png";
 import logo_title from "../images/logo-title.png";
@@ -12,25 +12,6 @@ import icon_skrr_purple from "../images/icon-skrr-purple.png";
 import likelion from "../images/likelion.png";
 
 function Home() {
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        fetch('/json/data.json', {
-            headers: {
-                Accept: 'application/json',
-            },
-        })
-            .then((response) => response.json())
-            .then((jsonData) => {
-                setData(jsonData);
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-    }, []);
-
-    console.log('Data:', data);
-
     return (
         <div className="home">
             <nav id="homeNav">
@@ -44,19 +25,6 @@ function Home() {
                     <button id="button-login"><Link to="/loginStaff">LOGIN</Link></button>
                 </div>
             </nav>
-
-            <div className="ex">
-                <h1>User List</h1>
-                <ul>
-                    {data.map((item, index) => (
-                        <li key={index}>
-                            <p>Name: {item.name}</p>
-                            <p>Age: {item.age}</p>
-                            <p>City: {item.city}</p>
-                        </li>
-                    ))}
-                </ul>
-            </div>
 
             <div className="homeBody">
                 <div className="homeTitle">
