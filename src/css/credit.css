@@ -1,20 +1,19 @@
-/* .credit>#creditNav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 5.4vw;
-    white-space: nowrap;
-}
-
-.credit>#creditNav>.buttonContainer {
-    margin-right: 2.4vw;
-} */
-
-.credit>.creditBody {
+.credit{
+    width:100%;
+    margin:0;
+    padding:0;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.creditBody {
+    display:flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width:100vw;
     white-space: nowrap;
 }
 
@@ -34,6 +33,7 @@
 }
 
 #creditTitle{
+    height:1.9vw;
     font-weight: 700;
     font-size: 1.6vw;
     line-height: 1.9vw;
@@ -44,7 +44,7 @@
 
 .creditContainer{
     width:39vw;
-    margin-top: 3.9vw;
+    margin-top: 3.4vw;
 }
 
 #creditNumber{
@@ -54,6 +54,7 @@
     font-size:1.2vw;
     line-height:1.4vw;
     color:#FFFFFF;
+    white-space: nowrap;
 }
 
 .creditProduct{
@@ -75,12 +76,16 @@
     width:32vw;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .creditProductBox{
+    width:70%;
     height:5.5vw;
     margin-left:1.5vw;
-    margin-top: 0.6vw;
+    display:flex;
+    flex-direction:column;
+    align-items: flex-start;
 }
 
 #creditProductTitle,
@@ -106,8 +111,12 @@
 }
 
 .creditProductBox2{
+    width:30%;
     height:5.5vw;
-    margin-top:0.6vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #creditProductPrice{
@@ -116,7 +125,6 @@
     font-size:1.4vw;
     line-height: 1.65vw;
     color:#FFFFFF;
-    margin-top: 1.9vw;
 }
 
 .creditBar{
@@ -129,6 +137,7 @@
     width:39vw;
     display:flex;
     justify-content: space-between;
+    align-items: flex-start;
 }
 
 #creditDiscountTitle{
@@ -137,6 +146,7 @@
     line-height: 1.4vw;
     color:#FFFFFF;
     margin-left:1vw;
+    margin-top:1.8vw;
 }
 
 .creditRight1,
@@ -145,6 +155,7 @@
     gap:1vw;
     margin-top:1.8vw;
     justify-content: flex-end;
+    align-items: center;
 }
 
 .creditRight2{
@@ -153,6 +164,7 @@
 
 #creditRight1Title,
 #creditRight2Title{
+    height:0.8vw;
     font-weight:700;
     font-size:0.8vw;
     line-height: 0.8vw;
@@ -280,17 +292,7 @@ background: url('../images/check-radio.png') no-repeat center center / contain;
     color:#0F1015;
     margin-top:9.75vw;
     cursor:pointer;
-}
-
-#creditFooter{
-    width: 100vw;
-    height: 8vw;
-    background-color: #191B24;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 6.75vw;
+    margin-bottom:5.2vw;
 }
 
 #creditButton a{

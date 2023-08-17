@@ -342,6 +342,9 @@ a{
     width:8vw;
     height:3vw;
     text-align: left;
+    display:flex;
+    flex-direction: column;
+    gap:0.5vw;
 }
 
 #p12{
