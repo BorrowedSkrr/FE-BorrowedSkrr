@@ -2,6 +2,9 @@
     width:100%;
     margin:0;
     padding:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .signStaffBody {
@@ -152,6 +155,7 @@
     color:#0F1015;
     cursor:pointer;
     margin-bottom:12.2vw;
+    white-space: nowrap;
 }
 
 #IdExplain,
