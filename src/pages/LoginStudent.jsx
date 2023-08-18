@@ -20,7 +20,7 @@ function LoginStudent() {
 
             <div className="loginStudentBody">        
                 <div className="loginButtonContianer">
-                    <button id="LoginstaffBtn"><Link to="/loginStaff">교직원</Link></button>
+                <Link to="/loginStaff"><button id="LoginstaffBtn">교직원</button></Link>
                     <button id="LoginstudentBtn">학생</button>
                 </div>
                 <p id="loginStudentTitle">학생 로그인</p>
@@ -37,7 +37,7 @@ function LoginStudent() {
 
                 <div className="pContainer5">
                     <p id="p11">혹시, 처음이신가요?</p>
-                    <p id="p11"><Link to="/SignStudent">회원가입하기</Link></p>
+                    <Link to="/SignStudent"><p id="p11">회원가입하기</p></Link>
                 </div>
             </div>
 

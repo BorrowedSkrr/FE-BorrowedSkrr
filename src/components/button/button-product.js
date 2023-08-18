@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import colors from "../../styles/colors";
+import { Link } from "react-router-dom";
 
 const StyleButton = styled.button`
     width: 7vw;
@@ -12,9 +13,13 @@ const StyleButton = styled.button`
 
 const ButtonProduct = () => {
     return (
-        <StyleButton>
-            <p>Product</p>
-        </StyleButton>
+        <>
+            <Link to="/product">
+                <StyleButton>
+                    <p>Product</p>
+                </StyleButton>
+            </Link>
+        </>
     )
 }
 

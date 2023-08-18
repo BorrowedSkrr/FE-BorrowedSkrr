@@ -15,9 +15,14 @@ const StyleButton = styled.button`
 const ButtonLogin = () => {
     
     return (
-        <StyleButton>
-            <Link to="/loginStaff"><p style={{color: `${colors.black}`}}>LOGIN</p></Link>
-        </StyleButton>
+        <>
+            <Link to="/loginStaff">
+                <StyleButton>
+                    <p style={{color: `${colors.black}`}}>LOGIN</p>
+                </StyleButton>
+            </Link>
+        </>
+
     )
 }
 

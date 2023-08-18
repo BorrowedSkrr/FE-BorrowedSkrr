@@ -76,7 +76,7 @@ function LoginStaff() {
             <div className="loginStaffBody">
                 <div className="loginButtonContianer">
                     <button id="staff">교직원</button>
-                    <button id="student"><Link to="/loginStudent">학생</Link></button>
+                    <Link to="/loginStudent"><button id="student">학생</button></Link>
                 </div>
                 <p id="loginStaffTitle">교직원 로그인</p>
                 <form id="loginStaffForm">
@@ -90,7 +90,7 @@ function LoginStaff() {
 
                 <div className="pContainer5">
                     <p id="p11">혹시, 처음이신가요?</p>
-                    <p id="p11"><Link to="/SignStaff">회원가입하기</Link></p>
+                    <Link to="/SignStaff"><p id="p11">회원가입하기</p></Link>
                 </div>
             </div>
 

@@ -26,7 +26,7 @@ function CreditSuccess() {
                     <p id="CreditSuccessSubTitle1">학생들에게 더 나은 교육환경을 선물하셨네요!</p>
                     <p id="CreditSuccessSubTitle2">배송까지 일주일정도 걸려요</p>
                 </div>
-                <button id="CreditSuccess_Home"><Link to="/home">홈으로 가기</Link></button>
+                <Link to="/home"><button id="CreditSuccess_Home">홈으로 가기</button></Link>
             </div>
             
             <footer id="CreditSuccessFooter2"></footer>
