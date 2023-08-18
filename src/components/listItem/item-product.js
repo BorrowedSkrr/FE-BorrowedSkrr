@@ -66,16 +66,16 @@ const DivNum = styled.div`
 const ItemProduct = (props) => {
     
     // id, 상품 이미지, 이름, 7일 가격, 30일 가격, 수량
+    // const {id, img, name, price7, price30, num} = props;
     const {id, img, name, price7, price30, num} = props;
 
     return (
-        <Link to={`/detail/${id}`} key={id}>
+        <Link to={`/productDetail/${id}`} key={id}>
             <StyleItem>
                 <img src={img} alt="제품 사진" style={{width:'13.3rem'}}/>
                 <DivRight>
                     <DivTop>
                         <p style={{color:`${colors.gray3}`, fontWeight: '700', fontSize:'2rem'}}>{name}</p>
-                        <img src={iconBoldHeart} alt="하트" style={{width:'3.2rem'}}/>
                     </DivTop>
                     <div style={{width:'100%', height:'2px', background:`${colors.gray1}`}}></div>
                     <DivBottom>
