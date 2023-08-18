@@ -5,7 +5,7 @@ import likelion from "../images/likelion.png";
 import Api from '../api';
 
 function LoginStaff() {
-    const [id, setId] = useState('')
+/*     const [id, setId] = useState('')
     const [pw, setPw] = useState('')
 
     const handleIdChange = (e) => {
@@ -19,7 +19,7 @@ function LoginStaff() {
     };
 
     const onClickLogin = () => {
-        console.log(id,pw);
+        console.log(id,pw); */
         // Api.post("accounts/api-auth/login/"
         // ,{
         //     classnetid : id,
@@ -37,7 +37,7 @@ function LoginStaff() {
         //     console.log(err);
         // })
 
-        const fetchData = async () => {
+        /* const fetchData = async () => {
             try{
                 const res = await Api.post("/accounts/api-auth/login/",{
                     headers: {
@@ -58,7 +58,7 @@ function LoginStaff() {
         };
         fetchData();
     }
-
+ */
     return (
         <div className="loginStaff">
             {/* <nav id="loginStaffNav">
@@ -74,19 +74,22 @@ function LoginStaff() {
             </nav> */}
 
             <div className="loginStaffBody">
-                <div className="loginButtonContianer">
-                    <button id="staff">교직원</button>
-                    <Link to="/loginStudent"><button id="student">학생</button></Link>
-                </div>
-                <p id="loginStaffTitle">교직원 로그인</p>
+                <p id="loginStaffTitle">로그인</p>
                 <form id="loginStaffForm">
                     <p id="idTitle">아이디</p>
-                    <input type="text" placeholder="아이디를 입력하세요" id="loginStaffId" onChange={handleIdChange}/>
+                    <input type="text" placeholder="아이디를 입력하세요" id="loginStaffId"/>
                     <p id="passwordTitle">비밀번호</p>
-                    <input type="password" placeholder="비밀번호를 입력하세요" id="loginStaffPassword" onChange={handlePasswordChange}/>
+                    <input type="password" placeholder="비밀번호를 입력하세요" id="loginStaffPassword"/>
                 </form>
 
-                <button type="button" id="loginStaffButton" onClick={onClickLogin}>로그인</button>
+                <div className="loginBtnContainer">
+                    <Link to="/product">
+                        <button type="button" id="loginStaffButton">교직원으로 로그인</button>
+                    </Link>
+                    <Link to="/studentHome">
+                        <button type="button" id="loginStudentButton">학생으로 로그인</button>
+                    </Link>
+                </div>
 
                 <div className="pContainer5">
                     <p id="p11">혹시, 처음이신가요?</p>

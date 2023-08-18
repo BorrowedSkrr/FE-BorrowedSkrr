@@ -18,64 +18,33 @@
     width:100vw;
 }
 
-.loginStaff>.loginStaffBody>.loginButtonContianer{
-    display:flex;
-    gap:1vw;
-    margin-top:2vw;
-}
-
-#staff,
-#student{
-    width:9vw;
-    height:3vw;
-    border-radius:0.4vw;
-    border:none;
-    background:#8270FF;
-    font-weight:700;
-    font-size:1vw;
-    line-height:1vw;
-    color:#FFFFFF;
-    cursor:pointer;
-}
-
-#student{
-    background:#2A2A3A;
-}
-
-#student>a{
-    text-decoration: none;
-    color:#FFFFFF;
-}
-
 #loginStaffTitle{
-    margin-top:4vw;
+    margin-top:8rem;
     font-weight:700;
-    font-size:1.2vw;
-    line-height:1.4vw;
+    font-size:2.4rem;
     color:#FFFFFF;
 }
 
 #loginStaffForm{
-   width:29vw;
+    width:29vw;
     text-align: left;
-    margin-top:1.6vw; 
+    margin-top:3.2rem; 
 }
 
 .loginStaff>.loginStaffBody>form>#idTitle,
 .loginStaff>.loginStaffBody>form>#passwordTitle{
     font-weight:700;
-    font-size:0.8vw;
-    line-height:0.8vw;
+    font-size:1.6rem;
     color:#7F85A3;
 }
 
 .loginStaff>.loginStaffBody>form>#passwordTitle{
-    margin-top:1.6vw;
+    margin-top:3.2rem;
 }
 
 #loginStaffId,
 #loginStaffPassword{
-    width:29vw;
+    width:100%;
     height:3.2vw;
     border-radius:0.4vw;
     background-color:#191B24;
@@ -84,21 +53,25 @@
     outline:none;
     font-weight:400;
     font-size:1vw;
-    line-height:1vw;
     color:#FFFFFF;
-    margin-top:0.5vw;
+    margin-top:1rem;
 }
 
 #loginStaffId::placeholder,
 #loginStaffPassword::placeholder{
     font-weight: 400;
-    font-size: 0.75vw;
-    line-height: 0.75vw;
+    font-size: 1.5rem;
     color: #7F85A3;
 }
 
+.loginBtnContainer{
+    display:flex;
+    width:27vw;
+    justify-content: space-between;
+}
+
 #loginStaffButton{
-    width:12.6vw;
+    width:13.1vw;
     height:3.2vw;
     margin-top:4.4vw;
     border:none;
