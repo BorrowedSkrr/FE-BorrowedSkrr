@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import ButtonLogin from "./button/button-login";
 import ButtonProduct from "./button/button-product";
 import { styled } from "styled-components";
+import ButtonMy from "./button/button-my";
 
 const StyleNavbar = styled.div`
     width: 100vw;
@@ -34,7 +35,9 @@ const Header = () => {
             </Link>
             <div style={style}>
                 <ButtonProduct/>
-                <ButtonLogin/>
+                {!localStorage.getItem('isLogin') && <ButtonLogin/> }
+                {localStorage.getItem('isLogin') && <ButtonMy/>}
+                {console.log(localStorage.getItem('isLogin'))}
             </div>
         </StyleNavbar>
     )
