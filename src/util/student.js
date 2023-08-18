@@ -1,4 +1,4 @@
-[
+const studentData = [
     {
         "id": 1,
         "name": "김스컬",
