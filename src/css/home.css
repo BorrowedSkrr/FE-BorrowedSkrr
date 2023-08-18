@@ -277,13 +277,12 @@
     margin-right:2vw;
 }
 
-/*여기부터 시작할 것*/
-#p4{
-    height:2vw;
-    font-weight:700;
-    font-size:1vw;
-    line-height:1vw;
-    color:#FFFFFF;
+#p4 {
+    height: 2vw;
+    font-weight: 700;
+    font-size: 1vw;
+    line-height: 1vw;
+    color: #FFFFFF;
 }
 
 #p5{
@@ -385,11 +384,10 @@
 #imageBox1,
 #imageBox2,
 #imageBox3,
-#imageBox4{
-    width:10.5vw;
-    height:6.65vw;
-    background:#EBEDF8;
-    margin-top:3vw;
+#imageBox4 {
+    width: 11.1vw;
+    height: 11.1vw;
+    margin-top: 3vw;
 }
 
 .functionContainer{

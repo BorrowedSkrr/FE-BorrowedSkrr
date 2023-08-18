@@ -10,6 +10,10 @@ import students from "../images/students.png";
 import icon_number2 from "../images/icon-number2.png";
 import icon_skrr_purple from "../images/icon-skrr-purple.png";
 import likelion from "../images/likelion.png";
+import advantage1 from "../images/advantage1.png";
+import advantage2 from "../images/advantage2.png";
+import advantage3 from "../images/advantage3.png";
+import advantage4 from "../images/advantage4.png";
 
 
 function Home() {
@@ -83,29 +87,29 @@ function Home() {
                     <div className="advantagesContainer">
                         <div className="advantagesBox1">
                             <p id="p7">부담없는!</p>
-                            <p id="p8">값비싼 테크제품을 최소 일주일부터<br/>
-                            부담없이 단기구독 해보세요</p>
-                            <div className="imageBox1" id="imageBox1"></div>
+                            <p id="p8">값비싼 테크제품을 최소 일주일부터<br />
+                                부담없이 단기구독 해보세요</p>
+                            <img src={advantage1} id="imageBox1"/>
                         </div>
                         <div className="advantagesBox2">
                             <p id="p7">자유로운!</p>
                             <p id="p8">학생들은 언제 어디서나 필요할 때<br/>
                                 실시간 예약 및 사용할 수 있어요</p>
-                            <div className="imageBox2" id="imageBox2"></div>
+                            <img src={advantage2} id="imageBox2"/>
                         </div>
                         <div className="advantagesBox3">
                             <p id="p7">안심되는!</p>
                             <p id="p8">대여중 사고가 날까봐 걱정이신가요?<br/>
                                 삼성화재와 함께하는 스컬케어가<br/>
                                 보상해드려요</p>
-                            <div className="imageBox3" id="imageBox3"></div>
+                            <img src={advantage3} id="imageBox3"/>
                         </div>
                         <div className="advantagesBox4">
                             <p id="p7">지속가능한!</p>
                             <p id="p8">전자제품 '아나바다'를 실천해요<br/>
                                 불필요한 소비를 줄이고<br/>
                                 탄소배출량을 줄일 수 있답니다</p>
-                            <div className="imageBox4" id="imageBox4"></div>
+                            <img src={advantage4} id="imageBox4"/>
                         </div>
                     </div>
                 </div>
