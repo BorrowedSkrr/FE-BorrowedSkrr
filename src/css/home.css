@@ -55,20 +55,40 @@
     text-decoration: none;
     color: #0F1015;
 } */
-
-.home>.homeBody{
-    display:flex;
+.home{
+    width:100%;
+    margin:0;
+    padding:0;
+    display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
+}
+
+.homeBody{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
+    width:100vw;
 }
 
-.home>.homeBody>.homeTitle{
-    margin-top:6.6vw;
+.homeTitle{
+    height: 8.15vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+    text-align: center;
+    margin:0;
+    margin-top:6.65vw;
 }
 
-.home>.homeBody>.homeTitle>p{
+#homeTitleP{
+    width:100%;
+    height:1.65vw;
+    margin:0;
     font-size: 1.4vw;
     font-weight: 500;
     line-height: 1.65vw;
@@ -76,66 +96,145 @@
     color:#FFFFFF;
 }
 
+@media (max-width:780px) {
+    #homeTitleP{
+        font-size:1vw;
+    }
+}
+
+@media (max-width:680px) {
+    #homeTitleP{
+        font-size:10px;
+    }
+}
+
+@media (max-width:670px) {
+    #homeTitleP{
+        font-size:5px;
+    }
+}
+
+@media (max-width:610px) {
+    #homeTitleP{
+        font-size:3px;
+    }
+}
+
 .home>.homeBody>.homeTitle>img{
     width:28.4vw;
     height:3.65vw;
-    margin-top:0.85vw;
+}
+
+@media (max-width:660px) {
+    .home>.homeBody>.homeTitle>img{
+        width:32.4vw;
+        height:4.1vw;
+    }
+}
+
+@media (max-width:600px) {
+    .home>.homeBody>.homeTitle>img{
+        width:38.4vw;
+        height:4.7vw;
+    }
+}
+
+@media (max-width:480px) {
+    .home>.homeBody>.homeTitle>img{
+        width:45.4vw;
+        height:5.4vw;
+        margin-top:2vw;
+    }
 }
 
 .home>.homeBody>.homeBanner{
+    margin:0;
+    width:100vw;
+    height:22.2vw;
     margin-top:8.25vw;
-    text-align: center;
     color:#FFFFFF;
-    position:relative;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .home>.homeBody>.homeBanner>img{
-    width:100vw;
+    width:100%;
     height:22.2vw;
 }
 
 .home>.homeBody>.homeBanner>.pContainer{
-    margin-top:-17vw;
+    margin:0;
+    margin-top:-15vw;
+    height:7.65vw;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
 }
 
-#p1{
-    font-weight: 700;
-    font-size: 1vw;
-    line-height: 1.8vw;
+.p2Container{
+    height:3.6vw;
 }
 
+#p1, 
 #p2{
-    font-weight: 700;
+    width:100%;
+    height:1.5vw;
+    font-weight: 400;
     font-size: 1vw;
-    line-height: 1vw;
+    line-height:1vw;
+}
+
+@media (max-width:780px) {
+    #p1, #p2{
+        font-size:0.5vw;
+    }
+
+    #p2{
+        margin-top:1vw;
+    }
+
+    #p3{
+        margin-top:2vw;
+    }
 }
 
 #p3{
-    margin-top:2.4vw;
-    font-weight:500;
-    font-size:1.4vw;
-    line-height:1.65vw;
+    height:1.65vw;
+    font-weight: 500;
+    font-size: 1.4vw;
+    line-height: 1.65vw;
+}
+
+.homeMenuBox{
+    height:4.5vw;
+    margin-top:8.7vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 #icon1{
     width:3vw;
     height:3vw;
-    z-index:1;
-    margin-top:15.7vw;
 }
 
 #p4{
-    margin-top:1vw;
     font-weight:700;
     font-size:1vw;
     line-height:1vw;
+    margin:0;
+    margin-top:0.5vw;
     color:#FFFFFF;
 }
 
 .home>.homeBody>.explainContainer{
     display:flex;
     gap:1vw;
-    margin-top:2.4vw;
+    margin:0;
+    margin-top:2.3vw;
 }
 
 .home>.homeBody>.explainContainer>.explainBox1,
@@ -152,12 +251,13 @@
     display:flex;
     justify-content: space-between;
     padding-top:2vw;
+    height:8vw;
 }
 
 #school,
 #students{
     width:7.4vw;
-    height:6vw;
+    height:5.5vw;
     margin-left:2vw;
 }
 
@@ -170,40 +270,58 @@
 
 .home>.homeBody>.explainContainer>.explainBox1>.pContainer2,
 .home>.homeBody>.explainContainer>.explainBox2>.pContainer2{
+    height:5.9vw;
     text-align: left;
+    margin-bottom:2vw;
     margin-left:2vw;
     margin-right:2vw;
-    margin-top:2vw;
 }
 
-#p4{
-    font-weight:700;
-    font-size:1vw;
-    line-height:1vw;
-    color:#FFFFFF;
+#p4 {
+    height: 2vw;
+    font-weight: 700;
+    font-size: 1vw;
+    line-height: 1vw;
+    color: #FFFFFF;
 }
 
 #p5{
-    font-size: 0.7vw;
+    height:3.9vw;
+    font-size: 0.75vw;
     font-weight: 400;
     line-height: 1.25vw;
     color:#7F85A3;
 }
 
-.home>.homeBody>.advantagesBanner{
-    margin-top:6.45vw;
-    width:100vw;
+.advantagesBanner{
+    margin-top:6.55vw;
+    width:100%;
     height:38.1vw;
     background-color:#8270FF;
+    align-items: center;
+    justify-content: center;
+    display:flex;
+    flex-direction: column;
+}
+
+.homeMenuBox2{
+    margin:0;
+    height:4.5vw;
+    margin-top:2vw;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
 }
 
 #icon2{
-    margin-top:4vw;
     width:3vw;
     height:3vw;
 }
 
 #p6{
+    height:1vw;
     margin-top:0.5vw;
     font-weight:700;
     font-size:1vw;
@@ -211,17 +329,18 @@
     color:#FFFFFF;
 }
 
-.home>.homeBody>.advantagesBanner>.advantagesContainer{
+.advantagesContainer{
     display:flex;
     justify-content: center;
-    gap:1vw;
+    gap:0.85vw;
+    margin:0;
     margin-top:2.4vw;
 }
 
-.home>.homeBody>.advantagesBanner>.advantagesContainer>.advantagesBox1,
-.home>.homeBody>.advantagesBanner>.advantagesContainer>.advantagesBox2,
-.home>.homeBody>.advantagesBanner>.advantagesContainer>.advantagesBox3,
-.home>.homeBody>.advantagesBanner>.advantagesContainer>.advantagesBox4{
+.advantagesBox1,
+.advantagesBox2,
+.advantagesBox3,
+.advantagesBox4{
     width:13.85vw;
     height:22.7vw;
     border:none;
@@ -229,18 +348,33 @@
     background: rgba(25, 27, 36, 0.2);
     text-align:left;
     color:#FFFFFF;
-    padding-left: 1.2vw;
-    padding-right:1.2vw;
+    padding-bottom:1.2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #p7{
-    padding-top: 1.5vw;
+    width:13.85vw;
+    text-align: left;
+    padding-left: 1.2vw;
+    height:1.45vw;
+    margin:0;
+    margin-top: 1.5vw;
     font-weight:700;
     font-size:1.2vw;
     line-height:1.4vw;
+
 }
 
-#p8{
+#p8{   
+    width:13.85vw;
+    padding-left: 1.2vw;
+    padding-right:1.2vw;
+    margin:0;
+    margin-top:0.8vw;
+    height:3.9vw;
     font-weight:400;
     font-size:0.75vw;
     line-height:1.25vw;
@@ -250,32 +384,28 @@
 #imageBox1,
 #imageBox2,
 #imageBox3,
-#imageBox4{
-    width:10vw;
-    height:10vw;
-    background:#EBEDF8;
-    margin-top:3vw;
-    margin-left:2vw;
+#imageBox4 {
+    width: 11.1vw;
+    height: 11.1vw;
+    margin-top: 3vw;
 }
 
-#imageBox3,
-#imageBox4{
-    margin-top:1.7vw;
-}
-
-.home>.homeBody>.functionContainer{
+.functionContainer{
+    width:56vw;
+    padding-left:2vw;
     margin-top:6.75vw;
-    padding-right:20vw;
+    height:21vw;
 }
 
-.home>.homeBody>.functionContainer>.functionBox1,
-.home>.homeBody>.functionContainer>.functionBox2{
+.functionBox1,
+.functionBox2{
     height:7vw;
     display:flex;
+    align-items: center;
 }
 
-.home>.homeBody>.functionContainer>.functionBox2{
-    margin-top:4.35vw;
+.functionBox2{
+    margin-top:6.85vw;
 }
 
 #imageBox5,
@@ -285,13 +415,14 @@
     background:#EBEDF8;
 }
 
-.home>.homeBody>.functionContainer>.functionBox1>.pContainer3,
-.home>.homeBody>.functionContainer>.functionBox2>.pContainer4{
+.pContainer3,
+.pContainer4{
     padding-left:2.6vw;
     text-align: left;
 }
 
 #p9{
+    height:1.45vw;
     font-weight:700;
     font-size:1.2vw;
     line-height: 1.4vw;
@@ -299,14 +430,16 @@
 }
 
 #p10{
+    height:1.35vw;
     font-weight:400;
     font-size:0.8vw;
     line-height:1.35vw;
     color:#FFFFFF;
+    margin-top:0.7vw;
 }
 
 #viewButton{
-    width:9.4vw;
+    width:9.45vw;
     height:3vw;
     border-radius:0.2vw;
     background-color:#D2F75A;
@@ -315,25 +448,6 @@
     line-height:1vw;
     color:#0F1015;
     margin-top:7vw;
+    margin-bottom:8.25vw;
     cursor:pointer;
-}
-
-#homeFooter{
-    margin-top:8.25vw;
-    width:100vw;
-    height:8vw;
-    background-color:#191B24;
-    display:flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-
-#likelion{
-    width:32vw;
-    height:2.1vw;
-}
-
-.ex{
-    color:#FFFFFF;
 }

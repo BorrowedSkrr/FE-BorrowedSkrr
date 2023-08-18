@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import logo_small from "../images/logo-small.png";
 import icon_back from "../images/icon-back.png";
@@ -13,7 +13,7 @@ import button_plus from "../images/button-plus.png";
 
 function StudentProduct() {
     const [isLiked10, setIsLiked10] = useState(false);
-    const [marginTop, setMarginTop] = useState('3.65vw');
+    const [marginTop, setMarginTop] = useState('6.65vw');
     const [rentButtonText, setRentButtonText] = useState('대여하기');
     const [showForm, setShowForm] = useState(false);
     const [redirectToCheckout, setRedirectToCheckout] = useState(false);
@@ -30,7 +30,7 @@ function StudentProduct() {
         if (rentButtonText === '대여하기') {
             setRentButtonText('대여신청');
             setShowForm(true);
-            setMarginTop('3.5vw');
+            setMarginTop('-1.5vw');
         } else if (rentButtonText === '대여신청') {
             if (isNaN(rentalNumber2) || rentalNumber2 < 1) {
                 console.log('대여 개수가 1개 이상이어야 합니다.');
@@ -77,7 +77,9 @@ function StudentProduct() {
 
             <div className="StudentProductBody">
                 <div className="StudentProductBodyAll">
-                    <button id="backButton"><Link to="/studentHome"><img src={icon_back} id="icon_back" alt="icon_back" />&nbsp;뒤로</Link></button>
+                    <button id="backButton"><Link to="/studentHome" id="Link1">
+                        <img src={icon_back} id="icon_back2" alt="icon_back" />
+                        <p id="backBtnTitle">뒤로</p></Link></button>
 
                     <div className="StudentProductContainer">
                         <img src={product} id="StudentProductImage" alt="StudentProductImage" />
@@ -139,7 +141,7 @@ function StudentProduct() {
 
             <form>
                 {showForm && (
-                    <div className="rentalShow2" style={{ zIndex: 1, position: 'absolute' }}>
+                    <div className="rentalShow2" style={{ zIndex: 1 }}>
                         <div className="rentalShowContainer2">
                             <div className="rentalNumberBox">
                                 <p id="rentalNumberTitle">수량 선택</p>
@@ -159,7 +161,7 @@ function StudentProduct() {
                 )}
             </form>
 
-            <footer id="StudentProductFooter" style={{ marginTop, zIndex: 2, position: 'absolute' }}>
+            <footer id="StudentProductFooter" style={{ marginTop, zIndex: 2 }}>
                 <div className="footerContainer">
                     <button id="rentalOrderBtn" onClick={handleRentButtonClick}>
                         {rentButtonText}

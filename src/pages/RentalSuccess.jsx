@@ -28,10 +28,8 @@ function RentalSuccess() {
                     <button id="RentalSuccess_Home"><Link to="/home">홈으로 가기</Link></button>
                 </div>
             </div>
-{/* 
-            <footer id="RentalSuccessFooter">
-                <img src={likelion} alt="likelion" id="likelion" />
-            </footer> */}
+
+            <footer id="RentalSuccessFooter"></footer> 
         </div>
     )
 }

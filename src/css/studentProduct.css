@@ -1,22 +1,20 @@
-.StudentProduct>#StudentProductNav {
+.StudentProduct{
+    width:100%;
+    margin:0;
+    padding:0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    height: 5.4vw;
-    white-space: nowrap;
-}
-
-.StudentProduct>#StudentProductNav>.buttonContainer {
-    margin-right: 2.4vw;
+    flex-direction: column;
 }
 
 .StudentProductBody{
-    margin-top: 2.9vw;
-    display: flex;
-    justify-content: center;
+    display:flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
+    width:100vw;
 }
 
 .StudentProductBodyAll{
@@ -24,71 +22,76 @@
 }
 
 .StudentProductContainer{
-    width: 39vw;
-    display: flex;
-    margin-top: 1.2vw;
+    width:39vw;
+    height:11.35vw;
+    display:flex;
+    margin-top:1.2vw;
 }
 
 #StudentProductImage{
-    width: 11.3vw;
-    height: 11.3vw;
-    border: none;
-    border-radius: 0.8vw;
+    width:11.3vw;
+    height:11.3vw;
+    border:none;
+    border-radius:0.8vw;
 }
 
 .StudentProductExplain{
-    width: 27.7vw;
-    height: 11.3vw;
-    display: flex;
+    width:27.7vw;
+    height:11.35vw;
+    display:flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    gap:0.4vw;
 }
 
 .StudentProductPContainer{
-    width: 23.3vw;
-    height: 6.5vw;
+    width:23.3vw;
+    height:6.55vw;
     text-align: left;
-    margin-top: -1vw;
+    display:flex;
+    flex-direction: column;
+    gap:0.7vw;
 }
 
 #StudentProductTitle{
-    font-weight: 700;
-    font-size: 1.2vw;
-    line-height: 1.4vw;
-    color: #FFFFFF;
+    height:1.45vw;
+    font-weight:700;
+    font-size:1.2vw;
+    line-height:1.4vw;
+    color:#FFFFFF;
 }
 
 #StudentProductText{
-    font-weight: 400;
-    font-size: 0.75vw;
-    line-height: 1.25vw;
-    color: #FFFFFF;
+    height:4.4vw;
+    font-weight:400;
+    font-size:0.75vw;
+    line-height:1.25vw;
+    color:#FFFFFF;
 }
 
 .StudentProductBottom{
-    width: 27.7vw;
-    display: flex;
+    width:27.7vw;
+    display:flex;
     justify-content: space-between;
-    margin-top: 3vw;
 }
 
 .StudentProductNumber{
-    width: 4.5vw;
-    height: 1.6vw;
-    border: none;
-    border-radius: 0.75vw;
-    background: #EBEDF8;
-    font-weight: 700;
-    font-size: 0.8vw;
-    line-height: 0.8vw;
-    color: #484A64;
+    width:4.5vw;
+    height:1.6vw;
+    border:none;
+    border-radius:0.75vw;
+    background:#EBEDF8;
+    font-weight:700;
+    font-size:0.8vw;
+    line-height:0.8vw;
+    color:#484A64;
     white-space: nowrap;
-    text-align: center;
+    text-align:center;
     flex-direction: column;
-    display: flex;
+    display:flex;
     justify-content: center;
-    margin-left: 2.5vw;
+    margin-left:2.5vw;
 }
 
 #StdProductTitle1{
@@ -112,30 +115,27 @@
 }
 
 #cautionTitle2{
-    margin:0;
-    font-weight: 700;
-    font-size: 1.2vw;
-    line-height: 1.4vw;
-    color: #FFFFFF;
-    margin-top: 4vw;
-    display: flex;
+    font-weight:700;
+    font-size:1.2vw;
+    line-height:1.4vw;
+    color:#FFFFFF;
+    margin-top:4.3vw;
+    display:flex;
     flex-direction: left;
 }
 
 .cautionBox2{
-    margin:0;
-    width: 39vw;
-    height: 21.3vw;
-    display: flex;
+    width:39vw;
+    height:21.3vw;
+    display:flex;
     flex-direction: column;
-    gap: 0.5vw;
+    gap:0.5vw;
     margin-top:1.2vw;
 }
 
 #StudentProductFooter {
-    margin-top: 5.65vw;
     width: 100vw;
-    height: 10vw;
+    height: 5vw;
     background-color: #191B24;
     display: flex;
     justify-content: center;
@@ -150,8 +150,8 @@
 }
 
 .rentalShow2 {
-    margin-top: -3vw;
-    width: 100%;
+    margin-top:1.5vw;
+    width: 100vw;
     height: 6.6vw;
     border: none;
     border-radius: 2vw 2vw 0 0;
@@ -170,6 +170,7 @@
 .rentalNumberBox{
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 
 #rentalNumber2{

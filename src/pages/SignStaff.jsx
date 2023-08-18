@@ -81,7 +81,7 @@ function SignStaff() {
                 </div>
                 <p id="signStaffTitle">교직원 회원가입</p>
 
-                <form onSubmit={handleFormSubmit}>
+                <form onSubmit={handleFormSubmit} id="signStaffForm">
                     <p id="NameTitle">이름</p>
                     <input type="text" placeholder="반드시 본명으로 입력" id="signStaffName" />
 
@@ -95,18 +95,20 @@ function SignStaff() {
 
                     <p id="PasswordTitle">비밀번호</p>
                     <input type="password" placeholder="영문, 숫자 포함 8자리 이상" id="signStaffPassword" onChange={handlePasswordChange} />
-                    {(isPasswordConfirmationStarted && !isPassword1Available) && (
-                        <p id="Password1Explain" style={{ color: "#FF5D47" }}>✓ 8자 이상 입력</p>
-                    )}
-                    {(isPasswordConfirmationStarted && !isPassword2Available) && (
-                        <p id="Password2Explain" style={{ color: "#FF5D47" }}>✓ 영문, 숫자 포함</p>
-                    )}
-                    {isPassword1Available && (
-                        <p id="Password1Explain">✓ 8자 이상 입력</p>
-                    )}
-                    {isPassword2Available && (
-                        <p id="Password2Explain">✓ 영문, 숫자 포함</p>
-                    )}
+                    <div class="psExplain">
+                        {(isPasswordConfirmationStarted && !isPassword1Available) && (
+                            <p id="Password1Explain" style={{ color: "#FF5D47" }}>✓ 8자 이상 입력</p>
+                        )}
+                        {(isPasswordConfirmationStarted && !isPassword2Available) && (
+                            <p id="Password2Explain" style={{ color: "#FF5D47" }}>✓ 영문, 숫자 포함</p>
+                        )}
+                        {isPassword1Available && (
+                            <p id="Password1Explain">✓ 8자 이상 입력</p>
+                        )}
+                        {isPassword2Available && (
+                            <p id="Password2Explain">✓ 영문, 숫자 포함</p>
+                        )}
+                    </div>
 
                     <p id="CheckPasswordTitle">비밀번호 확인</p>
                     <input type="password" placeholder="영문, 숫자 포함 8자리 이상" id="signStaffPasswordCheck" onChange={handlePasswordChange} />
@@ -125,25 +127,23 @@ function SignStaff() {
                     <input type="text" placeholder="풀네임으로 입력 (ex. 스컬고등학교)" id="signStaffSchool" />
 
                     <p id="FileTitle">재직증명서 첨부</p>
-                    <div className="fileUpload">
-                        <input type="file" ref={fileInputRef} style={{ display: 'none' }} onChange={handleFileChange} />
-                        <div className="selectedFileNameContainer">
-                            {selectedFileName}
-                        </div>
+                    <div className="fileUploadContainer">
+                        <div className="fileUpload">
+                            <input type="file" ref={fileInputRef} style={{ display: 'none' }} onChange={handleFileChange} />
+                            <div className="selectedFileNameContainer">
+                                {selectedFileName}
+                            </div>
+                        </div>                    
+                        <button className="fileUploadBtn" onClick={handleFileButtonClick}>파일선택</button>
                     </div>
-                    <button className="fileUploadBtn" onClick={handleFileButtonClick}>파일선택</button>
-
-                    <div className="buttonContainer">
-                        {isIdAvailable && isPassword1Available && isPassword2Available && isPasswordCheckAvailable ? (
-                            <Link to="/loginstaff">
-                                <button type="submit" id="signStaffButton">회원가입 완료</button>
-                            </Link>
-                        ) : (
-                            <button type="submit" id="signStaffButton" disabled>회원가입 완료</button>
-                        )}
-                    </div>
-
                 </form>
+                {isIdAvailable && isPassword1Available && isPassword2Available && isPasswordCheckAvailable ? (
+                        <Link to="/loginstaff">
+                            <button type="submit" id="signStaffButton">회원가입 완료</button>
+                        </Link>
+                    ) : (
+                        <button type="submit" id="signStaffButton" disabled>회원가입 완료</button>
+                    )}
             </div>
 
             {/* <footer id="signStaffFooter">

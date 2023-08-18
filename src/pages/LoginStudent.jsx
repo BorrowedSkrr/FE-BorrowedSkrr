@@ -24,18 +24,16 @@ function LoginStudent() {
                     <button id="LoginstudentBtn">학생</button>
                 </div>
                 <p id="loginStudentTitle">학생 로그인</p>
-                <form>
+                <form id="loginStudentForm">
                     <p id="idTitle">아이디</p>
                     <input type="text" placeholder="아이디를 입력하세요" id="loginStudentId" />
                     <p id="passwordTitle">비밀번호</p>
                     <input type="password" placeholder="비밀번호를 입력하세요" id="loginStudentPassword" />
 
                     <div className="noAccess">접근권한 허용 후에 이용할 수 있어요.</div>
-
-                    <div className="buttonContainer">
-                        <button type="submit" id="loginStudentButton">로그인</button>
-                    </div>
                 </form>
+                
+                <button type="submit" id="loginStudentButton">로그인</button>
 
                 <div className="pContainer5">
                     <p id="p11">혹시, 처음이신가요?</p>
@@ -43,9 +41,7 @@ function LoginStudent() {
                 </div>
             </div>
 
-            {/* <footer id="loginStudentFooter">
-                <img src={likelion} alt="likelion" id="likelion" />
-            </footer> */}
+            <footer id="loginStudentFooter"></footer> 
         </div>
     )
 }

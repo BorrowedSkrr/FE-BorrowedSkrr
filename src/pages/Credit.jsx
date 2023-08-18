@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import logo_small from "../images/logo-small.png";
 import logo_skrr_black from "../images/logo-skrr-black.png";
@@ -55,14 +55,14 @@ function Credit() {
 
             <div className="creditBody">
                 <div className="creditBox">
-                    <img src={logo_skrr_black} id="logo_skrr_black" alt="logo_skrr_black"/>
+                    <img src={logo_skrr_black} id="logo_skrr_black" alt="logo_skrr_black" />
                     <p id="creditTitle">결제하기</p>
                 </div>
 
                 <div className="creditContainer">
                     <p id="creditNumber">총 2종류</p>
                     <div className="creditProduct">
-                        <img src={credit_product} id="credit_product" alt="credit_product"/>
+                        <img src={credit_product} id="credit_product" alt="credit_product" />
                         <div className="creditProductRight">
                             <div className="creditProductBox">
                                 <p id="creditProductTitle">애플 에어팟 맥스</p>
@@ -75,7 +75,7 @@ function Credit() {
                         </div>
                     </div>
                     <div className="creditProduct">
-                        <img src={credit_product} id="credit_product" alt="credit_product"/>
+                        <img src={credit_product} id="credit_product" alt="credit_product" />
                         <div className="creditProductRight">
                             <div className="creditProductBox">
                                 <p id="creditProductTitle">애플 에어팟 맥스</p>
@@ -110,7 +110,7 @@ function Credit() {
                         <p id="creditWayTitle">결제 방식</p>
                         <form className="radioForm">
                             <label id="radioLabel">
-                                <input type="radio" name="deposit" value="deposit" onChange={handlePaymentSubmit}/>
+                                <input type="radio" name="deposit" value="deposit" onChange={handlePaymentSubmit} />
                                 <span id="radioTitle">무통장입금</span>
                             </label>
                         </form>

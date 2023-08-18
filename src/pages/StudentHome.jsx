@@ -124,17 +124,7 @@ function StudentHome() {
 
     return (
         <div className="StudentHome">
-            <nav id="StudentHomeNav">
-                <div className="logo-small">
-                    <Link to="/">
-                        <img src={logo_small} alt="logo_small" id="logo_small" />
-                    </Link>
-                </div>
-                <div className="buttonContainer">
-                    <button id="button-product">PRODUCT</button>
-                    <button id="button-login">MY PAGE</button>
-                </div>
-            </nav>
+            <nav id="StudentHomeNav"></nav>
 
             <div className="StudentHomeBody">
                 <div className="StudentHomeBox">
@@ -262,9 +252,9 @@ function StudentHome() {
                 ) : null}
             </div>
 
-            <footer id="StudentHomeFooter" style={{ marginTop: productData.length === 0 && productData2.length === 0 ? '10vw' : '5vw' }}>
+        {/*    <footer id="StudentHomeFooter" style={{ marginTop: productData.length === 0 && productData2.length === 0 ? '10vw' : '5vw' }}>
                 <img src={likelion} alt="likelion" id="likelion" />
-            </footer>
+            </footer> */}
         </div>
     )
 }

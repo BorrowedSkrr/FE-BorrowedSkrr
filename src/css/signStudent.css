@@ -1,117 +1,32 @@
-.signStudent>#signStudentNav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 5.4vw;
-    white-space: nowrap;
-}
-
-.signStudent>#signStudentNav>.buttonContainer {
-    margin-right: 1.6vw;
-}
-
-.signStudent>.signStudentBody {
+.signStudent{
+    width:100%;
+    margin:0;
+    padding:0;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    white-space: nowrap;
 }
 
-.signStudent>.signStudentBody>.signButtonContianer {
-    display: flex;
-    gap: 1vw;
-    margin-top: 2vw;
+.signStudentBody {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width:100vw;
 }
 
 #signStudentTitle {
-    margin-top: 3vw;
+    margin-top: 4vw;
+    height:1.45vw;
     font-weight: 700;
     font-size: 1.2vw;
     line-height: 1.4vw;
     color: #FFFFFF;
 }
 
-#NameTitle,
-#IdTitle,
-#PasswordTitle,
-#CheckPasswordTitle,
-#SchoolTitle,
-#InformationTitle {
-    margin-top: 3vw;
-    font-weight: 700;
-    font-size: 1vw;
-    line-height: 1vw;
-    color: #7F85A3;
-}
-
-#signStudentName,
-#signStudentId,
-#signStudentPassword,
-#signStudentPasswordCheck,
-#signStudentSchool,
-#signStudentInformation {
-    width: 29vw;
-    height: 3.2vw;
-    border-radius: 0.4vw;
-    border: none;
-    background: #191B24;
-    font-weight: 400;
-    font-size: 1vw;
-    line-height: 1vw;
-    color: #FFFFFF;
-    padding-left: 1vw;
-    outline: none;
-    caret-color: #484A64;
-}
-
-#signStudentName:focus,
-#signStudentId:focus,
-#signStudentPassword:focus,
-#signStudentPasswordCheck:focus,
-#signStudentSchool:focus,
-#signStudentInformation:focus {
-    outline: 0.1vw solid #484A64;
-}
-
-#signStudentName::placeholder,
-#signStudentId::placeholder,
-#signStudentPassword::placeholder,
-#signStudentPasswordCheck::placeholder,
-#signStudentSchool::placeholder,
-#signStudentInformation::placeholder {
-    font-weight: 400;
-    font-size: 0.85vw;
-    line-height: 0.85vw;
-    color: #7F85A3;
-}
-
-.signStudent>.signStudentBody>form>.buttonContainer {
-    margin-top: 6.5vw;
-    display: flex;
-    justify-content: center;
-}
-
-#signStudentButton {
-    width: 10vw;
-    height: 3.2vw;
-    border: none;
-    border-radius: 0.4vw;
-    background: #D2F75A;
-    font-weight: 700;
-    font-size: 1vw;
-    line-height: 1vw;
-    color: #0F1015;
-    cursor:pointer;
-}
-
-#signStudentFooter {
-    width: 100vw;
-    height: 8vw;
-    background-color: #191B24;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 7.2vw;
+#signStudentForm{
+    width:29vw;
+    text-align: left;
+    margin-top:3vw; 
 }
