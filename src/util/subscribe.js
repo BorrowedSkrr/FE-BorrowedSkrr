@@ -5,7 +5,7 @@ const SubscribeData = [
         "count": 20,
         "start_date": "2023-08-03",
         "end_date": "2023-08-09",
-        "price": "940000",
+        "price": 940000,
         "image": "image/desktop-1.png"
     },
     {
@@ -14,7 +14,7 @@ const SubscribeData = [
         "count": 10,
         "start_date": "2023-08-12",
         "end_date": "2023-08-18",
-        "price": "370000",
+        "price": 370000,
         "image": "image/vr-1.png"
     },
     {
@@ -23,7 +23,7 @@ const SubscribeData = [
         "count": 5,
         "start_date": "2023-07-01",
         "end_date": "2023-07-31",
-        "price": "400000",
+        "price": 400000,
         "image": "image/sound-2.png"
     },
     {
@@ -32,7 +32,7 @@ const SubscribeData = [
         "count": 3,
         "start_date": "2023-08-01",
         "end_date": "2023-08-31",
-        "price": "25200",
+        "price": 25200,
         "image": "image/camera-4.png"
     }
 ]
