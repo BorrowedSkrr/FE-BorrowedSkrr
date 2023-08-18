@@ -23,8 +23,8 @@ const ListSubscribe = ({data}) => {
                         // img = {'https://via.placeholder.com/150/92c952'}
                         img={require(`../../util/${item.image}`)}
                         name = {item.name }
-                        num = {item.id} 
-                        period = {item.id}
+                        num = {item.count} 
+                        period = {`${item.start_date} - ${item.end_date}`}
                         price = {parseInt(item.id, 10)}
                     />
                 )
