@@ -4,7 +4,7 @@ import logo_small from "../images/logo-small.png";
 import likelion from "../images/likelion.png";
 import Api from '../api';
 
-function LoginStaff() {
+function LoginStaff({loginHandler}) {
 /*     const [id, setId] = useState('')
     const [pw, setPw] = useState('')
 
@@ -67,11 +67,13 @@ function LoginStaff() {
             localStorage.setItem('userName', '김교사');
             localStorage.setItem('userName', '한성고');
             localStorage.setItem('isLogin', true);
+            loginHandler(true);
         } else if (Auth === '학생'){
             localStorage.setItem('userId', 2);
             localStorage.setItem('userName', '김학생');
             localStorage.setItem('userName', '한성고');
             localStorage.setItem('isLogin', true);
+            loginHandler(true);
         }
     }
 

@@ -19,7 +19,7 @@ const StyleButton = styled.button`
     padding: 0.8rem 2.1rem;
 `
 
-const MyPageStaff = () => {
+const MyPageStaff = ({loginHandler}) => {
     const [modalShow, setModalShow] = useState(false);
     // 학교 코드
     const [schoolCode, setSchoolCode] = useState();
@@ -43,10 +43,10 @@ const MyPageStaff = () => {
     };
 
     const onClickLogout = () => {
-        let token = localStorage.getItem('token')
-
-        localStorage.clear()
-        window.location.replace('http://localhost:3000/')
+        console.log('수정')
+        localStorage.clear();
+        loginHandler(false);
+        window.location.replace('https://borrowedskrr.github.io/FE-BorrowedSkrr/');
     }
 
     const manageStudentListener = ({name, state}) => {
@@ -159,7 +159,7 @@ const MyPageStaff = () => {
                     </div>
                     <div style={{display:'flex', flexDirection:'column', justifyContent:'center', gap: '16px', marginRight:'20px'}}>
                         <Link to='/MyPageStaffEdit'><StyleButton>정보수정</StyleButton></Link>
-                        <StyleButton onClick={() => onClickLogout}>로그아웃</StyleButton>
+                        <StyleButton onClick={onClickLogout}>로그아웃</StyleButton>
                     </div>
                 </div>
                 <div style={{display:'flex', flexDirection:'column', padding:'1.25vw', backgroundColor:`${colors.gray5}`, borderRadius:'0.417vw'}}>
