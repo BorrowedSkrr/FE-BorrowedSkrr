@@ -32,9 +32,9 @@ const ListManageStudent = ({data, studentButtonListener}) => {
                         key={index}
                         studentButtonListener={studentButtonListener}
                         name={item.name}
-                        info={item.email}
-                        date={item.website}
-                        isManaged={false}
+                        info={item.belong}
+                        date={item.date}
+                        isManaged={item.state}
                     />
                 )
             })}

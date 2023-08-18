@@ -1,4 +1,4 @@
-const studentData = [
+const StudentData = [
     {
         "id": 1,
         "name": "김스컬",
@@ -70,3 +70,5 @@ const studentData = [
         "state": true
     }
 ]
+
+export default StudentData;

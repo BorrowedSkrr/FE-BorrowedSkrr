@@ -10,6 +10,7 @@ import MyPageCopy from '../components/MyPage-Copy';
 import PermissionModal from '../components/modal/permissionModal';
 import { Link } from 'react-router-dom';
 import Api from '../api';
+import StudentData from '../util/student';
 
 const StyleButton = styled.button`
     background-color: ${colors.gray4};
@@ -64,26 +65,29 @@ const MyPageStaff = ({loginHandler}) => {
             'name': name,
             'state': state
         };
-        const fetchData = async () => {
-            try{
-                const response = await axios.post('https://jsonplaceholder.typicode.com/comments', dataToSend);
-                console.log('Response:', response.data);
-                setStudentData(response);
-            } catch(error){
-                console.log(error);
-            } 
-        };
-        fetchData();
+        // const fetchData = async () => {
+        //     try{
+        //         const response = await axios.post('https://jsonplaceholder.typicode.com/comments', dataToSend);
+        //         console.log('Response:', response.data);
+        //         setStudentData(response);
+        //     } catch(error){
+        //         console.log(error);
+        //     } 
+        // };
+        // fetchData();
+        console.log(state)
     }
 
     const handlemodalreject = (name, state) => {
         // updateStudentData(name, state);
         console.log(name, state)
+
     };
 
 
     const handlemodalremove = (name, state) => {
-        updateStudentData(name, state);
+        // updateStudentData(name, state);
+        console.log(name, state)
     };
 
     const studentButtonListener = (name, state) => {
@@ -110,33 +114,37 @@ const MyPageStaff = ({loginHandler}) => {
     //     }
     // }, []);
     
-    useEffect(() => {
-        let isMounted = true; // 마운트 상태를 나타내는 변수
+    // useEffect(() => {
+    //     let isMounted = true; // 마운트 상태를 나타내는 변수
 
-        const fetchData = async () => {
-            try{
-                const resultSchoolCode = await Api.get(`https://jsonplaceholder.typicode.com/comments/1`);
-                const resultUser = await Api.get(`https://jsonplaceholder.typicode.com/users/2`);
-                const resultStudent = await Api.get(`https://jsonplaceholder.typicode.com/users`);
-                const resultRental = await Api.get(`https://jsonplaceholder.typicode.com/photos`);
+    //     const fetchData = async () => {
+    //         try{
+    //             const resultSchoolCode = await Api.get(`https://jsonplaceholder.typicode.com/comments/1`);
+    //             const resultUser = await Api.get(`https://jsonplaceholder.typicode.com/users/2`);
+    //             const resultStudent = await Api.get(`https://jsonplaceholder.typicode.com/users`);
+    //             const resultRental = await Api.get(`https://jsonplaceholder.typicode.com/photos`);
                 
-                // setSchoolCode(resultSchoolCode.data);
-                // setUser(resultUser.data);
-                // setStudentData(resultStudent.data);
-                // setRentalData(resultRental.data);
+    //             // setSchoolCode(resultSchoolCode.data);
+    //             // setUser(resultUser.data);
+    //             // setStudentData(resultStudent.data);
+    //             // setRentalData(resultRental.data);
 
-                if (isMounted){
-                    initData(resultSchoolCode.data, resultUser.data, resultStudent.data, resultRental.data)
-                }
-            } catch (error){
-                console.log(error);
-            }
-        };
-        fetchData();
+    //             if (isMounted){
+    //                 initData(resultSchoolCode.data, resultUser.data, resultStudent.data, resultRental.data)
+    //             }
+    //         } catch (error){
+    //             console.log(error);
+    //         }
+    //     };
+    //     fetchData();
 
-        return () => {
-            isMounted = false; // 컴포넌트가 언마운트될 때 변수를 false로 설정
-        };
+    //     return () => {
+    //         isMounted = false; // 컴포넌트가 언마운트될 때 변수를 false로 설정
+    //     };
+    // }, []);
+
+    useEffect(() => {
+        setStudentData(StudentData);
     }, []);
 
     return (
