@@ -48,7 +48,7 @@ const StyleGrid = styled.div`
 `
 
 const ItemManageRental = (props) => {
-    const {img, name, num, date, by} = props;
+    const {img, name, num, date, by, explain} = props;
     const [isStyleDivVisible, setIsStyleDivVisible] = useState(false); // 가시성 상태
 
     const toggleStyleDiv = () => {
@@ -77,7 +77,7 @@ const ItemManageRental = (props) => {
             {isStyleDivVisible && (
                 <StyleDiv>
                     <p style={{fontWeight:'700'}}>사유</p>
-                    <div>Lorem ipsum dolor sit amet consectetur. Mattis netus a ut suspendisse neque. Blandit semper porttitor nunc adipiscing gravida faucibus proin nunc. Eu a sit placerat amet non semper mauris iaculis. </div>
+                    <div>{explain}</div>
                 </StyleDiv>
             )}
         </StyleGrid>

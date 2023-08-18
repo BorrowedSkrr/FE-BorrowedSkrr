@@ -8,11 +8,12 @@ const ListManageRental = ({data}) => {
                 return(
                     <ItemManageRental 
                         key={index}
-                        img={item.thumbnailUrl}
-                        name={item.id}
-                        num={item.id}
-                        date='2023. 07. 06. ~ 2023. 08. 06.'
-                        by='김스컬 (1학년 2반)'
+                        img={require(`../../util/${item.image}`)}
+                        name={item.name}
+                        num={item.count}
+                        date={`${item.start_date} - ${item.end_date}`}
+                        by={item.student}
+                        explain={item.reason}
                     />
                 )
             })}

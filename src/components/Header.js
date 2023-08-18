@@ -36,7 +36,7 @@ const Header = ({isLogin}) => {
             <div style={style}>
                 <ButtonProduct/>
                 {!isLogin && <ButtonLogin/> }
-                {isLogin && <ButtonMy/>}
+                {isLogin && <ButtonMy id={localStorage.getItem('userId')}/>}
             </div>
         </StyleNavbar>
     )

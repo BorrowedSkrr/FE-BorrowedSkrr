@@ -11,6 +11,7 @@ import PermissionModal from '../components/modal/permissionModal';
 import { Link } from 'react-router-dom';
 import Api from '../api';
 import StudentData from '../util/student';
+import ReservationData from '../util/reservation';
 
 const StyleButton = styled.button`
     background-color: ${colors.gray4};
@@ -145,6 +146,7 @@ const MyPageStaff = ({loginHandler}) => {
 
     useEffect(() => {
         setStudentData(StudentData);
+        setRentalData(ReservationData);
     }, []);
 
     return (
