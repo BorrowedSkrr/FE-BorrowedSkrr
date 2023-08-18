@@ -12,6 +12,9 @@ import likelion from "../images/likelion.png";
 import icon_search from "../images/icon-search.png";
 import notcheck_radio from "../images/notcheck-radio.png";
 import yescheck_radio from "../images/yescheck-radio.png";
+import banner1 from "../images/banner1.png";
+import banner2 from "../images/banner2.png";
+import banner3 from "../images/banner3.png";
 
 function Product() {
     //정렬 박스(셀렉트 박스)
@@ -174,9 +177,9 @@ function Product() {
 
     //배너
     const images = [
-        productImage,
-        icon_line_heart,
-        icon_lbold_heart
+        banner2,
+        banner3,
+        banner1
     ];
 
     const [currentSlide, setCurrentSlide] = useState(0);

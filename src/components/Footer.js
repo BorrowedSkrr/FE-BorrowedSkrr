@@ -6,7 +6,6 @@ import colors from "../styles/colors";
 
 const StyleDiv = styled.div`
     width: 100vw;
-    min-width: 768px;
     height: 15vh;
     display: flex;
     align-items: center;
