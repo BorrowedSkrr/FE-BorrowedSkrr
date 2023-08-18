@@ -17,52 +17,51 @@
     white-space: nowrap;
 }
 
-#logo_skrr_black{
-    width:3vw;
-    height:3vw;
-    margin-top:3.4vw;
+#logo_skrr_black {
+    width: 3vw;
+    height: 3vw;
+    margin-top: 3.4vw;
 }
 
 #CreditSuccessTitle{
     height:1.9vw;
     font-weight: 700;
-    font-size:1.6vw;
-    line-height:1.9vw;
+    font-size: 1.6vw;
+    line-height: 1.9vw;
     text-align: center;
-    color:#FFFFFF;
-    margin-top:0.4vw;
+    color: #FFFFFF;
+    margin-top: 0.4vw;
 }
 
-.CreditSuccessDiv{
-    margin-top:2.5vw;
-    height:2.6vw;
+.CreditSuccessDiv {
+    margin-top: 2.5vw;
+    height: 2.6vw;
 }
 
 #CreditSuccessSubTitle1,
 #CreditSuccessSubTitle2{
     font-weight: 400;
-    font-size:0.75vw;
-    line-height:1.25vw;
+    font-size: 0.75vw;
+    line-height: 1.25vw;
     text-align: center;
-    color:#EBEDF8;
+    color: #EBEDF8;
 }
 
-#CreditSuccess_Home{
-    width:10vw;
-    height:3.2vw;
-    border:none;
-    border-radius:0.4vw;
-    background:#D2F75A;
+#CreditSuccess_Home {
+    width: 10vw;
+    height: 3.2vw;
+    border: none;
+    border-radius: 0.4vw;
+    background: #D2F75A;
     font-weight: 700;
-    font-size:1vw;
-    line-height:1vw;
-    color:#0F1510;
-    margin-top:4vw;
+    font-size: 1vw;
+    line-height: 1vw;
+    color: #0F1510;
+    margin-top: 4vw;
 }
 
-#CreditSuccess_Home>a{
-    text-decoration: none;
-    color:#0F1510;
+#CreditSuccess_Home>a {
+    color:#EBEDF8;
 }
 
 #CreditSuccessFooter2{

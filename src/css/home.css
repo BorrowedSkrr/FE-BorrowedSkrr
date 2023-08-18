@@ -55,7 +55,6 @@
     text-decoration: none;
     color: #0F1015;
 } */
-
 .home{
     width:100%;
     margin:0;
@@ -63,10 +62,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
-.homeBody,
-.homeTitle{
+.homeBody{
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -76,9 +75,9 @@
 }
 
 .homeTitle{
-    width:31.2vw;
     height: 8.15vw;
     display:flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items:center;
     text-align: center;
@@ -87,7 +86,7 @@
 }
 
 #homeTitleP{
-    width:24vw;
+    width:100%;
     height:1.65vw;
     margin:0;
     font-size: 1.4vw;
@@ -97,9 +96,55 @@
     color:#FFFFFF;
 }
 
+@media (max-width:780px) {
+    #homeTitleP{
+        font-size:1vw;
+    }
+}
+
+@media (max-width:680px) {
+    #homeTitleP{
+        font-size:10px;
+    }
+}
+
+@media (max-width:670px) {
+    #homeTitleP{
+        font-size:5px;
+    }
+}
+
+@media (max-width:610px) {
+    #homeTitleP{
+        font-size:3px;
+    }
+}
+
 .home>.homeBody>.homeTitle>img{
     width:28.4vw;
     height:3.65vw;
+}
+
+@media (max-width:660px) {
+    .home>.homeBody>.homeTitle>img{
+        width:32.4vw;
+        height:4.1vw;
+    }
+}
+
+@media (max-width:600px) {
+    .home>.homeBody>.homeTitle>img{
+        width:38.4vw;
+        height:4.7vw;
+    }
+}
+
+@media (max-width:480px) {
+    .home>.homeBody>.homeTitle>img{
+        width:45.4vw;
+        height:5.4vw;
+        margin-top:2vw;
+    }
 }
 
 .home>.homeBody>.homeBanner{
@@ -133,10 +178,25 @@
 
 #p1, 
 #p2{
+    width:100%;
     height:1.5vw;
     font-weight: 400;
     font-size: 1vw;
     line-height:1vw;
+}
+
+@media (max-width:780px) {
+    #p1, #p2{
+        font-size:0.5vw;
+    }
+
+    #p2{
+        margin-top:1vw;
+    }
+
+    #p3{
+        margin-top:2vw;
+    }
 }
 
 #p3{
@@ -217,6 +277,7 @@
     margin-right:2vw;
 }
 
+/*여기부터 시작할 것*/
 #p4{
     height:2vw;
     font-weight:700;
