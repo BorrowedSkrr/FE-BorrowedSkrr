@@ -14,6 +14,7 @@
     align-items: center;
     flex-direction: column;
     width:100vw;
+    min-height:75vh;
 }
 
 #RentalSuccessTitle{
@@ -50,6 +51,7 @@
     font-size: 1vw;
     line-height: 1vw;
     color: #0F1510;
+    margin-bottom: 10vw;
 }
 
 #RentalSuccess_Home a{
