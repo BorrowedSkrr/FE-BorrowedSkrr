@@ -14,6 +14,9 @@ import advantage1 from "../images/advantage1.png";
 import advantage2 from "../images/advantage2.png";
 import advantage3 from "../images/advantage3.png";
 import advantage4 from "../images/advantage4.png";
+import week1 from "../images/1week.png";
+import buy from "../images/buy.png";
+
 
 
 function Home() {
@@ -50,7 +53,7 @@ function Home() {
 
                 <div className="homeMenuBox">
                     <img src={icon_skrr_black} alt="icon_skrr_black" id="icon1"/>
-                    <p id="p4">빌렸스컬 이용법</p>
+                    <p id="pHome">빌렸스컬 이용법</p>
                 </div>
 
                 <div className="explainContainer">
@@ -116,14 +119,14 @@ function Home() {
 
                 <div className="functionContainer">
                     <div className="functionBox1">
-                        <div className="imageBox5" id="imageBox5"></div>
+                        <img src={week1} id="imageBox5"/>
                         <div className="pContainer3">
                             <p id="p9">최소 일주일부터 필요한 만큼만!</p>
                             <p id="p10">부담되는 장기인수형 렌탈 대신, 단기구독으로 부담없이 즐기세요</p>
                         </div>
                     </div>
                     <div className="functionBox2">
-                        <div className="imageBox6" id="imageBox6"></div>
+                        <img src={buy} id="imageBox6"/>
                         <div className="pContainer4">
                             <p id="p9">구입도 가능!</p>
                             <p id="p10">사용중인 제품을 구입할 수도 있어요<br/>

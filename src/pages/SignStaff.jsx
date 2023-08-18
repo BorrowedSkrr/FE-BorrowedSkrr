@@ -43,21 +43,21 @@ function SignStaff() {
         dataToSend.append('school', signStaffSchool);
         dataToSend.append('certificate', signStaffFile);
 
-        // try {
-        //     const response = await axios.post('/accounts/employee-signup', dataToSend); // 실제 서버 URL로 바꾸세요
-        //     console.log('Response:', response.data);
-        // } catch (error) {
-        //     console.log(error);
-        //     // 오류 처리
-        // }
-
         try {
+            const response = await Api.post('/accounts/employee-signup', dataToSend); // 실제 서버 URL로 바꾸세요
+            console.log('Response:', response.data);
+        } catch (error) {
+            console.log(error);
+             // 오류 처리
+        }
+
+/*         try {
             const response = await Api.get('https://jsonplaceholder.typicode.com/posts'); // 실제 서버 URL로 바꾸세요
             console.log('Response:', response.data);
         } catch (error) {
             console.log(error);
             // 오류 처리
-        }
+        } */
 
         e.preventDefault();
     };
