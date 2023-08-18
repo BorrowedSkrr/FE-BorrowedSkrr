@@ -75,7 +75,6 @@
 }
 
 .homeTitle{
-    height: 8.15vw;
     display:flex;
     flex-direction: column;
     justify-content: space-between;
@@ -87,64 +86,16 @@
 
 #homeTitleP{
     width:100%;
-    height:1.65vw;
     margin:0;
-    font-size: 1.4vw;
+    font-size: 2.8rem;
     font-weight: 500;
-    line-height: 1.65vw;
     white-space: nowrap;
     color:#FFFFFF;
 }
 
-@media (max-width:780px) {
-    #homeTitleP{
-        font-size:1vw;
-    }
-}
-
-@media (max-width:680px) {
-    #homeTitleP{
-        font-size:10px;
-    }
-}
-
-@media (max-width:670px) {
-    #homeTitleP{
-        font-size:5px;
-    }
-}
-
-@media (max-width:610px) {
-    #homeTitleP{
-        font-size:3px;
-    }
-}
-
 .home>.homeBody>.homeTitle>img{
-    width:28.4vw;
-    height:3.65vw;
-}
-
-@media (max-width:660px) {
-    .home>.homeBody>.homeTitle>img{
-        width:32.4vw;
-        height:4.1vw;
-    }
-}
-
-@media (max-width:600px) {
-    .home>.homeBody>.homeTitle>img{
-        width:38.4vw;
-        height:4.7vw;
-    }
-}
-
-@media (max-width:480px) {
-    .home>.homeBody>.homeTitle>img{
-        width:45.4vw;
-        height:5.4vw;
-        margin-top:2vw;
-    }
+    width:56.8rem;
+    margin-top:2rem;
 }
 
 .home>.homeBody>.homeBanner{
@@ -166,7 +117,6 @@
 .home>.homeBody>.homeBanner>.pContainer{
     margin:0;
     margin-top:-15vw;
-    height:7.65vw;
     justify-content: space-between;
     align-items: center;
     text-align: center;
@@ -179,31 +129,13 @@
 #p1, 
 #p2{
     width:100%;
-    height:1.5vw;
     font-weight: 400;
-    font-size: 1vw;
-    line-height:1vw;
-}
-
-@media (max-width:780px) {
-    #p1, #p2{
-        font-size:0.5vw;
-    }
-
-    #p2{
-        margin-top:1vw;
-    }
-
-    #p3{
-        margin-top:2vw;
-    }
+    font-size: 2rem;
 }
 
 #p3{
-    height:1.65vw;
     font-weight: 500;
-    font-size: 1.4vw;
-    line-height: 1.65vw;
+    font-size: 2.8rem;
 }
 
 .homeMenuBox{
@@ -465,6 +397,10 @@
     margin-top:7vw;
     margin-bottom:8.25vw;
     cursor:pointer;
+}
+
+#viewButton>a{
+    color:#0F1015;
 }
 
 #pHome{

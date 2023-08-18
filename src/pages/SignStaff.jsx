@@ -115,7 +115,7 @@ function SignStaff() {
             <div className="signStaffBody">
                 <div className="signButtonContianer">
                     <button id="staff">교직원</button>
-                    <button id="student"><Link to="/signStudent">학생</Link></button>
+                    <Link to="/signStudent"><button id="student">학생</button></Link>
                 </div>
                 <p id="signStaffTitle">교직원 회원가입</p>
 
@@ -176,9 +176,11 @@ function SignStaff() {
                     </div>
                 </form>
                 {isIdAvailable && isPassword1Available && isPassword2Available && isPasswordCheckAvailable ? (
+                    <Link to="/loginstaff">
                     <button type="button" id="signStaffButton" onClick={handleFormSubmit}>
-                        <Link to="/loginstaff">회원가입 완료</Link>
+                        회원가입 완료
                     </button>
+                    </Link>
                 ) : (
                     <button type="submit" id="signStaffButton" disabled>회원가입 완료</button>
                 )}

@@ -46,8 +46,8 @@ function Home() {
                         <div className="p2Container">
                             <p id="p1">빌렸스컬은 전국 각지의 학교를 대상으로</p>
                             <p id="p2">더 나은 교육환경을 제공하기 위한 테크제품 렌탈서비스입니다</p>
+                            <p id="p3">사지말고, 대여하세요!</p>
                         </div>
-                        <p id="p3">사지말고, 대여하세요!</p>
                     </div>
                 </div>
 
@@ -146,7 +146,7 @@ function Home() {
                     </div>
                 </div>
 
-                <button id="viewButton">제품 보러가기</button>
+                <Link to="/product"><button id="viewButton">제품 보러가기</button></Link>
             </div>
 
             {/* <footer id="homeFooter">
