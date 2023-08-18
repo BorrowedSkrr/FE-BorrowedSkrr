@@ -22,6 +22,29 @@
     margin-top: 2vw;
 }
 
+#staff,
+#student {
+    width: 9vw;
+    height: 3vw;
+    border-radius: 0.4vw;
+    border: none;
+    background: #8270FF;
+    font-weight: 700;
+    font-size: 1vw;
+    line-height: 1vw;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+#student {
+    background: #2A2A3A;
+}
+
+#student>a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
 #signStaffTitle {
     margin-top: 4vw;
     height:1.45vw;
@@ -180,4 +203,22 @@
     display:flex;
     flex-direction: column;
     gap:0.2vw;
+}
+
+.signExp{
+    width: 29vw;
+        height: 1.6vw;
+        border: 0.05vw solid #8F4949;
+        border-radius: 0.4vw;
+        background: rgba(255, 89, 89, 0.1);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-weight: 500;
+        font-size: 0.7vw;
+        line-height: 0.7vw;
+        color: #CC6969;
+        position: absolute;
+        margin-top: 48vw;
 }
