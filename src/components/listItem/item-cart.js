@@ -60,7 +60,7 @@ const ItemCart = (props) => {
                 <DivCenter>
                     <div>
                         <p style={{marginBottom:'1.6rem',fontSize:'2rem', fontWeight:'700'}}>{name}</p>
-                        <p style={{fontSize:'2rem', fontWeight:'700'}}>{num}</p>
+                        <p style={{fontSize:'2rem', fontWeight:'700'}}>{num} 개</p>
                     </div>
                     <p style={{fontSize:'1.5rem', color:colors.gray2}}>{period}</p>
                 </DivCenter>

@@ -7,6 +7,7 @@ import axios from "axios";
 import CustomPagination from "../components/paging/pagination";
 import ItemLike from "../components/listItem/item-like";
 import ListLike from "../components/list/list-like";
+import LikeProductData from "../util/likeProduct";
 
 const LikeStaff = () => {
     // 관심 리스트
@@ -23,24 +24,25 @@ const LikeStaff = () => {
     };
 
     useEffect(() => {
-        let isMounted = true; // 마운트 상태를 나타내는 변수
+        // let isMounted = true; // 마운트 상태를 나타내는 변수
 
-        const fetchData = async () => {
-            try{
-                const resultLikeData = await axios.get(`https://jsonplaceholder.typicode.com/users`);
+        // const fetchData = async () => {
+        //     try{
+        //         const resultLikeData = await axios.get(`https://jsonplaceholder.typicode.com/users`);
 
-                if (isMounted){
-                    setLikeData(resultLikeData.data)
-                }
-            } catch (error){
-                console.log(error);
-            }
-        };
-        fetchData();
+        //         if (isMounted){
+        //             setLikeData(resultLikeData.data)
+        //         }
+        //     } catch (error){
+        //         console.log(error);
+        //     }
+        // };
+        // fetchData();
 
-        return () => {
-            isMounted = false; // 컴포넌트가 언마운트될 때 변수를 false로 설정
-        };
+        // return () => {
+        //     isMounted = false; // 컴포넌트가 언마운트될 때 변수를 false로 설정
+        // };
+        setLikeData(LikeProductData);
     }, []);
 
     useEffect(() => {

@@ -8,6 +8,7 @@ import axios from "axios";
 import ListCart from "../components/list/list-cart";
 import { styled } from "styled-components";
 import Api from "../api";
+import CartData from "../util/wantProduct";
 
 const StyleButton = styled.button`
     padding: 2.2rem 6.4rem;
@@ -30,24 +31,25 @@ const CartStaff = () => {
     const [checkNum, setCheckNum] = useState(0);
 
     useEffect(() => {
-        let isMounted = true; // 마운트 상태를 나타내는 변수
+        // let isMounted = true; // 마운트 상태를 나타내는 변수
 
-        const fetchData = async () => {
-            try{
-                const resultcartData = await axios.get(`https://jsonplaceholder.typicode.com/users`);
+        // const fetchData = async () => {
+        //     try{
+        //         const resultcartData = await axios.get(`https://jsonplaceholder.typicode.com/users`);
 
-                if (isMounted){
-                    setCartData(resultcartData.data)
-                }
-            } catch (error){
-                console.log(error);
-            }
-        };
-        fetchData();
+        //         if (isMounted){
+        //             setCartData(resultcartData.data)
+        //         }
+        //     } catch (error){
+        //         console.log(error);
+        //     }
+        // };
+        // fetchData();
 
-        return () => {
-            isMounted = false; // 컴포넌트가 언마운트될 때 변수를 false로 설정
-        };
+        // return () => {
+        //     isMounted = false; // 컴포넌트가 언마운트될 때 변수를 false로 설정
+        // };
+        setCartData(CartData);
     }, []);
 
     const cartListener = (price, isCheck) => {

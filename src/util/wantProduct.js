@@ -1,4 +1,4 @@
-const subscribeData = [
+const CartData = [
     {
         "id": 11,
         "name": "아이패드 5세대",
@@ -27,3 +27,5 @@ const subscribeData = [
         "image": "image/vr-2.png"
     }
 ]
+
+export default CartData;

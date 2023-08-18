@@ -1,4 +1,4 @@
-const likeProductData = [
+const LikeProductData = [
     {
         "id": 1,
         "name": "LG gram 17인치 노트북",
@@ -110,3 +110,5 @@ const likeProductData = [
         "category": "3"
     }
 ]
+
+export default LikeProductData;
