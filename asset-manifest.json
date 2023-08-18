@@ -1,9 +1,12 @@
 {
   "files": {
-    "main.css": "/FE-BorrowedSkrr/static/css/main.71d9fd58.css",
-    "main.js": "/FE-BorrowedSkrr/static/js/main.5df67653.js",
+    "main.css": "/FE-BorrowedSkrr/static/css/main.d98e3291.css",
+    "main.js": "/FE-BorrowedSkrr/static/js/main.e1be5e8f.js",
     "static/js/787.0440f72f.chunk.js": "/FE-BorrowedSkrr/static/js/787.0440f72f.chunk.js",
     "static/media/home-banner.png": "/FE-BorrowedSkrr/static/media/home-banner.ca1ed3986cea1f0a5224.png",
+    "static/media/banner2.png": "/FE-BorrowedSkrr/static/media/banner2.5ccbcbf4becf616f43a2.png",
+    "static/media/banner3.png": "/FE-BorrowedSkrr/static/media/banner3.ffd547b5c83238bb4d40.png",
+    "static/media/banner1.png": "/FE-BorrowedSkrr/static/media/banner1.8941333b955764edfef9.png",
     "static/media/advantage4.png": "/FE-BorrowedSkrr/static/media/advantage4.162c354afaa1fe24015e.png",
     "static/media/advantage2.png": "/FE-BorrowedSkrr/static/media/advantage2.8035dcf97fa3d9e71f94.png",
     "static/media/advantage1.png": "/FE-BorrowedSkrr/static/media/advantage1.dc4ab5cf0e662e0dc0d0.png",
@@ -22,12 +25,12 @@
     "static/media/check-radio.svg": "/FE-BorrowedSkrr/static/media/check-radio.a4a0ca7fcb85a80a78f7465c35a0e511.svg",
     "static/media/notcheck-radio.svg": "/FE-BorrowedSkrr/static/media/notcheck-radio.bb054c3ae489b09e2ffc00502bfc69be.svg",
     "static/media/icon_back.svg": "/FE-BorrowedSkrr/static/media/icon_back.8d7f3a40cfce19733d7ae55419bb850e.svg",
-    "main.71d9fd58.css.map": "/FE-BorrowedSkrr/static/css/main.71d9fd58.css.map",
-    "main.5df67653.js.map": "/FE-BorrowedSkrr/static/js/main.5df67653.js.map",
+    "main.d98e3291.css.map": "/FE-BorrowedSkrr/static/css/main.d98e3291.css.map",
+    "main.e1be5e8f.js.map": "/FE-BorrowedSkrr/static/js/main.e1be5e8f.js.map",
     "787.0440f72f.chunk.js.map": "/FE-BorrowedSkrr/static/js/787.0440f72f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.71d9fd58.css",
-    "static/js/main.5df67653.js"
+    "static/css/main.d98e3291.css",
+    "static/js/main.e1be5e8f.js"
   ]
 }
