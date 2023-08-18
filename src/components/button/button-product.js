@@ -14,13 +14,11 @@ const StyleButton = styled.button`
 const ButtonProduct = () => {
     return (
         <>
-            {localStorage.getItem('id') === 1 && 
-                <Link to="/product">
-                    <StyleButton>
-                        <p>Product</p>
-                    </StyleButton>
-                </Link>
-            }
+            <Link to="/product">
+                <StyleButton>
+                    <p>Product</p>
+                </StyleButton>
+            </Link>
         </>
     )
 }
