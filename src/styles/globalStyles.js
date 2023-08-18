@@ -37,6 +37,7 @@ const customReset = css`
     }
     a {
         text-decoration: none;
+        
     }
     table {
         border-collapse: collapse;

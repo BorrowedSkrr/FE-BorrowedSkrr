@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import logo_small from "../images/logo-small.png";
 import icon_back from "../images/icon-back.png";
 import product from "../images/product.png";
@@ -12,6 +12,11 @@ import button_minus from "../images/button-minus.png";
 import button_plus from "../images/button-plus.png";
 
 function ProductDetail() {
+    let {id} = useParams();
+    // let findItem = shoes.find((item) => {
+    //     return item.id == id;
+    // });
+
     const [marginTop, setMarginTop] = useState('8.65vw');
     const [isLiked9, setIsLiked9] = useState(false);
     const [rentButtonText, setRentButtonText] = useState('대여하기');

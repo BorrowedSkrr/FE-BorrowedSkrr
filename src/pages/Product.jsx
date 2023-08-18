@@ -15,8 +15,15 @@ import yescheck_radio from "../images/yescheck-radio.png";
 import banner1 from "../images/banner1.png";
 import banner2 from "../images/banner2.png";
 import banner3 from "../images/banner3.png";
+import axios from 'axios';
+import ListLike from '../components/list/list-like';
+import ListProduct from '../components/list/list-product';
 
 function Product() {
+    // 관심 리스트
+    const [productData, setProductData] = useState([]);
+    const [slicedData, setSlicedData] = useState([]);
+
     //정렬 박스(셀렉트 박스)
     const [activeButton, setActiveButton] = useState("notebook");
     const [selectedOption, setSelectedOption] = useState('기본');
@@ -54,6 +61,32 @@ function Product() {
     };
 
     useEffect(() => {
+        let isMounted = true; // 마운트 상태를 나타내는 변수
+
+        const fetchData = async () => {
+            try{
+                const resultProductData = await axios.get(`https://jsonplaceholder.typicode.com/users`);
+
+                if (isMounted){
+                    setProductData(resultProductData.data)
+                }
+            } catch (error){
+                console.log(error);
+            }
+        };
+        fetchData();
+
+        return () => {
+            isMounted = false; // 컴포넌트가 언마운트될 때 변수를 false로 설정
+        };
+    }, []);
+
+    useEffect(() => {
+        // 현재 페이지에 해당하는 데이터 슬라이싱
+        setSlicedData(productData.slice(0, 8));
+    }, [productData]);
+
+    useEffect(() => {
         document.addEventListener('click', handleClickOutside);
         return () => {
             document.removeEventListener('click', handleClickOutside);
@@ -75,105 +108,105 @@ function Product() {
         isLiked5, isLiked6, isLiked7, isLiked8
     ]);
 
-    const handleHeartClick = (productId) => {
-        const updatedLikedState = [...likedStatus];
-        updatedLikedState[productId - 1] = !updatedLikedState[productId - 1];
-        setLikedStatus(updatedLikedState);
-        const updatedProductData = productData.map((product) => {
-            if (product.id === productId) {
-                return {
-                    ...product,
-                    isLiked: !product.isLiked,
-                };
-            }
-            return product;
-        });
+    // const handleHeartClick = (productId) => {
+    //     const updatedLikedState = [...likedStatus];
+    //     updatedLikedState[productId - 1] = !updatedLikedState[productId - 1];
+    //     setLikedStatus(updatedLikedState);
+    //     const updatedProductData = productData.map((product) => {
+    //         if (product.id === productId) {
+    //             return {
+    //                 ...product,
+    //                 isLiked: !product.isLiked,
+    //             };
+    //         }
+    //         return product;
+    //     });
 
-        setProductData(updatedProductData);
+    //     setProductData(updatedProductData);
 
-        const updatedProductData2 = productData2.map((product) => {
-            if (product.id === productId) {
-                return {
-                    ...product,
-                    isLiked: !product.isLiked,
-                };
-            }
-            return product;
-        });
-        setProductData2(updatedProductData2);
-    };
+    //     // const updatedProductData2 = productData2.map((product) => {
+    //     //     if (product.id === productId) {
+    //     //         return {
+    //     //             ...product,
+    //     //             isLiked: !product.isLiked,
+    //     //         };
+    //     //     }
+    //     //     return product;
+    //     // });
+    //     // setProductData2(updatedProductData2);
+    // };
 
-    //왼쪽 줄 상품 데이터
-    const [productData, setProductData] = useState([
-        {
-            id: 1,
-            name: '애플 에어팟 맥스1',
-            isLiked: isLiked1,
-            weekPrice: '39,000원',
-            monthPrice: '120,000원',
-            remaining: 30,
-        },
-        {
-            id: 3,
-            name: '애플 에어팟 맥스3',
-            isLiked: isLiked3,
-            weekPrice: '39,000원',
-            monthPrice: '120,000원',
-            remaining: 0,
-        },
-        {
-            id: 5,
-            name: '애플 에어팟 맥스5',
-            isLiked: isLiked5,
-            weekPrice: '39,000원',
-            monthPrice: '120,000원',
-            remaining: 0,
-        },
-        {
-            id: 7,
-            name: '애플 에어팟 맥스7',
-            isLiked: isLiked7,
-            weekPrice: '39,000원',
-            monthPrice: '120,000원',
-            remaining: 30,
-        }
-    ]);
+    // // //왼쪽 줄 상품 데이터
+    // // const [productData, setProductData] = useState([
+    // //     {
+    // //         id: 1,
+    // //         name: '애플 에어팟 맥스1',
+    // //         isLiked: isLiked1,
+    // //         weekPrice: '39,000원',
+    // //         monthPrice: '120,000원',
+    // //         remaining: 30,
+    // //     },
+    // //     {
+    // //         id: 3,
+    // //         name: '애플 에어팟 맥스3',
+    // //         isLiked: isLiked3,
+    // //         weekPrice: '39,000원',
+    // //         monthPrice: '120,000원',
+    // //         remaining: 0,
+    // //     },
+    // //     {
+    // //         id: 5,
+    // //         name: '애플 에어팟 맥스5',
+    // //         isLiked: isLiked5,
+    // //         weekPrice: '39,000원',
+    // //         monthPrice: '120,000원',
+    // //         remaining: 0,
+    // //     },
+    // //     {
+    // //         id: 7,
+    // //         name: '애플 에어팟 맥스7',
+    // //         isLiked: isLiked7,
+    // //         weekPrice: '39,000원',
+    // //         monthPrice: '120,000원',
+    // //         remaining: 30,
+    // //     }
+    // // ]);
 
-    //오른쪽 줄 상품 데이터
-    const [productData2, setProductData2] = useState([
-        {
-            id: 2,
-            name: '애플 에어팟 맥스2',
-            isLiked: isLiked2,
-            weekPrice: '39,000원',
-            monthPrice: '120,000원',
-            remaining: 20,
-        },
-        {
-            id: 4,
-            name: '애플 에어팟 맥스4',
-            isLiked: isLiked4,
-            weekPrice: '39,000원',
-            monthPrice: '120,000원',
-            remaining: 0,
-        },
-        {
-            id: 6,
-            name: '애플 에어팟 맥스6',
-            isLiked: isLiked6,
-            weekPrice: '39,000원',
-            monthPrice: '120,000원',
-            remaining: 5,
-        },
-        {
-            id: 8,
-            name: '애플 에어팟 맥스8',
-            isLiked: isLiked8,
-            weekPrice: '39,000원',
-            monthPrice: '120,000원',
-            remaining: 50,
-        }
-    ]);
+    // // //오른쪽 줄 상품 데이터
+    // // const [productData2, setProductData2] = useState([
+    // //     {
+    // //         id: 2,
+    // //         name: '애플 에어팟 맥스2',
+    // //         isLiked: isLiked2,
+    // //         weekPrice: '39,000원',
+    // //         monthPrice: '120,000원',
+    // //         remaining: 20,
+    // //     },
+    // //     {
+    // //         id: 4,
+    // //         name: '애플 에어팟 맥스4',
+    // //         isLiked: isLiked4,
+    // //         weekPrice: '39,000원',
+    // //         monthPrice: '120,000원',
+    // //         remaining: 0,
+    // //     },
+    // //     {
+    // //         id: 6,
+    // //         name: '애플 에어팟 맥스6',
+    // //         isLiked: isLiked6,
+    // //         weekPrice: '39,000원',
+    // //         monthPrice: '120,000원',
+    // //         remaining: 5,
+    // //     },
+    // //     {
+    // //         id: 8,
+    // //         name: '애플 에어팟 맥스8',
+    // //         isLiked: isLiked8,
+    // //         weekPrice: '39,000원',
+    // //         monthPrice: '120,000원',
+    // //         remaining: 50,
+    // //     }
+    // // ]);
 
     //배너
     const images = [
@@ -333,80 +366,10 @@ function Product() {
                     </button>
                 </div>
 
-                <div className="productList">
-                    <div className="left">
-                        {productData.map((product) => (
-                            <div
-                                key={product.id}
-                                className={`product${product.id}`}
-                                style={{ opacity: product.remaining === 0 ? 0.4 : 1 }}
-                            >
-                                <img src={productImage} id="productImage" alt="productImage" />
-                                <div className="productExplain">
-                                    <div className="topTitle">
-                                        <Link to="/productDetail">
-                                            <p id="productTitle">{product.name}</p>
-                                        </Link>
-                                        <img
-                                            src={product.isLiked ? icon_lbold_heart : icon_line_heart}
-                                            id="icon_line_heart"
-                                            alt="icon_line_heart"
-                                            onClick={() => handleHeartClick(product.id)}
-                                        />
-                                    </div>
-                                    <div className="bar"></div>
-                                    <div className="bottomTitle">
-                                        <div className="weekTitle">
-                                            <p id="p12">7일 기준</p>
-                                            <p id="p13">{product.weekPrice}</p>
-                                        </div>
-                                        <div className="monthTitle">
-                                            <p id="p12">1달 기준</p>
-                                            <p id="p13">{product.monthPrice}</p>
-                                        </div>
-                                        <div className="number">{product.remaining}개 남음</div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="right">
-                        {productData2.map((product) => (
-                            <div
-                                key={product.id}
-                                className={`product${product.id}`}
-                                style={{ opacity: product.remaining === 0 ? 0.4 : 1 }}
-                            >
-                                <img src={productImage} id="productImage" alt="productImage" />
-                                <div className="productExplain">
-                                    <div className="topTitle">
-                                        <Link to="/productDetail">
-                                            <p id="productTitle">{product.name}</p>
-                                        </Link>
-                                        <img
-                                            src={product.isLiked ? icon_lbold_heart : icon_line_heart}
-                                            id="icon_line_heart"
-                                            alt="icon_line_heart"
-                                            onClick={() => handleHeartClick(product.id)}
-                                        />
-                                    </div>
-                                    <div className="bar"></div>
-                                    <div className="bottomTitle">
-                                        <div className="weekTitle">
-                                            <p id="p12">7일 기준</p>
-                                            <p id="p13">{product.weekPrice}</p>
-                                        </div>
-                                        <div className="monthTitle">
-                                            <p id="p12">1달 기준</p>
-                                            <p id="p13">{product.monthPrice}</p>
-                                        </div>
-                                        <div className="number">{product.remaining}개 남음</div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                {productData.length > 0 && 
+                    <ListProduct data={slicedData}/>
+                }
+                {console.log(slicedData)}
 
                 <div className="addView">
                     <p id="p14">더보기</p>
