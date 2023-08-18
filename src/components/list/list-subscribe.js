@@ -25,7 +25,7 @@ const ListSubscribe = ({data}) => {
                         name = {item.name }
                         num = {item.count} 
                         period = {`${item.start_date} - ${item.end_date}`}
-                        price = {parseInt(item.id, 10)}
+                        price = {parseInt(item.price, 10)}
                     />
                 )
             })}

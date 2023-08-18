@@ -9,6 +9,7 @@ import ListCart from "../components/list/list-cart";
 import { styled } from "styled-components";
 import Api from "../api";
 import CartData from "../util/wantProduct";
+import CreditModal from "../components/modal/creditModal";
 
 const StyleButton = styled.button`
     padding: 2.2rem 6.4rem;
@@ -23,6 +24,7 @@ const StyleButton = styled.button`
 `
 
 const CartStaff = () => {
+    const [modalShow, setModalShow] = useState(false);
     // 장바구니 리스트
     const [cartData, setCartData] = useState([]);
     // 선택한 제품 가격
@@ -89,7 +91,13 @@ const CartStaff = () => {
                 <p style={{fontSize:'2.4rem'}}>총 내역</p>
                 <p style={{fontSize:'3.2rem'}}>{totalPrice} 원</p>
             </div>
-            <StyleButton>결제하기</StyleButton>
+            <StyleButton onClick={() => setModalShow(true)}>결제하기</StyleButton>
+            {modalShow && 
+                <CreditModal
+                    show={modalShow}
+                    onHide = {() => setModalShow(false)}
+                />
+            }
         </div>
     )
 }
