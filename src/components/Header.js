@@ -21,7 +21,7 @@ const StyleNavbar = styled.div`
     }
 `
 
-const Header = () => {
+const Header = ({isLogin}) => {
     const style = {
         display: "flex",
         flexDirection: "row",
@@ -35,9 +35,8 @@ const Header = () => {
             </Link>
             <div style={style}>
                 <ButtonProduct/>
-                {!localStorage.getItem('isLogin') && <ButtonLogin/> }
-                {localStorage.getItem('isLogin') && <ButtonMy/>}
-                {console.log(localStorage.getItem('isLogin'))}
+                {!isLogin && <ButtonLogin/> }
+                {isLogin && <ButtonMy/>}
             </div>
         </StyleNavbar>
     )

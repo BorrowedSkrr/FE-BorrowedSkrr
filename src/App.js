@@ -22,17 +22,24 @@ import StudentHome from './pages/StudentHome';
 import StudentProduct from './pages/StudentProduct';
 import RentalSuccess from './pages/RentalSuccess';
 import StudentRental from './pages/StudentRental';
+import { useState } from 'react';
 
 function App() {
+  const [isLogin, setIsLogin] = useState(false);
+  const loginHandler = (state) => {
+    setIsLogin(state);
+  }
+
+
   return (
     <>
       <GlobalStyle/>
       <Router basename={process.env.PUBLIC_URL}>
-        <Header/>
+        <Header isLogin={isLogin}/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/loginStaff" element={<LoginStaff />} />
+          <Route path="/loginStaff" element={<LoginStaff loginHandler={loginHandler} />} />
           <Route path="/signStaff" element={<SignStaff />} />
           <Route path="/product" element={<Product />} />
           <Route path="/loginStudent" element={<LoginStudent />} />
@@ -40,7 +47,7 @@ function App() {
           <Route path="/productDetail/:id" element={<ProductDetail />} />
           <Route path="/credit" element={<Credit/>}/>
           <Route path="/creditSuccess" element={<CreditSuccess/>}/>
-          <Route path='/myPageStaff' element={<MyPageStaff/>} />
+          <Route path='/myPageStaff' element={<MyPageStaff loginHandler={loginHandler}/>} />
           <Route path='/myPageStaffEdit' element={<MyPageStaffEdit/>} />
           <Route path="/studentHome" element={<StudentHome/>}/>
           <Route path="/studentProduct" element={<StudentProduct />} />
