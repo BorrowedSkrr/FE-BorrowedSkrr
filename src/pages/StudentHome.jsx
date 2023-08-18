@@ -252,7 +252,7 @@ function StudentHome() {
                 ) : null}
             </div>
 
-         {/*    <footer id="StudentHomeFooter" style={{ marginTop: productData.length === 0 && productData2.length === 0 ? '10vw' : '5vw' }}>
+        {/*    <footer id="StudentHomeFooter" style={{ marginTop: productData.length === 0 && productData2.length === 0 ? '10vw' : '5vw' }}>
                 <img src={likelion} alt="likelion" id="likelion" />
             </footer> */}
         </div>

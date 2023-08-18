@@ -200,6 +200,7 @@
 }
 
 .bottomTitle2{
+    width: 20.5vw;
     align-items: center;
     display:flex;
     justify-content: space-between;
