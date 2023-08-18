@@ -1,32 +1,32 @@
-.signStudent {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+.signStudent{
+    width:100%;
+    margin:0;
+    padding:0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .signStudentBody {
-    display: flex;
+    display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 100vw;
+    width:100vw;
 }
 
 #signStudentTitle {
     margin-top: 4vw;
-    height: 1.45vw;
+    height:1.45vw;
     font-weight: 700;
     font-size: 1.2vw;
     line-height: 1.4vw;
     color: #FFFFFF;
 }
 
-#signStudentForm {
-    width: 29vw;
+#signStudentForm{
+    width:29vw;
     text-align: left;
-    margin-top: 3vw;
+    margin-top:3vw; 
 }

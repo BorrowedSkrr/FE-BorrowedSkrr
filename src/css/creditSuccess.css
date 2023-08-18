@@ -1,19 +1,19 @@
-.CreditSuccess {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+.CreditSuccess{
+    width:100%;
+    margin:0;
+    padding:0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.CreditSuccessBody {
-    display: flex;
+.CreditSuccessBody{
+    display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 100vw;
+    width:100vw;
     white-space: nowrap;
 }
 
@@ -23,8 +23,8 @@
     margin-top: 3.4vw;
 }
 
-#CreditSuccessTitle {
-    height: 1.9vw;
+#CreditSuccessTitle{
+    height:1.9vw;
     font-weight: 700;
     font-size: 1.6vw;
     line-height: 1.9vw;
@@ -39,7 +39,7 @@
 }
 
 #CreditSuccessSubTitle1,
-#CreditSuccessSubTitle2 {
+#CreditSuccessSubTitle2{
     font-weight: 400;
     font-size: 0.75vw;
     line-height: 1.25vw;
@@ -61,11 +61,10 @@
 }
 
 #CreditSuccess_Home>a {
-    text-decoration: none;
-    color: #0F1510;
+    color:#EBEDF8;
 }
 
-#CreditSuccessFooter2 {
+#CreditSuccessFooter2{
     position: fixed;
     bottom: 0;
 }

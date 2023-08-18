@@ -20,7 +20,7 @@ function CreditSuccess() {
             </nav> */}
 
             <div className="CreditSuccessBody">
-                <img src={logo_skrr_black} id="logo_skrr_black" alt="logo_skrr_black" />
+                <img src={logo_skrr_black} id="logo_skrr_black" alt="logo_skrr_black"/>
                 <p id="CreditSuccessTitle">결제가 완료되었어요!</p>
                 <div className="CreditSuccessDiv">
                     <p id="CreditSuccessSubTitle1">학생들에게 더 나은 교육환경을 선물하셨네요!</p>
@@ -28,7 +28,7 @@ function CreditSuccess() {
                 </div>
                 <button id="CreditSuccess_Home"><Link to="/home">홈으로 가기</Link></button>
             </div>
-
+            
             <footer id="CreditSuccessFooter2"></footer>
         </div>
     )

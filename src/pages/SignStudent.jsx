@@ -30,7 +30,7 @@ function SignStudent() {
             setIsPasswordConfirmationStarted(true);
         } else if (e.target.id === 'signStudentPassword') {
             setIsPasswordConfirmationStarted(true);
-            setIsPasswordCheckAvailable(passwordCheck === password);
+            setIsPasswordCheckAvailable(passwordCheck === password); 
 
             // 비밀번호 8자 이상 판별
             setIsPassword1Available(password.length >= 8);
@@ -38,7 +38,7 @@ function SignStudent() {
             // 영문과 숫자 포함 여부 판별
             setIsPassword2Available(/^(?=.*[a-zA-Z])(?=.*[0-9])/.test(password));
         }
-
+        
         if (!password && !passwordCheck) {
             setIsPasswordCheckAvailable(false);
             setIsPasswordConfirmationStarted(false);
@@ -111,20 +111,20 @@ function SignStudent() {
 
                     <p id="SchoolTitle">학교코드</p>
                     <input type="text" placeholder="학교코드 입력" id="signStudentSchool" />
-
+                    
                     <p id="InformationTitle">학년/반/번호</p>
                     <input type="text" placeholder="ex. 1학년 1반 1번" id="signStudentInformation" />
                 </form>
 
                 {isIdAvailable && isPassword1Available && isPassword2Available && isPasswordCheckAvailable ? (
-                    <Link to="/loginstudent">
-                        <button type="submit" id="signStudentButton">회원가입 완료</button>
-                    </Link>
-                ) : (
-                    <button type="submit" id="signStudentButton" disabled>회원가입 완료</button>
-                )}
+                            <Link to="/loginstudent">
+                                <button type="submit" id="signStudentButton">회원가입 완료</button>
+                            </Link>
+                        ) : (
+                            <button type="submit" id="signStudentButton" disabled>회원가입 완료</button>
+                        )}
             </div>
-            {/* 
+{/* 
             <footer id="signStudentFooter">
                 <img src={likelion} alt="likelion" id="likelion" />
             </footer> */}

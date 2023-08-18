@@ -1,90 +1,90 @@
-.loginStudent {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+.loginStudent{
+    width:100%;
+    margin:0;
+    padding:0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .loginStudentBody {
-    display: flex;
+    display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 100vw;
+    width:100vw;
 }
 
 .loginStudent>.loginStudentBody>.loginButtonContianer {
-    display: flex;
-    gap: 1vw;
-    margin-top: 2vw;
+    display:flex;
+    gap:1vw;
+    margin-top:2vw;
 }
 
 #LoginstaffBtn,
 #LoginstudentBtn {
-    width: 9vw;
-    height: 3vw;
-    border-radius: 0.4vw;
-    border: none;
-    background: #8270FF;
-    font-weight: 700;
-    font-size: 1vw;
-    line-height: 1vw;
-    color: #FFFFFF;
-    cursor: pointer;
+    width:9vw;
+    height:3vw;
+    border-radius:0.4vw;
+    border:none;
+    background:#8270FF;
+    font-weight:700;
+    font-size:1vw;
+    line-height:1vw;
+    color:#FFFFFF;
+    cursor:pointer;
 }
 
 #LoginstaffBtn {
     background: #2A2A3A;
 }
 
-#LoginstaffBtn>a {
+#LoginstaffBtn>a{
     text-decoration: none;
-    color: #FFFFFF;
+    color:#FFFFFF;
 }
 
 #loginStudentTitle {
-    margin-top: 4vw;
-    font-weight: 700;
-    font-size: 1.2vw;
-    line-height: 1.4vw;
-    color: #FFFFFF;
+    margin-top:4vw;
+    font-weight:700;
+    font-size:1.2vw;
+    line-height:1.4vw;
+    color:#FFFFFF;
 }
 
-#loginStudentForm {
-    width: 29vw;
+#loginStudentForm{
+    width:29vw;
     text-align: left;
-    margin-top: 1.6vw;
+    margin-top:1.6vw;
 }
 
 .loginStudent>.loginStudentBody>form>#idTitle,
 .loginStudent>.loginStudentBody>form>#passwordTitle {
-    font-weight: 700;
-    font-size: 0.8vw;
-    line-height: 0.8vw;
-    color: #7F85A3;
+    font-weight:700;
+    font-size:0.8vw;
+    line-height:0.8vw;
+    color:#7F85A3;
 }
 
 .loginStudent>.loginStudentBody>form>#passwordTitle {
-    margin-top: 1.6vw;
+    margin-top:1.6vw;
 }
 
 #loginStudentId,
 #loginStudentPassword {
-    width: 29vw;
-    height: 3.2vw;
-    border-radius: 0.4vw;
-    background-color: #191B24;
-    border: none;
-    padding-left: 1vw;
-    outline: none;
-    font-weight: 400;
-    font-size: 1vw;
-    line-height: 1vw;
-    color: #FFFFFF;
-    margin-top: 0.5vw;
+    width:29vw;
+    height:3.2vw;
+    border-radius:0.4vw;
+    background-color:#191B24;
+    border:none;
+    padding-left:1vw;
+    outline:none;
+    font-weight:400;
+    font-size:1vw;
+    line-height:1vw;
+    color:#FFFFFF;
+    margin-top:0.5vw;
 }
 
 #loginStudentId::placeholder,
@@ -96,23 +96,23 @@
 }
 
 #loginStudentButton {
-    width: 12.6vw;
-    height: 3.2vw;
-    margin-top: 4.4vw;
-    border: none;
-    border-radius: 0.4vw;
-    background: #D2F75A;
-    font-weight: 700;
-    font-size: 1vw;
-    line-height: 1vw;
-    color: #0F1015;
-    cursor: pointer;
+    width:12.6vw;
+    height:3.2vw;
+    margin-top:4.4vw;
+    border:none;
+    border-radius:0.4vw;
+    background:#D2F75A;
+    font-weight:700;
+    font-size:1vw;
+    line-height:1vw;
+    color:#0F1015;
+    cursor:pointer;
 }
 
 .loginStudent>.loginStudentBody>.pContainer5 {
     margin-top: 1.5vw;
-    display: flex;
-    gap: 1vw;
+    display:flex;
+    gap:1vw;
 }
 
 #loginStudentFooter {
@@ -120,20 +120,20 @@
     bottom: 0;
 }
 
-.noAccess {
-    position: absolute;
-    margin-top: 1.8vw;
-    width: 29vw;
-    height: 1.6vw;
-    border: 0.05vw solid #8F4949;
-    border-radius: 0.4vw;
+.noAccess{
+    position:absolute;
+    margin-top:1.8vw;
+    width:29vw;
+    height:1.6vw;
+    border:0.05vw solid #8F4949;
+    border-radius:0.4vw;
     background: rgba(255, 89, 89, 0.1);
-    font-weight: 500;
-    font-size: 0.7vw;
-    line-height: 0.8vw;
-    color: #CC6969;
+    font-weight:500;
+    font-size:0.7vw;
+    line-height:0.8vw;
+    color:#CC6969;
     text-align: center;
-    display: flex;
+    display:flex;
     justify-content: center;
     flex-direction: column;
 }

@@ -1,19 +1,19 @@
-.signStaff {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+.signStaff{
+    width:100%;
+    margin:0;
+    padding:0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .signStaffBody {
-    display: flex;
+    display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 100vw;
+    width:100vw;
 }
 
 .signButtonContianer {
@@ -24,17 +24,17 @@
 
 #signStaffTitle {
     margin-top: 4vw;
-    height: 1.45vw;
+    height:1.45vw;
     font-weight: 700;
     font-size: 1.2vw;
     line-height: 1.4vw;
     color: #FFFFFF;
 }
 
-#signStaffForm {
-    width: 29vw;
+#signStaffForm{
+    width:29vw;
     text-align: left;
-    margin-top: 3vw;
+    margin-top:3vw; 
 }
 
 #NameTitle,
@@ -43,21 +43,21 @@
 #CheckPasswordTitle,
 #SchoolTitle,
 #FileTitle,
-#InformationTitle {
-    height: 1vw;
-    font-weight: 700;
-    font-size: 1vw;
-    line-height: 1vw;
-    color: #7F85A3;
-    margin-top: 3vw;
+#InformationTitle{
+    height:1vw;
+    font-weight:700;
+    font-size:1vw;
+    line-height:1vw;
+    color:#7F85A3;
+    margin-top:3vw; 
 }
 
-#FileTitle {
-    margin-top: 3vw;
+#FileTitle{
+    margin-top:3vw;
 }
 
 .fileUploadContainer {
-    display: flex;
+    display:flex;
     justify-content: space-between;
 }
 
@@ -72,24 +72,24 @@
 #signStudentPassword,
 #signStudentPasswordCheck,
 #signStudentSchool,
-#signStudentInformation {
-    margin-top: 0.8vw;
-    width: 29vw;
-    height: 3.2vw;
-    border-radius: 0.4vw;
-    border: none;
-    background: #191B24;
-    font-weight: 400;
-    font-size: 1vw;
-    line-height: 1vw;
-    color: #FFFFFF;
-    padding-left: 1vw;
-    outline: none;
+#signStudentInformation{
+    margin-top:0.8vw;
+    width:29vw;
+    height:3.2vw;
+    border-radius:0.4vw;
+    border:none;
+    background:#191B24;
+    font-weight:400;
+    font-size:1vw;
+    line-height:1vw;
+    color:#FFFFFF;
+    padding-left:1vw;
+    outline:none;
     caret-color: #484A64;
 }
 
-.fileUpload {
-    width: 19vw;
+.fileUpload{
+    width:19vw;
 }
 
 #signStaffName:focus,
@@ -117,67 +117,67 @@
 #signStudentPasswordCheck::placeholder,
 #signStudentSchool::placeholder,
 #signStudentInformation::placeholder {
-    font-weight: 400;
-    font-size: 0.85vw;
-    line-height: 0.85vw;
-    color: #7F85A3;
+    font-weight:400;
+    font-size:0.85vw;
+    line-height:0.85vw;
+    color:#7F85A3;
 }
 
-.fileUploadBtn {
-    width: 9vw;
-    height: 3.2vw;
-    border: 0.1vw solid #484A64;
-    border-radius: 0.4vw;
-    background: #2A2A3A;
-    font-weight: 700;
-    font-size: 1vw;
-    line-height: 1.6vw;
-    color: #7F85A3;
-    cursor: pointer;
-    margin-top: 0.8vw;
+.fileUploadBtn{
+    width:9vw;
+    height:3.2vw;
+    border:0.1vw solid #484A64;
+    border-radius:0.4vw;
+    background:#2A2A3A;
+    font-weight:700;
+    font-size:1vw;
+    line-height:1.6vw;
+    color:#7F85A3;
+    cursor:pointer;
+    margin-top:0.8vw;
 }
 
 .selectedFileNameContainer {
-    padding-top: 1vw;
+    padding-top:1vw;
 }
 
 #signStaffButton,
-#signStudentButton {
-    margin-top: 6.5vw;
-    width: 10.25vw;
-    height: 3.2vw;
-    border: none;
-    border-radius: 0.4vw;
-    background: #D2F75A;
-    font-weight: 700;
-    font-size: 1vw;
-    line-height: 1vw;
-    color: #0F1015;
-    cursor: pointer;
-    margin-bottom: 12.2vw;
+#signStudentButton{
+    margin-top:6.5vw;
+    width:10.25vw;
+    height:3.2vw;
+    border:none;
+    border-radius:0.4vw;
+    background:#D2F75A;
+    font-weight:700;
+    font-size:1vw;
+    line-height:1vw;
+    color:#0F1015;
+    cursor:pointer;
+    margin-bottom:12.2vw;
     white-space: nowrap;
 }
 
 #IdExplain,
 #Password1Explain,
 #Password2Explain,
-#PasswordCheckExplain {
-    height: 0.65vw;
-    font-weight: 500;
-    font-size: 0.65vw;
-    line-height: 0.65vw;
-    color: #D2F75A;
+#PasswordCheckExplain{
+    height:0.65vw;
+    font-weight:500;
+    font-size:0.65vw;
+    line-height:0.65vw;
+    color:#D2F75A;
 }
 
 #IdExplain,
 .psExplain,
-#PasswordCheckExplain {
+#PasswordCheckExplain{
     position: absolute;
-    margin-top: 0.8vw;
+    margin-top:0.8vw;
 }
 
-.psExplain {
-    display: flex;
+.psExplain{
+    display:flex;
     flex-direction: column;
-    gap: 0.2vw;
+    gap:0.2vw;
 }

@@ -18,7 +18,7 @@ function LoginStudent() {
                 </div>
             </nav> */}
 
-            <div className="loginStudentBody">
+            <div className="loginStudentBody">        
                 <div className="loginButtonContianer">
                     <button id="LoginstaffBtn"><Link to="/loginStaff">교직원</Link></button>
                     <button id="LoginstudentBtn">학생</button>
@@ -32,7 +32,7 @@ function LoginStudent() {
 
                     <div className="noAccess">접근권한 허용 후에 이용할 수 있어요.</div>
                 </form>
-
+                
                 <button type="submit" id="loginStudentButton">로그인</button>
 
                 <div className="pContainer5">
@@ -41,7 +41,7 @@ function LoginStudent() {
                 </div>
             </div>
 
-            <footer id="loginStudentFooter"></footer>
+            <footer id="loginStudentFooter"></footer> 
         </div>
     )
 }
