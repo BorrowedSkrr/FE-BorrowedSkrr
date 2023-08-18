@@ -59,6 +59,22 @@ function LoginStaff() {
         fetchData();
     }
  */
+
+    const onClickLogin = (Auth) => {
+        localStorage.clear();
+        if (Auth === '교직원'){
+            localStorage.setItem('userId', 1);
+            localStorage.setItem('userName', '김교사');
+            localStorage.setItem('userName', '한성고');
+            localStorage.setItem('isLogin', true);
+        } else if (Auth === '학생'){
+            localStorage.setItem('userId', 2);
+            localStorage.setItem('userName', '김학생');
+            localStorage.setItem('userName', '한성고');
+            localStorage.setItem('isLogin', true);
+        }
+    }
+
     return (
         <div className="loginStaff">
             {/* <nav id="loginStaffNav">
@@ -84,10 +100,10 @@ function LoginStaff() {
 
                 <div className="loginBtnContainer">
                     <Link to="/product">
-                        <button type="button" id="loginStaffButton">교직원으로 로그인</button>
+                        <button type="button" id="loginStaffButton" onClick={() => onClickLogin('교직원')}>교직원으로 로그인</button>
                     </Link>
                     <Link to="/studentHome">
-                        <button type="button" id="loginStudentButton">학생으로 로그인</button>
+                        <button type="button" id="loginStudentButton" onClick={() => onClickLogin('학생')}>학생으로 로그인</button>
                     </Link>
                 </div>
 

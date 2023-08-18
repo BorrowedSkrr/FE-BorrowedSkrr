@@ -17,6 +17,11 @@ function ProductDetail() {
     //     return item.id == id;
     // });
 
+    // {img, name, info, num, price7, price30}
+    const productItem = products.find((item) => {
+        return item.id == id;
+    })
+
     const [marginTop, setMarginTop] = useState('8.65vw');
     const [isLiked9, setIsLiked9] = useState(false);
     const [rentButtonText, setRentButtonText] = useState('대여하기');
@@ -103,15 +108,15 @@ function ProductDetail() {
     //이거 수량 남은거에 맞춰서 최대 조정해줘야 합니다.
     const increaseRentalNumber = () => {
         const currentValue = parseInt(rentalNumber, 10);
-        if (currentValue < 100) {
+        if (currentValue < productItem.num) {
             setRentalNumber(currentValue + 1);
         }
     };
 
     //이것도 가격에 맞춰서 바꿔주셔야합니다.
     function calculateTotalPrice(quantity, days) {
-        const pricePerDay = 39000 / 7;
-        const pricePerMonth = 120000;
+        const pricePerDay = productItem.price7 / 7;
+        const pricePerMonth = productItem.price30;
 
         if (days % 28 === 0) {
             const totalMonths = days / 28;
@@ -160,7 +165,7 @@ function ProductDetail() {
 
     useEffect(() => {
         if (redirectToCheckout) {
-            navigate('/credit');
+            navigate(`/credit/${id}`);
         }
     }, [redirectToCheckout, navigate]);
 
@@ -191,11 +196,11 @@ function ProductDetail() {
                         <img src={product} id="productDetailImage" alt="productDetailImage"/>
                         <div className="productDeatilExplain">
                             <div className="productDetailPContainer">
-                                <p id="productDetailTitle">애플 에어팟 맥스1</p>
-                                <p id="productDetailText">하이파이 오디오와 업계최고 수준의 액티브 노이즈 캔슬링, 적응형 EQ, 공간 음향 기능을 갖췄습니다.</p>
+                                <p id="productDetailTitle">{productItem.name}</p>
+                                <p id="productDetailText">{productItem.info}</p>
                             </div>
                             <div className="productDetailBottom">
-                                <div className="productDetailNumber">30개 남음</div>
+                                <div className="productDetailNumber">{productItem.num}개 남음</div>
                                 <img
                                     src={isLiked9 ? white_lbold_heart : white_line_heart}
                                     id="white_line_heart"
@@ -210,11 +215,11 @@ function ProductDetail() {
                     <div className="priceBox">
                         <div className="weekBox">
                             <p id="productweekTtile">7일 기준</p>
-                            <p id="productweekPrice">39,000원</p>
+                            <p id="productweekPrice">{productItem.price7}원</p>
                         </div>
                         <div className="monthBox">
                             <p id="productmonthTitle">1달 기준</p>
-                            <p id="productmonthPrice">120,000원</p>
+                            <p id="productmonthPrice">{productItem.price30}</p>
                         </div>
                     </div>
 
