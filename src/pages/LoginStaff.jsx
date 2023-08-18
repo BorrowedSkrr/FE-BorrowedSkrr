@@ -39,7 +39,10 @@ function LoginStaff() {
 
         const fetchData = async () => {
             try{
-                const res = await Api.post("accounts/api-auth/login/",{
+                const res = await Api.post("/accounts/api-auth/login/",{
+                    headers: {
+                        'Content-Type': 'application/json'
+                        },
                     username : id,
                     password : pw
                 });
