@@ -29,7 +29,7 @@ function RentalSuccess() {
                 </div>
             </div>
 
-            <footer id="RentalSuccessFooter"></footer>
+            <footer id="RentalSuccessFooter"></footer> 
         </div>
     )
 }

@@ -26,9 +26,9 @@ function LoginStaff() {
                 <p id="loginStaffTitle">교직원 로그인</p>
                 <form id="loginStaffForm">
                     <p id="idTitle">아이디</p>
-                    <input type="text" placeholder="아이디를 입력하세요" id="loginStaffId" />
+                    <input type="text" placeholder="아이디를 입력하세요" id="loginStaffId"/>
                     <p id="passwordTitle">비밀번호</p>
-                    <input type="password" placeholder="비밀번호를 입력하세요" id="loginStaffPassword" />
+                    <input type="password" placeholder="비밀번호를 입력하세요" id="loginStaffPassword"/>
                 </form>
 
                 <button type="submit" id="loginStaffButton">로그인</button>

@@ -8,7 +8,7 @@ import icon_clock from "../images/icon-clock.png";
 import icon_broken from "../images/icon-broken.png";
 import icon_warning from "../images/icon-warning.png";
 import white_lbold_heart from "../images/white-lbold-heart.png";
-import button_minus from "../images/button-minus.png";
+import button_minus from "../images/button-minus.png"; 
 import button_plus from "../images/button-plus.png";
 
 function ProductDetail() {
@@ -36,7 +36,7 @@ function ProductDetail() {
             if (isNaN(rentalDay) || rentalDay < 7) {
                 console.log('대여 일수가 7일 이상이어야 합니다.');
             } else {
-                const endDate = getEndDate(rentalDay);
+                const endDate = getEndDate(rentalDay); 
                 const totalPrice = calculateTotalPrice(rentalNumber, rentalDay);
                 console.log(`대여 시작일: ${getCurrentDate()}`);
                 console.log(`대여 종료일: ${endDate}`);
@@ -176,12 +176,12 @@ function ProductDetail() {
             <div className="productDetailBody">
                 <div className="productDetailBodyAll">
                     <button id="backButton"><Link to="/product" id="Link1">
-                        <img src={icon_back} id="icon_back2" alt="icon_back" />
+                        <img src={icon_back} id="icon_back2" alt="icon_back"/>
                         <p id="backBtnTitle">뒤로</p>
                     </Link></button>
 
                     <div className="productDetailContainer">
-                        <img src={product} id="productDetailImage" alt="productDetailImage" />
+                        <img src={product} id="productDetailImage" alt="productDetailImage"/>
                         <div className="productDeatilExplain">
                             <div className="productDetailPContainer">
                                 <p id="productDetailTitle">애플 에어팟 맥스1</p>
@@ -216,7 +216,7 @@ function ProductDetail() {
                         <div className="caution1">
                             <div className="caution1All">
                                 <div className="caution1TitleBox">
-                                    <img src={icon_clock} id="icon_clock" alt="icon_clock" />
+                                    <img src={icon_clock} id="icon_clock" alt="icon_clock"/>
                                     <p id="caution1Title">시간 엄수</p>
                                 </div>
                                 <p id="cautionExplain">렌탈 일정을 반드시 지켜주시고 부득이하게 일정을 변경해야 하는 상황에는 미리 연락해주세요.</p>
@@ -225,7 +225,7 @@ function ProductDetail() {
                         <div className="caution2">
                             <div className="caution2All">
                                 <div className="caution1TitleBox">
-                                    <img src={icon_broken} id="icon_broken" alt="icon_broken" />
+                                    <img src={icon_broken} id="icon_broken" alt ="icon_broken"/>
                                     <p id="caution2Title">파손 및 분실주의</p>
                                 </div>
                                 <p id="cautionExplain">소중한 제품을 조심해서 사용해주세요. 렌탈 전, 후로 제품에 이상이 있는지 잘 확인해주시고 해당 내용을 꼭 담당자에게 알려주세요. 영상이나 사진으로 제품 상태를 체크해두는 것이 도움이 될거예요!</p>
@@ -234,11 +234,11 @@ function ProductDetail() {
                         <div className="caution3">
                             <div className="caution3All">
                                 <div className="caution3TitleBox">
-                                    <img src={icon_warning} id="icon_warning" alt="icon_warning" />
+                                    <img src={icon_warning} id="icon_warning" alt="icon_warning"/>
                                     <p id="caution3Title">기타 주의사항</p>
                                 </div>
                                 <p id="cautionExplain">
-                                    대여 신청인 외에 다른 사람이 대신 사용하지 않도록 해주세요.<br />
+                                    대여 신청인 외에 다른 사람이 대신 사용하지 않도록 해주세요.<br/>
                                     문제가 생기거나 문의사항이 생길 시, 언제든지 문의주세요.
                                 </p>
                             </div>
@@ -246,7 +246,7 @@ function ProductDetail() {
                     </div>
                 </div>
             </div>
-
+            
             <form>
                 {showForm && (
                     <div className="rentalShow" style={{ zIndex: 1 }}>
@@ -309,8 +309,8 @@ function ProductDetail() {
                     </div>
                 )}
             </form>
-
-            <div id="ProductDetailFooter" style={{ marginTop, zIndex: 2 }}>
+            
+            <div id="ProductDetailFooter" style={{ marginTop, zIndex:2}}>
                 <div className="footerContainer">
                     {showCartButton && (
                         <button id="cartBtn">장바구니 추가</button>

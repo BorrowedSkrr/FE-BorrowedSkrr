@@ -13,7 +13,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 100vw;
+    width:100vw;
     white-space: nowrap;
 }
 
@@ -47,13 +47,13 @@
     margin-top: 3.4vw;
 }
 
-#creditNumber {
-    width: 4.15vw;
-    height: 1.45vw;
-    font-weight: 700;
-    font-size: 1.2vw;
-    line-height: 1.4vw;
-    color: #FFFFFF;
+#creditNumber{
+    width:4.15vw;
+    height:1.45vw;
+    font-weight:700;
+    font-size:1.2vw;
+    line-height:1.4vw;
+    color:#FFFFFF;
     white-space: nowrap;
 }
 
@@ -79,12 +79,12 @@
     align-items: center;
 }
 
-.creditProductBox {
-    width: 70%;
-    height: 5.5vw;
-    margin-left: 1.5vw;
-    display: flex;
-    flex-direction: column;
+.creditProductBox{
+    width:70%;
+    height:5.5vw;
+    margin-left:1.5vw;
+    display:flex;
+    flex-direction:column;
     align-items: flex-start;
 }
 
@@ -110,10 +110,10 @@
     margin-top: 1.5vw;
 }
 
-.creditProductBox2 {
-    width: 30%;
-    height: 5.5vw;
-    display: flex;
+.creditProductBox2{
+    width:30%;
+    height:5.5vw;
+    display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -124,7 +124,7 @@
     font-weight: 500;
     font-size: 1.4vw;
     line-height: 1.65vw;
-    color: #FFFFFF;
+    color:#FFFFFF;
 }
 
 .creditBar {

@@ -25,7 +25,7 @@ function SignStaff() {
     };
 
     //유효성 검사
-    const isIdAvailable = true;
+    const isIdAvailable = true; 
     const [isPasswordConfirmationStarted, setIsPasswordConfirmationStarted] = useState(false);
     const [isPasswordCheckAvailable, setIsPasswordCheckAvailable] = useState(false);
     const [isPassword1Available, setIsPassword1Available] = useState(false);
@@ -133,17 +133,17 @@ function SignStaff() {
                             <div className="selectedFileNameContainer">
                                 {selectedFileName}
                             </div>
-                        </div>
+                        </div>                    
                         <button className="fileUploadBtn" onClick={handleFileButtonClick}>파일선택</button>
                     </div>
                 </form>
                 {isIdAvailable && isPassword1Available && isPassword2Available && isPasswordCheckAvailable ? (
-                    <Link to="/loginstaff">
-                        <button type="submit" id="signStaffButton">회원가입 완료</button>
-                    </Link>
-                ) : (
-                    <button type="submit" id="signStaffButton" disabled>회원가입 완료</button>
-                )}
+                        <Link to="/loginstaff">
+                            <button type="submit" id="signStaffButton">회원가입 완료</button>
+                        </Link>
+                    ) : (
+                        <button type="submit" id="signStaffButton" disabled>회원가입 완료</button>
+                    )}
             </div>
 
             {/* <footer id="signStaffFooter">
