@@ -221,29 +221,24 @@
     height:3vw;
 }
 
-#p4{
-    font-weight:700;
-    font-size:1vw;
-    line-height:1vw;
-    margin:0;
-    margin-top:0.5vw;
-    color:#FFFFFF;
-}
 
 .home>.homeBody>.explainContainer{
     display:flex;
     gap:1vw;
     margin:0;
     margin-top:2.3vw;
+    justify-content: center;
 }
 
 .home>.homeBody>.explainContainer>.explainBox1,
 .home>.homeBody>.explainContainer>.explainBox2{
     width: 29vw;
-    height: 17.9vw;
+    height:auto;
     border-radius: 0.8vw;
     background-color: #191B24;
     border: none;
+    display:flex;
+    flex-direction: column;
 }
 
 .home>.homeBody>.explainContainer>.explainBox1>.imgContainer,
@@ -270,7 +265,6 @@
 
 .home>.homeBody>.explainContainer>.explainBox1>.pContainer2,
 .home>.homeBody>.explainContainer>.explainBox2>.pContainer2{
-    height:5.9vw;
     text-align: left;
     margin-bottom:2vw;
     margin-left:2vw;
@@ -278,30 +272,29 @@
 }
 
 #p4 {
-    height: 2vw;
+    margin-top:2vw;
     font-weight: 700;
-    font-size: 1vw;
-    line-height: 1vw;
+    font-size: 2rem;
     color: #FFFFFF;
 }
 
 #p5{
-    height:3.9vw;
-    font-size: 0.75vw;
+    margin-top:1vw;
+    font-size: 1.5rem;
     font-weight: 400;
-    line-height: 1.25vw;
     color:#7F85A3;
+    line-height:2.55rem;
 }
 
 .advantagesBanner{
     margin-top:6.55vw;
     width:100%;
-    height:38.1vw;
     background-color:#8270FF;
     align-items: center;
     justify-content: center;
     display:flex;
     flex-direction: column;
+    padding-bottom:2vw;
 }
 
 .homeMenuBox2{
@@ -330,42 +323,60 @@
 }
 
 .advantagesContainer{
-    display:flex;
+    display: flex;
     justify-content: center;
     gap:0.85vw;
     margin:0;
     margin-top:2.4vw;
 }
 
+@media (max-width:960px) {
+    .advantagesContainer {
+        display: flex;
+        justify-content: center;
+        gap: 0.85vw;
+        margin: 0;
+        margin-top: 2.4vw;
+        flex-direction: column;
+    }
+}
+
+.advantagesLeft{
+    display:flex;
+    flex-direction: row;
+    gap: 0.85vw;
+}
+
+.advantagesRight{
+    display: flex;
+    flex-direction: row;
+    gap: 0.85vw;
+}
+
 .advantagesBox1,
 .advantagesBox2,
 .advantagesBox3,
 .advantagesBox4{
-    width:13.85vw;
-    height:22.7vw;
+    min-width:13.85vw;
     border:none;
     border-radius:0.8vw;
     background: rgba(25, 27, 36, 0.2);
     text-align:left;
     color:#FFFFFF;
-    padding-bottom:1.2vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 #p7{
     width:13.85vw;
     text-align: left;
     padding-left: 1.2vw;
-    height:1.45vw;
     margin:0;
     margin-top: 1.5vw;
     font-weight:700;
-    font-size:1.2vw;
-    line-height:1.4vw;
-
+    font-size:2.4rem;
 }
 
 #p8{   
@@ -374,11 +385,21 @@
     padding-right:1.2vw;
     margin:0;
     margin-top:0.8vw;
-    height:3.9vw;
     font-weight:400;
-    font-size:0.75vw;
-    line-height:1.25vw;
+    font-size:1.5rem;
     color:#EBEDF8;
+    line-height:2.55rem;
+}
+
+@media (max-width:960px) {
+    .advantagesBox1,
+    .advantagesBox2,
+    .advantagesBox3,
+    .advantagesBox4,
+    #p8,
+    #p7 {
+        min-width: 30vw;
+    }
 }
 
 #imageBox1,
@@ -394,12 +415,10 @@
     width:56vw;
     padding-left:2vw;
     margin-top:6.75vw;
-    height:21vw;
 }
 
 .functionBox1,
 .functionBox2{
-    height:7vw;
     display:flex;
     align-items: center;
 }
@@ -412,7 +431,6 @@
 #imageBox6{
     width:7vw;
     height:7vw;
-    background:#EBEDF8;
 }
 
 .pContainer3,
@@ -422,25 +440,22 @@
 }
 
 #p9{
-    height:1.45vw;
     font-weight:700;
-    font-size:1.2vw;
-    line-height: 1.4vw;
+    font-size:2.4rem;
     color:#FFFFFF;
 }
 
 #p10{
-    height:1.35vw;
     font-weight:400;
-    font-size:0.8vw;
-    line-height:1.35vw;
+    font-size:1.6rem;
     color:#FFFFFF;
     margin-top:0.7vw;
+    line-height:2.72rem;
 }
 
 #viewButton{
-    width:9.45vw;
-    height:3vw;
+    min-width:9.45vw;
+    min-height:3vw;
     border-radius:0.2vw;
     background-color:#D2F75A;
     font-weight:700;
@@ -450,4 +465,11 @@
     margin-top:7vw;
     margin-bottom:8.25vw;
     cursor:pointer;
+}
+
+#pHome{
+    font-weight: 700;
+    font-size:2rem;
+    margin:0;
+    margin-top:1vw;
 }

@@ -9,7 +9,6 @@ import { styled } from "styled-components";
 const StyleNavbar = styled.div`
     width: 100vw;
     height: 10vh;
-    min-width: 768px;
     display: flex;
     flex-direction: row;
     align-items: center;
