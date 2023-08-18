@@ -77,9 +77,11 @@ function StudentProduct() {
 
             <div className="StudentProductBody">
                 <div className="StudentProductBodyAll">
-                    <button id="backButton"><Link to="/studentHome" id="Link1">
+                    <Link to="/studentHome" id="Link1">
+                    <button id="backButton">
                         <img src={icon_back} id="icon_back2" alt="icon_back" />
-                        <p id="backBtnTitle">뒤로</p></Link></button>
+                        <p id="backBtnTitle">뒤로</p></button>
+                    </Link>
 
                     <div className="StudentProductContainer">
                         <img src={product} id="StudentProductImage" alt="StudentProductImage" />

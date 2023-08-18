@@ -88,9 +88,11 @@ function StudentRental() {
                     </div>
                 </form>
                 {isFormValid ? (
+                    <Link to="/rentalSuccess">
                     <button type="submit" id="StudentRentalBtn">
-                        <Link to="/rentalSuccess">신청하기</Link>
+                        신청하기=
                     </button>
+                    </Link>
                 ) : (
                     <button type="button" id="StudentRentalBtn" disabled>
                         신청하기

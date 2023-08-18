@@ -180,10 +180,12 @@ function ProductDetail() {
 
             <div className="productDetailBody">
                 <div className="productDetailBodyAll">
-                    <button id="backButton"><Link to="/product" id="Link1">
+                    <Link to="/product" id="Link1">
+                    <button id="backButton">
                         <img src={icon_back} id="icon_back2" alt="icon_back"/>
                         <p id="backBtnTitle">뒤로</p>
-                    </Link></button>
+                    </button>
+                    </Link>
 
                     <div className="productDetailContainer">
                         <img src={product} id="productDetailImage" alt="productDetailImage"/>
