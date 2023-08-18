@@ -80,10 +80,10 @@ function LoginStaff() {
                     <p id="idTitle">아이디</p>
                     <input type="text" placeholder="아이디를 입력하세요" id="loginStaffId" onChange={handleIdChange}/>
                     <p id="passwordTitle">비밀번호</p>
-                    <input type="password" placeholder="비밀번호를 입력하세요" id="loginStaffPassword"/>
+                    <input type="password" placeholder="비밀번호를 입력하세요" id="loginStaffPassword" onChange={handlePasswordChange}/>
                 </form>
 
-                <button type="submit" id="loginStaffButton">로그인</button>
+                <button type="button" id="loginStaffButton" onClick={onClickLogin}>로그인</button>
 
                 <div className="pContainer5">
                     <p id="p11">혹시, 처음이신가요?</p>

@@ -116,7 +116,7 @@ const MyPageStaffEdit = () => {
     useEffect(() => {
         const fetchData = async () => {
             try{
-                const resultUser = await Api.get(`https://jsonplaceholder.typicode.com/comments/1`);
+                const resultUser = await Api.get(`accounts/employeeInfo/2`);
                 setUser(resultUser.data);
             } catch (error){
                 console.log(error);
@@ -124,6 +124,10 @@ const MyPageStaffEdit = () => {
         };
         fetchData();
     }, []);
+
+    useEffect(() => {
+        console.log(user);
+    }, [user])
 
     const withdrawListener = () => {
         const dataToSend = {

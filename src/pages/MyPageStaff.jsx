@@ -104,11 +104,11 @@ const MyPageStaff = () => {
         }
     }
 
-    useEffect(() => {
-        if (localStorage.getItem('token') === null) {
-        window.location.replace('http://localhost:3000/')
-        }
-    }, []);
+    // useEffect(() => {
+    //     if (localStorage.getItem('token') === null) {
+    //     window.location.replace('http://localhost:3000/')
+    //     }
+    // }, []);
     
     useEffect(() => {
         let isMounted = true; // 마운트 상태를 나타내는 변수
