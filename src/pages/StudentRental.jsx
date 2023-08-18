@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import logo_small from "../images/logo-small.png";
 import logo_skrr_black from "../images/logo-skrr-black.png";
@@ -41,7 +41,7 @@ function StudentRental() {
                     <img src={logo_skrr_black} id="logo_skrr_black" alt="logo_skrr_black" />
                     <p id="StudentRentalTitle">대여 신청</p>
                 </div>
-                
+
 
                 <form onSubmit={handleFormSubmit}>
                     <div className="StudentRentalContainer">

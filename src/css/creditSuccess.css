@@ -1,84 +1,71 @@
-.CreditSuccess>#CreditSuccessNav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 5.4vw;
-    white-space: nowrap;
-}
-
-.CreditSuccess>#CreditSuccessNav>.buttonContainer {
-    margin-right: 2.4vw;
-}
-
-.CreditSuccessBody{
+.CreditSuccess {
+    width: 100%;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.CreditSuccessBody {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100vw;
     white-space: nowrap;
 }
 
-#logo_skrr_black{
-    width:3vw;
-    height:3vw;
-    margin-top:3.4vw;
+#logo_skrr_black {
+    width: 3vw;
+    height: 3vw;
+    margin-top: 3.4vw;
 }
 
-#CreditSuccessTitle{
+#CreditSuccessTitle {
+    height: 1.9vw;
     font-weight: 700;
-    font-size:1.6vw;
-    line-height:1.9vw;
+    font-size: 1.6vw;
+    line-height: 1.9vw;
     text-align: center;
-    color:#FFFFFF;
-    margin-top:0.9vw;
+    color: #FFFFFF;
+    margin-top: 0.4vw;
+}
+
+.CreditSuccessDiv {
+    margin-top: 2.5vw;
+    height: 2.6vw;
 }
 
 #CreditSuccessSubTitle1,
-#CreditSuccessSubTitle2{
-    margin-top:0;
+#CreditSuccessSubTitle2 {
     font-weight: 400;
-    font-size:0.75vw;
-    line-height:1.25vw;
+    font-size: 0.75vw;
+    line-height: 1.25vw;
     text-align: center;
-    color:#EBEDF8;
-    margin-top:1vw;
+    color: #EBEDF8;
 }
 
-#CreditSuccessSubTitle2{
-    margin:0;
-}
-
-.CreditSuccessBtn{
-    display:flex;
-    justify-content: center;
-    margin-top:4vw;
-}
-
-#CreditSuccess_Home{
-    width:10vw;
-    height:3.2vw;
-    border:none;
-    border-radius:0.4vw;
-    background:#D2F75A;
+#CreditSuccess_Home {
+    width: 10vw;
+    height: 3.2vw;
+    border: none;
+    border-radius: 0.4vw;
+    background: #D2F75A;
     font-weight: 700;
-    font-size:1vw;
-    line-height:1vw;
-    color:#0F1510;
+    font-size: 1vw;
+    line-height: 1vw;
+    color: #0F1510;
+    margin-top: 4vw;
 }
 
-#CreditSuccess_Home a{
+#CreditSuccess_Home>a {
     text-decoration: none;
-    color:#0F1510;
+    color: #0F1510;
 }
 
-#CreditSuccessFooter{
-    width: 100vw;
-    height: 8vw;
-    background-color: #191B24;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+#CreditSuccessFooter2 {
     position: fixed;
     bottom: 0;
 }

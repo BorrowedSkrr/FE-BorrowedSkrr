@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import logo_small from "../images/logo-small.png";
 import profile_teacher from "../images/profile-teacher.png";
@@ -124,22 +124,12 @@ function StudentHome() {
 
     return (
         <div className="StudentHome">
-            <nav id="StudentHomeNav">
-                <div className="logo-small">
-                    <Link to="/">
-                        <img src={logo_small} alt="logo_small" id="logo_small" />
-                    </Link>
-                </div>
-                <div className="buttonContainer">
-                    <button id="button-product">PRODUCT</button>
-                    <button id="button-login">MY PAGE</button>
-                </div>
-            </nav>
+            <nav id="StudentHomeNav"></nav>
 
             <div className="StudentHomeBody">
                 <div className="StudentHomeBox">
                     <div className="StudentHomeleft">
-                        <img src={profile_teacher} alt="profile_teacher" id="profile_teacher"/>
+                        <img src={profile_teacher} alt="profile_teacher" id="profile_teacher" />
                         <div className="StudentHomePContainer">
                             <p id="StudentProfile">스컬고등학교 1학년 2반</p>
                             <div className="StudentHomePContainer2">
@@ -155,17 +145,17 @@ function StudentHome() {
                 </div>
                 <div className="StudentHomeBtnContainer2">
                     <button id="StudentHomeBtn3">
-                        <img src={white_line_heartHome} alt="white_line_heartHome" id="white_line_heartHome"/>
+                        <img src={white_line_heartHome} alt="white_line_heartHome" id="white_line_heartHome" />
                         <p id="StudentHomeBtnP1">관심목록</p>
                     </button>
                     <button id="StudentHomeBtn4">
-                        <img src={icon_moneyHome} alt="icon_moneyHome" id="icon_moneyHome"/>
+                        <img src={icon_moneyHome} alt="icon_moneyHome" id="icon_moneyHome" />
                         <p id="StudentHomeBtnP2">대여 내역</p>
                     </button>
                 </div>
 
                 <p id="StudentHomeP">우리 학교 대여 현황</p>
-                
+
                 <div className="menuBar2">
                     <button
                         id="notebook"
@@ -196,7 +186,7 @@ function StudentHome() {
                         🎮 게임/VR
                     </button>
                 </div>
-                <p id="StudentHomeP3" style={{ display: productData.length === 0 && productData2.length === 0 ? 'block' : 'none'}}>아직 대여 현황이 없습니다</p>
+                <p id="StudentHomeP3" style={{ display: productData.length === 0 && productData2.length === 0 ? 'block' : 'none' }}>아직 대여 현황이 없습니다</p>
 
                 {productData.length > 0 || productData2.length > 0 ? (
                     <div className="StudentHomeList">
@@ -262,9 +252,9 @@ function StudentHome() {
                 ) : null}
             </div>
 
-            <footer id="StudentHomeFooter" style={{ marginTop: productData.length === 0 && productData2.length === 0 ? '10vw' : '5vw' }}>
+            {/*    <footer id="StudentHomeFooter" style={{ marginTop: productData.length === 0 && productData2.length === 0 ? '10vw' : '5vw' }}>
                 <img src={likelion} alt="likelion" id="likelion" />
-            </footer>
+            </footer> */}
         </div>
     )
 }
