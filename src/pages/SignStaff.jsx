@@ -125,11 +125,6 @@ function SignStaff() {
 
                     <p id="IdTitle">아이디</p>
                     <input type="text" placeholder="아이디 입력" id="signStaffId" />
-                    {isIdAvailable ? (
-                        <p id="IdExplain">사용 가능한 아이디입니다 :)</p>
-                    ) : (
-                        <p id="IdExplain" style={{ color: "#FF5D47" }}>이미 존재하는 아이디입니다 :(</p>
-                    )}
 
                     <p id="PasswordTitle">비밀번호</p>
                     <input type="password" placeholder="영문, 숫자 포함 8자리 이상" id="signStaffPassword" onChange={handlePasswordChange} />
@@ -175,6 +170,7 @@ function SignStaff() {
                         <button type="button" className="fileUploadBtn" onClick={handleFileButtonClick}>파일선택</button>
                     </div>
                 </form>
+
                 {isIdAvailable && isPassword1Available && isPassword2Available && isPasswordCheckAvailable ? (
                     <Link to="/loginstaff">
                     <button type="button" id="signStaffButton" onClick={handleFormSubmit}>
