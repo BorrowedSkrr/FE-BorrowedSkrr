@@ -1,4 +1,4 @@
-const productData = [
+const ProductData = [
     {
         "id": 1,
         "name": "LG gram 17인치 노트북",
@@ -375,4 +375,4 @@ const productData = [
     }
 ]
 
-export default productData;
+export default ProductData;

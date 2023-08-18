@@ -18,6 +18,7 @@ import banner3 from "../images/banner3.png";
 import axios from 'axios';
 import ListLike from '../components/list/list-like';
 import ListProduct from '../components/list/list-product';
+import ProductData from '../util/product';
 
 function Product() {
     // 관심 리스트
@@ -61,24 +62,25 @@ function Product() {
     };
 
     useEffect(() => {
-        let isMounted = true; // 마운트 상태를 나타내는 변수
+        // let isMounted = true; // 마운트 상태를 나타내는 변수
 
-        const fetchData = async () => {
-            try{
-                const resultProductData = await axios.get(`https://jsonplaceholder.typicode.com/users`);
+        // const fetchData = async () => {
+        //     try{
+        //         const resultProductData = await axios.get(`https://jsonplaceholder.typicode.com/users`);
 
-                if (isMounted){
-                    setProductData(resultProductData.data)
-                }
-            } catch (error){
-                console.log(error);
-            }
-        };
-        fetchData();
+        //         if (isMounted){
+        //             setProductData(resultProductData.data)
+        //         }
+        //     } catch (error){
+        //         console.log(error);
+        //     }
+        // };
+        // fetchData();
 
-        return () => {
-            isMounted = false; // 컴포넌트가 언마운트될 때 변수를 false로 설정
-        };
+        // return () => {
+        //     isMounted = false; // 컴포넌트가 언마운트될 때 변수를 false로 설정
+        // };
+        setProductData(ProductData);
     }, []);
 
     useEffect(() => {

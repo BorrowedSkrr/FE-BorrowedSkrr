@@ -22,11 +22,12 @@ const ListProduct = ({data}) => {
                     <ItemProduct 
                         key = {index}
                         id = {item.id}
-                        img = {'https://via.placeholder.com/150/92c952'}
+                        // img = {'https://via.placeholder.com/150/92c952'}
+                        img={require(`../../util/${item.image}`)}
                         name = {item.name }
-                        price7 = {item.id} 
-                        price30 = {item.id}
-                        num = {item.id}
+                        price7 = {item.priceWeek} 
+                        price30 = {item.priceMonth}
+                        num = {item.count}
                     />
                 )
             })}
