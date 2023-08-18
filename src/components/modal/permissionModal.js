@@ -48,11 +48,7 @@ const StyleTitle = styled.p`
     margin-bottom: 4.7rem;
 `
 
-const CustomModal = (props) => {
-  const onClick = () => {
-
-  }
-  
+const PermissionModal = (props) => {
   return (
     <Modal
       {... props}
@@ -65,8 +61,14 @@ const CustomModal = (props) => {
         {props.state === '삭제' && <StyleTitle>'{props.name}'님의 학생정보를 삭제할까요?</StyleTitle>}
         <div style={{display:'flex', flexDirection:'row', gap:'1.6rem'}}>
             <StyleButton text={'취소'} onClick={props.onHide}>취소</StyleButton>
-            {props.state === '거절' && <StyleButton text={'거절'}>거절</StyleButton>}
-            {props.state === '삭제' && <StyleButton text={'삭제'}>삭제</StyleButton>}
+            {props.state === '거절' && <StyleButton text={'거절'} onClick={() => {
+              props.handlemodalreject(props.name, props.state);
+              props.onHide();
+            }}>거절</StyleButton>}
+            {props.state === '삭제' && <StyleButton text={'삭제'} onClick={() => {
+              props.handlemodalremove(props.name, props.state);
+              props.onHide();
+            }}>삭제</StyleButton>}
         </div>
       </StyleModal>
 
@@ -74,4 +76,4 @@ const CustomModal = (props) => {
   );
 }
 
-export default CustomModal;
+export default PermissionModal;

@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import colors from '../styles/colors';
 import { styled } from 'styled-components';
 import iconSkrrBlack from '../images/icon-skrr-black.png'
 import iconBack from '../images/icon_back.svg'
+import PermissionModal from '../components/modal/permissionModal';
+import Api from '../api';
+import WithDrawModal from '../components/modal/withdrawModal';
 
 const StyleP = styled.p`
     color: ${colors.gray2};
@@ -79,6 +82,11 @@ const StyleBody = styled.div`
 `
 
 const MyPageStaffEdit = () => {
+    // 관리자 정보
+    const [user, setUser] = useState();
+    // 모달
+    const [modalShow, setModalShow] = useState(false);
+
     //파일 업로드 시 파일명 가져오기
     const fileInputRef = React.useRef(null);
     const [selectedFileName, setSelectedFileName] = useState('');
@@ -104,6 +112,33 @@ const MyPageStaffEdit = () => {
     const [isPasswordValid, setPasswordValid] = useState(false);
     const [isPasswordLengthValid, setPasswordLengthValid] = useState(false);
     const [isPasswordCheckValid, setPasswordCheckValid] = useState(false);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try{
+                const resultUser = await Api.get(`https://jsonplaceholder.typicode.com/comments/1`);
+                setUser(resultUser.data);
+            } catch (error){
+                console.log(error);
+            }
+        };
+        fetchData();
+    }, []);
+
+    const withdrawListener = () => {
+        const dataToSend = {
+            'id': user.id
+        };
+
+        const fetchData = async () => {
+            try{
+                const resultSchoolCode = await Api.delete(`https://jsonplaceholder.typicode.com/comments/1`,dataToSend);
+            } catch (error){
+                console.log(error);
+            }
+        };
+        fetchData();
+    }
 
     // 비밀번호 유효성 검사 함수
     const validatePassword = (value) => {
@@ -245,11 +280,17 @@ const MyPageStaffEdit = () => {
                         </div>
                         
                     </StyleContainer>
-                    <StyleContainer>
-                        <StyleButton>회원탈퇴</StyleButton>
-                    </StyleContainer>
-                    
                 </form>
+                    <StyleContainer>
+                        <StyleButton onClick={() => setModalShow(true)}>회원탈퇴</StyleButton>
+                    </StyleContainer>
+                {modalShow && 
+                <WithDrawModal 
+                    show={modalShow}
+                    onHide = {() => setModalShow(false)}
+                    withdrawListener = {withdrawListener}
+                />
+            }
             </StyleBody>
         </div>
     )

@@ -2,8 +2,8 @@ import { styled } from "styled-components";
 import colors from "../../styles/colors";
 
 const StyleButton = styled.button`
-    width: 7.031vw;
-    height: 2.292vw;
+    width: 7vw;
+    height: 2vw;
     font-size: 0.833vw;
     font-weight: 700;
     text-transform: uppercase;

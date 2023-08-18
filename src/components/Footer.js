@@ -7,11 +7,10 @@ import colors from "../styles/colors";
 const StyleDiv = styled.div`
     width: 100vw;
     min-width: 768px;
-    height: 8.333vw;
+    height: 15vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3.073vw 0;
     background-color: ${colors.gray5};
 
     img{

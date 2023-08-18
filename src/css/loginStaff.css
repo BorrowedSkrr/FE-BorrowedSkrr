@@ -1,21 +1,9 @@
-.loginStaff>#loginStaffNav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 5.4vw;
-    white-space: nowrap;
-}
-
-.loginStaff>#loginStaffNav>.buttonContainer {
-    margin-right: 1.6vw;
-}
-
 .loginStaff>.loginStaffBody{
     display:flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     white-space: nowrap;
+    min-height: 75vh;
 }
 
 .loginStaff>.loginStaffBody>.loginButtonContianer{
@@ -80,6 +68,7 @@
     font-size:1vw;
     line-height:1vw;
     color:#FFFFFF;
+    margin-top: 0.521vw;
 }
 
 #loginStaffId::placeholder,

@@ -8,12 +8,13 @@ import { styled } from "styled-components";
 
 const StyleNavbar = styled.div`
     width: 100vw;
+    height: 10vh;
     min-width: 768px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 1.667vw 3.125vw;
+    padding: 0 3.125vw;
 
     img{
         width: 13.75vw;

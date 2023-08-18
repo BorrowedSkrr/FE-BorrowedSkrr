@@ -7,8 +7,9 @@ import MyPageRental from '../components/MyPage-Rental';
 import imgProfile from "../images/profile-teacher.svg";
 import { styled } from 'styled-components';
 import MyPageCopy from '../components/MyPage-Copy';
-import CustomModal from '../components/modal/customModal';
+import PermissionModal from '../components/modal/permissionModal';
 import { Link } from 'react-router-dom';
+import Api from '../api';
 
 const StyleButton = styled.button`
     background-color: ${colors.gray4};
@@ -41,6 +42,13 @@ const MyPageStaff = () => {
         setRentalData(rentalData);
     };
 
+    const onClickLogout = () => {
+        let token = localStorage.getItem('token')
+
+        localStorage.clear()
+        window.location.replace('http://localhost:3000/')
+    }
+
     const manageStudentListener = ({name, state}) => {
         if(state === '거절'){
             // 모달창 띄운 후, 거절 누르면 거절 눌렀다는 정보 서버로 넘긴후 정보 다시 받아오기. 취소 누르면 냅두기
@@ -51,6 +59,33 @@ const MyPageStaff = () => {
         }
     }
 
+    const updateStudentData = (name, state) => {
+        const dataToSend = {
+            'name': name,
+            'state': state
+        };
+        const fetchData = async () => {
+            try{
+                const response = await axios.post('https://jsonplaceholder.typicode.com/comments', dataToSend);
+                console.log('Response:', response.data);
+                setStudentData(response);
+            } catch(error){
+                console.log(error);
+            } 
+        };
+        fetchData();
+    }
+
+    const handlemodalreject = (name, state) => {
+        // updateStudentData(name, state);
+        console.log(name, state)
+    };
+
+
+    const handlemodalremove = (name, state) => {
+        updateStudentData(name, state);
+    };
+
     const studentButtonListener = (name, state) => {
         console.log('클릭', name, state)
         if(state === '거절'){
@@ -59,7 +94,8 @@ const MyPageStaff = () => {
             setModalVisible(true);
             setModalShow(true);
         } else if(state === '허용'){
-            // 서버로 허용되었다는 정보 넘긴 후, 학생 정보 다시 받아오기
+            // POST(서버로 허용되었다는 정보 넘긴 후, 학생 정보 다시 받아오기)
+            updateStudentData(name, state);
         } else if(state === '삭제'){
             // 모달창 띄운 후, 삭제 누르면 삭제됐다는 정보 서버로 넘긴 후 정보 다시 받아오기. 취소 누르면 냅두기
             setManageStudent({name,state})
@@ -69,14 +105,20 @@ const MyPageStaff = () => {
     }
 
     useEffect(() => {
+        if (localStorage.getItem('token') === null) {
+        window.location.replace('http://localhost:3000/')
+        }
+    }, []);
+    
+    useEffect(() => {
         let isMounted = true; // 마운트 상태를 나타내는 변수
 
         const fetchData = async () => {
             try{
-                const resultSchoolCode = await axios.get(`https://jsonplaceholder.typicode.com/comments/1`);
-                const resultUser = await axios.get(`https://jsonplaceholder.typicode.com/users/2`);
-                const resultStudent = await axios.get(`https://jsonplaceholder.typicode.com/users`);
-                const resultRental = await axios.get(`https://jsonplaceholder.typicode.com/photos`);
+                const resultSchoolCode = await Api.get(`https://jsonplaceholder.typicode.com/comments/1`);
+                const resultUser = await Api.get(`https://jsonplaceholder.typicode.com/users/2`);
+                const resultStudent = await Api.get(`https://jsonplaceholder.typicode.com/users`);
+                const resultRental = await Api.get(`https://jsonplaceholder.typicode.com/photos`);
                 
                 // setSchoolCode(resultSchoolCode.data);
                 // setUser(resultUser.data);
@@ -116,8 +158,8 @@ const MyPageStaff = () => {
                         </div>
                     </div>
                     <div style={{display:'flex', flexDirection:'column', justifyContent:'center', gap: '16px', marginRight:'20px'}}>
-                        <StyleButton>정보수정</StyleButton>
-                        <StyleButton>로그아웃</StyleButton>
+                        <Link to='/MyPageStaffEdit'><StyleButton>정보수정</StyleButton></Link>
+                        <StyleButton onClick={() => onClickLogout}>로그아웃</StyleButton>
                     </div>
                 </div>
                 <div style={{display:'flex', flexDirection:'column', padding:'1.25vw', backgroundColor:`${colors.gray5}`, borderRadius:'0.417vw'}}>
@@ -139,11 +181,13 @@ const MyPageStaff = () => {
             {/* {isModalVisible && <Modal name={manageStudent.name} state={manageStudent.state}/>} */}
 
             {modalShow && 
-                <CustomModal
-                    name={manageStudent.name} 
+                <PermissionModal
+                    name={manageStudent.name}
                     state={manageStudent.state}
                     show={modalShow}
-                    onHide={() => setModalShow(false)}
+                    onHide = {() => setModalShow(false)}
+                    handlemodalreject = {handlemodalreject}
+                    handlemodalremove = {handlemodalremove}
                 />
             }
         </div>

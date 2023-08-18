@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import ListCart from "../components/list/list-cart";
 import { styled } from "styled-components";
+import Api from "../api";
 
 const StyleButton = styled.button`
     padding: 2.2rem 6.4rem;
@@ -62,7 +63,6 @@ const CartStaff = () => {
             }
             return isCheck ? prevTotalPrice + price : prevTotalPrice - price;
         });
-        
     }
 
     return(
