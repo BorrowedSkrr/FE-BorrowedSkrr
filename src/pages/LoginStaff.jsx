@@ -40,8 +40,8 @@ function LoginStaff() {
         const fetchData = async () => {
             try{
                 const res = await Api.post("accounts/api-auth/login/",{
-                    classnetid : id,
-                    classnetpw : pw
+                    username : id,
+                    password : pw
                 });
 
                 console.log(res.data);
