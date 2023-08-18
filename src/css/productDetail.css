@@ -155,8 +155,12 @@
     border:none;
     border-radius:0.4vw;
     text-align: start;
-    padding-left:1.6vw;
-    align-items: center;
+    align-items: flex-start;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:0.5vw;
+    padding-left:2vw;
 }
 
 #productweekTtile,
@@ -166,7 +170,6 @@
     font-size:0.8vw;
     line-height:1vw;
     color:#7F85A3;
-    margin-top:1.5vw;
 }
 
 #productweekPrice,
