@@ -10,6 +10,7 @@ import icon_warning from "../images/icon-warning.png";
 import white_lbold_heart from "../images/white-lbold-heart.png";
 import button_minus from "../images/button-minus.png"; 
 import button_plus from "../images/button-plus.png";
+import productData from '../util/product';
 
 function ProductDetail() {
     let {id} = useParams();
@@ -18,7 +19,7 @@ function ProductDetail() {
     // });
 
     // {img, name, info, num, price7, price30}
-    const productItem = products.find((item) => {
+    const productItem = productData.find((item) => {
         return item.id == id;
     })
 

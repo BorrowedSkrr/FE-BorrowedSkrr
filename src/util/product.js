@@ -1,4 +1,4 @@
-[
+const productData = [
     {
         "id": 1,
         "name": "LG gram 17인치 노트북",
@@ -374,3 +374,5 @@
         "category": "3"
     }
 ]
+
+export default productData;
