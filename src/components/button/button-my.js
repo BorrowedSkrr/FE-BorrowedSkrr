@@ -16,11 +16,20 @@ const ButtonMy = () => {
     
     return (
         <>
-            <Link to="/myPageStaff">
-                <StyleButton>
-                    <p style={{color: `${colors.black}`}}>MY PAGE</p>
-                </StyleButton>
-            </Link>
+            {localStorage.getItem('id') === 1 && 
+                <Link to="/myPageStaff">
+                    <StyleButton>
+                        <p style={{color: `${colors.black}`}}>MY PAGE</p>
+                    </StyleButton>
+                </Link>
+            }
+            {localStorage.getItem('id') === 2 && 
+                <Link to="/myPageStudent">
+                    <StyleButton>
+                        <p style={{color: `${colors.black}`}}>MY PAGE</p>
+                    </StyleButton>
+                </Link>
+            }
         </>
 
     );
