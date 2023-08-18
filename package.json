@@ -1,5 +1,5 @@
 {
-  "homepage": "https://borrowedskrr.github.io/FE-BorrowedSkrr/",
+  "homepage": "https://borrowedskrr.github.io/FE-BorrowedSkrr",
   "proxy": "http://49.50.163.177:8000",
   "name": "fe-borrowedskrr",
   "version": "0.1.0",
@@ -11,6 +11,7 @@
     "axios": "^1.4.0",
     "bootstrap": "^5.3.1",
     "gh-pages": "^6.0.0",
+    "http-proxy-middleware": "^2.0.6",
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
     "react-copy-to-clipboard": "^5.1.0",
