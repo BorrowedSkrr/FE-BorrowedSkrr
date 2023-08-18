@@ -20,7 +20,8 @@ const ListSubscribe = ({data}) => {
                 return(
                     <ItemSubscribe 
                         key = {index}
-                        img = {'https://via.placeholder.com/150/92c952'}
+                        // img = {'https://via.placeholder.com/150/92c952'}
+                        img={require(`../../util/${item.image}`)}
                         name = {item.name }
                         num = {item.id} 
                         period = {item.id}

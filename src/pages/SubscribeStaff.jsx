@@ -6,6 +6,7 @@ import ListSubscribe from "../components/list/list-subscribe";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import CustomPagination from "../components/paging/pagination";
+import SubscribeData from "../util/subscribe";
 
 const SubScribeStaff = () => {
     // 장바구니 리스트
@@ -22,24 +23,26 @@ const SubScribeStaff = () => {
     };
 
     useEffect(() => {
-        let isMounted = true; // 마운트 상태를 나타내는 변수
+        // let isMounted = true; // 마운트 상태를 나타내는 변수
 
-        const fetchData = async () => {
-            try{
-                const resultSubscribeData = await axios.get(`https://jsonplaceholder.typicode.com/users`);
+        // const fetchData = async () => {
+        //     try{
+        //         const resultSubscribeData = await axios.get(`https://jsonplaceholder.typicode.com/users`);
 
-                if (isMounted){
-                    setSubscribeData(resultSubscribeData.data)
-                }
-            } catch (error){
-                console.log(error);
-            }
-        };
-        fetchData();
+        //         if (isMounted){
+        //             setSubscribeData(resultSubscribeData.data)
+        //         }
+        //     } catch (error){
+        //         console.log(error);
+        //     }
+        // };
+        // fetchData();
 
-        return () => {
-            isMounted = false; // 컴포넌트가 언마운트될 때 변수를 false로 설정
-        };
+        // return () => {
+        //     isMounted = false; // 컴포넌트가 언마운트될 때 변수를 false로 설정
+        // };
+        setSubscribeData(SubscribeData);
+
     }, []);
 
     useEffect(() => {
@@ -47,6 +50,7 @@ const SubScribeStaff = () => {
         const startIndex = (page - 1) * itemsPerPage;
         const endIndex = startIndex + itemsPerPage;
         setSlicedData(subscribeData.slice(startIndex, endIndex));
+        console.log("!!!!!!!!");
     }, [subscribeData, page]);
 
     return (

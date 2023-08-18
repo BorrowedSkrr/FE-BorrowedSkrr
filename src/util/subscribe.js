@@ -1,4 +1,4 @@
-const subscribeData = [
+const SubscribeData = [
     {
         "id": 1,
         "name": "LG gram 17인치 노트북",
@@ -36,3 +36,5 @@ const subscribeData = [
         "image": "image/camera-4.png"
     }
 ]
+
+export default SubscribeData;
