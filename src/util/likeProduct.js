@@ -1,4 +1,4 @@
-const productData = [
+const likeProductData = [
     {
         "id": 1,
         "name": "LG gram 17인치 노트북",
