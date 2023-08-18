@@ -25,7 +25,7 @@ function RentalSuccess() {
                 <p id="RentalSuccessSubTitle">자유롭게 사용하시고, 대여일정을 꼭 지켜주세요!</p>
 
                 <div className="RentalSuccessBtn">
-                    <button id="RentalSuccess_Home"><Link to="/home">홈으로 가기</Link></button>
+                    <Link to="/home"><button id="RentalSuccess_Home">홈으로 가기</button></Link>
                 </div>
             </div>
 

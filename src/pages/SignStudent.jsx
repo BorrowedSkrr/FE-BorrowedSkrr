@@ -61,7 +61,7 @@ function SignStudent() {
 
             <div className="signStudentBody">
                 <div className="signButtonContianer">
-                    <button id="LoginstaffBtn"><Link to="/signStaff">교직원</Link></button>
+                    <Link to="/signStaff"><button id="LoginstaffBtn">교직원=</button></Link>
                     <button id="LoginstudentBtn">학생</button>
                 </div>
 
